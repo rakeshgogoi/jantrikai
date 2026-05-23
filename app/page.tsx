@@ -129,7 +129,7 @@ export default function HomePage() {
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <a
-                  href="https://jantraweb.onrender.com"
+                  href="https://jantraweb.codingryder.com"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-medium text-brand-700 transition hover:bg-brand-50"
                 >
                   Open Jantra Web
