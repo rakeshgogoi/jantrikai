@@ -83,10 +83,10 @@ export default function JantraBotPage() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="https://wa.me/919864816473?text=Hi"
+                href="https://jantrabot.codingryder.com"
                 className="btn-primary"
               >
-                Open in WhatsApp
+                Open Jantra Bot
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
               <Link href="/" className="btn-secondary">
@@ -176,7 +176,7 @@ export default function JantraBotPage() {
 
             <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="https://wa.me/919864816473?text=Hi"
+                href="https://jantrabot.codingryder.com"
                 className="btn-primary"
               >
                 Start a chat

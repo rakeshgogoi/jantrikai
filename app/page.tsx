@@ -135,10 +135,10 @@ export default function HomePage() {
                   Open Jantra Web
                 </a>
                 <a
-                  href="https://wa.me/919864816473?text=Hi"
+                  href="https://jantrabot.codingryder.com"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/10"
                 >
-                  Message Jantra Bot
+                  Open Jantra Bot
                 </a>
               </div>
             </div>
