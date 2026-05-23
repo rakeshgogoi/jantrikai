@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Sparkles } from 'lucide-react';
+import { Bot } from 'lucide-react';
 
 const navLinks = [
   { href: '/web/', label: 'Jantra Web' },
@@ -14,7 +14,7 @@ export default function Nav() {
       <div className="container-page flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-bold text-slate-900">
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-600 to-brand-800 text-white shadow-sm">
-            <Sparkles className="h-4 w-4" aria-hidden />
+            <Bot className="h-4 w-4" aria-hidden />
           </span>
           <span className="text-base tracking-tight">
             Jantrik <span className="text-brand-600">AI</span>
