@@ -3,7 +3,6 @@ services:
   - type: web
     name: jantrikai
     env: static
-    region: oregon
     plan: free
     buildCommand: npm ci && npm run build
     staticPublishPath: ./out
