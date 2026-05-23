@@ -13,9 +13,23 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Jantra Web — A multilingual AI workspace',
+  title: 'Jantra Web — Multilingual AI workspace in 19 languages',
   description:
-    'A web-based multilingual AI assistant. Chat, translate, scan bank statements, digitise handwritten Indic pages, and more — across 19 languages.',
+    'A browser-based multilingual AI assistant. Chat, translate, scan bank statements, digitise handwritten Indic pages, and play language games — across 19 languages.',
+  alternates: { canonical: '/web/' },
+  openGraph: {
+    title: 'Jantra Web — Multilingual AI workspace in 19 languages',
+    description:
+      'Chat, translate, scan statements, and digitise handwritten Indic pages in your language.',
+    url: '/web/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jantra Web — Multilingual AI workspace',
+    description:
+      'Chat, translate, scan statements, and digitise handwritten Indic pages in your language.',
+  },
 };
 
 const modes = [

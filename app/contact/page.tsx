@@ -3,9 +3,17 @@ import { Mail, Globe } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact — Jantrik AI',
+  title: 'Contact Jantrik AI',
   description:
-    'Get in touch with the Jantrik AI team. Partnerships, press, language requests, or just a hello.',
+    'Get in touch with the Jantrik AI team for partnerships, press, language requests, or just to say hello. Reach us at connect@codingryder.com.',
+  alternates: { canonical: '/contact/' },
+  openGraph: {
+    title: 'Contact Jantrik AI',
+    description:
+      'Get in touch for partnerships, press, language requests, or just to say hello.',
+    url: '/contact/',
+    type: 'website',
+  },
 };
 
 export default function ContactPage() {

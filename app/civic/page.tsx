@@ -12,9 +12,23 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Jantra Civic — Civic services that speak your language',
+  title: 'Jantra Civic — Government schemes & forms in your language',
   description:
-    'Jantra Civic helps Indian citizens discover government schemes, fill forms, find their elected representatives, and access jobs and tenders — all on WhatsApp, in their language.',
+    'Jantra Civic helps Indian citizens discover central and state government schemes, fill forms, find elected representatives, and access jobs and tenders — on WhatsApp, in their language.',
+  alternates: { canonical: '/civic/' },
+  openGraph: {
+    title: 'Jantra Civic — Government schemes & forms in your language',
+    description:
+      'Discover government schemes, fill forms, and access civic services on WhatsApp in your language.',
+    url: '/civic/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jantra Civic — Government services in your language',
+    description:
+      'Discover schemes, fill forms, and access civic services on WhatsApp in your language.',
+  },
 };
 
 const services = [

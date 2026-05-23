@@ -2,9 +2,17 @@ import type { Metadata } from 'next';
 import { Mail, Globe } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About — Jantrik AI',
+  title: 'About Jantrik AI — Built by Coding Ryder Enterprises',
   description:
-    'Jantrik AI is built by Coding Ryder Enterprises to make AI accessible in the languages people actually speak — across India and beyond.',
+    'Jantrik AI is built by Coding Ryder Enterprises to make AI accessible in the languages Indians actually speak. Learn about the team and our language-first principles.',
+  alternates: { canonical: '/about/' },
+  openGraph: {
+    title: 'About Jantrik AI — Built by Coding Ryder Enterprises',
+    description:
+      'Language-first AI for India. Learn about the team behind Jantra Web, Jantra Bot, and Jantra Civic.',
+    url: '/about/',
+    type: 'website',
+  },
 };
 
 const principles = [

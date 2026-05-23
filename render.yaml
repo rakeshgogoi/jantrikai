@@ -18,3 +18,11 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
+      # Next.js generates icon and opengraph-image as extension-less PNGs;
+      # force the correct Content-Type so browsers and social crawlers render them.
+      - path: /icon
+        name: Content-Type
+        value: image/png
+      - path: /opengraph-image
+        name: Content-Type
+        value: image/png

@@ -12,9 +12,23 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Jantra Bot — AI on WhatsApp, in your language',
+  title: 'Jantra Bot — AI on WhatsApp in 10 Indian languages',
   description:
-    'Jantra Bot is a WhatsApp AI assistant in 10 Indian languages. Ask anything, translate, look up words, play language games — no app to install.',
+    'Jantra Bot is a WhatsApp AI assistant in 10 Indian languages plus English. Ask anything, translate, look up words, play language games — no app to install.',
+  alternates: { canonical: '/bot/' },
+  openGraph: {
+    title: 'Jantra Bot — AI on WhatsApp in 10 Indian languages',
+    description:
+      'A WhatsApp AI assistant fluent in 10 Indian languages and English. Translate, chat, learn, play.',
+    url: '/bot/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jantra Bot — AI on WhatsApp',
+    description:
+      'A WhatsApp AI assistant fluent in 10 Indian languages and English.',
+  },
 };
 
 const features = [
