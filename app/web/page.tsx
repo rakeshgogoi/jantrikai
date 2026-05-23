@@ -186,8 +186,8 @@ export default function JantraWebPage() {
                     — Web app, Python backend, PostgreSQL data
                   </li>
                   <li>
-                    <span className="font-medium text-slate-900">Razorpay</span>{' '}
-                    — Cards, UPI, bank transfer
+                    <span className="font-medium text-slate-900">pgvector</span>{' '}
+                    — Embeddings and semantic search on PostgreSQL
                   </li>
                 </ul>
               </div>
