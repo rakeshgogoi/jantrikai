@@ -1,9 +1,16 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
 const siteUrl = 'https://jantrikai.com';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#0d9488',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
