@@ -33,12 +33,12 @@ export default function Nav() {
           ))}
         </nav>
 
-        <a
-          href="mailto:connect@codingryder.com"
+        <Link
+          href="/contact/"
           className="hidden md:inline-flex btn-primary !py-2"
         >
           Contact
-        </a>
+        </Link>
       </div>
     </header>
   );
