@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Jantrik AI — Multilingual AI for India in 19 languages',
+    default: 'Jantrik AI — Multilingual AI for the World in 19 languages',
     template: '%s · Jantrik AI',
   },
   description:
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Jantrik AI',
-    title: 'Jantrik AI — Multilingual AI for India in 19 languages',
+    title: 'Jantrik AI — Multilingual AI for the World in 19 languages',
     description:
       'Jantra Web, Jantra Bot, and Jantra Civic — three multilingual AI products for India, across 19 languages.',
     url: siteUrl,
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jantrik AI — Multilingual AI for India in 19 languages',
+    title: 'Jantrik AI — Multilingual AI for the World in 19 languages',
     description:
       'Jantra Web, Jantra Bot, and Jantra Civic — three multilingual AI products for India, across 19 languages.',
   },
