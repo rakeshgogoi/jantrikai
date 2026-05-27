@@ -11,6 +11,14 @@ const helloVariants = [
   { label: 'നമസ്കാരം', lang: 'Malayalam' },
   { label: 'ନମସ୍କାର', lang: 'Odia' },
   { label: 'Hello', lang: 'English' },
+  { label: 'Hola', lang: 'Spanish' },
+  { label: 'Bonjour', lang: 'French' },
+  { label: 'Hallo', lang: 'German' },
+  { label: 'مرحبا', lang: 'Arabic' },
+  { label: '你好', lang: 'Chinese' },
+  { label: 'こんにちは', lang: 'Japanese' },
+  { label: '안녕하세요', lang: 'Korean' },
+  { label: 'Olá', lang: 'Portuguese' },
 ];
 
 export default function Hero() {
