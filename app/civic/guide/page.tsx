@@ -135,7 +135,7 @@ const gettingStarted = [
   {
     step: 'Step 1',
     title: 'Open Jantra Bot',
-    body: "Save +91 63612 45647 in WhatsApp and send Hi. If you've used Jantra Bot before, just open the chat.",
+    body: "Open jantracivic.codingryder.com - it launches a WhatsApp chat with Jantra Bot. If you've used it before, just reopen the chat.",
   },
   {
     step: 'Step 2',
@@ -318,7 +318,7 @@ export default function JantraCivicGuidePage() {
               Alerts.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="https://wa.me/916361245647" className="btn-primary">
+              <a href="https://jantracivic.codingryder.com" className="btn-primary">
                 Try Jantra Civic
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
@@ -428,10 +428,10 @@ export default function JantraCivicGuidePage() {
                 ))}
               </ol>
               <a
-                href="https://wa.me/916361245647"
+                href="https://jantracivic.codingryder.com"
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-emerald-600"
               >
-                Open Jantra Bot, then type: /civic
+                Try Jantra Civic
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
             </section>
@@ -742,9 +742,9 @@ export default function JantraCivicGuidePage() {
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <ContactCard
                   label="Try Jantra Civic"
-                  value="+91 63612 45647"
-                  sub="WhatsApp Jantra Bot and type /civic"
-                  href="https://wa.me/916361245647"
+                  value="jantracivic.codingryder.com"
+                  sub="Opens a WhatsApp chat - then type /civic"
+                  href="https://jantracivic.codingryder.com"
                 />
                 <ContactCard
                   label="Feedback / Support"
@@ -770,10 +770,10 @@ export default function JantraCivicGuidePage() {
               <div className="mt-8 overflow-hidden rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 p-8 text-center text-white shadow-md">
                 <p className="text-xl font-bold">Ready to try it?</p>
                 <a
-                  href="https://wa.me/916361245647"
+                  href="https://jantracivic.codingryder.com"
                   className="mt-3 inline-flex items-center gap-2 text-lg font-semibold underline decoration-2 underline-offset-4 hover:text-amber-50"
                 >
-                  Open WhatsApp → wa.me/916361245647 → /civic
+                  Open jantracivic.codingryder.com and type /civic
                   <ArrowRight className="h-5 w-5" aria-hidden />
                 </a>
               </div>
