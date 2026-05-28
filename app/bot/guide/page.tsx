@@ -374,7 +374,7 @@ const faqs = [
   { q: 'Is there a message limit?', a: 'There is no strict daily limit for regular usage. Extremely high-volume usage may be rate-limited automatically.' },
   { q: 'What AI powers Jantra Bot?', a: 'Jantra Bot uses Google Gemini for language understanding and image analysis, and Sarvam AI for voice transcription.' },
   { q: 'Can businesses use Jantra Bot?', a: 'Jantra Bot is built for individuals. For business or institutional deployments, contact Coding Ryder directly.' },
-  { q: 'How do I give feedback?', a: 'WhatsApp Rakesh directly at wa.me/918720951721 - he personally reads all feedback.' },
+  { q: 'How do I give feedback?', a: 'Email connect@codingryder.com - Rakesh personally reads every message.' },
 ];
 
 const specs = [
@@ -865,9 +865,9 @@ export default function JantraBotGuidePage() {
                 />
                 <ContactCard
                   label="Feedback / Support"
-                  value="+91 87209 51721"
-                  sub="WhatsApp Rakesh directly with feedback, bugs, or ideas"
-                  href="https://wa.me/918720951721"
+                  value="connect@codingryder.com"
+                  sub="Email us with feedback, bugs, or ideas"
+                  href="mailto:connect@codingryder.com"
                 />
                 <ContactCard
                   label="Website"

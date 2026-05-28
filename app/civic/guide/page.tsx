@@ -748,9 +748,9 @@ export default function JantraCivicGuidePage() {
                 />
                 <ContactCard
                   label="Feedback / Support"
-                  value="+91 87209 51721"
-                  sub="WhatsApp Rakesh directly with feedback, bugs, or ideas"
-                  href="https://wa.me/918720951721"
+                  value="connect@codingryder.com"
+                  sub="Email us with feedback, bugs, or ideas"
+                  href="mailto:connect@codingryder.com"
                 />
                 <ContactCard
                   label="Website"
