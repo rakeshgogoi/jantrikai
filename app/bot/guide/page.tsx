@@ -23,12 +23,12 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Jantra Bot User Guide — Complete product documentation',
+  title: 'Jantra Bot User Guide - Complete product documentation',
   description:
     'The complete Jantra Bot user guide: all six modes, 10 languages, voice and image support, commands, tips, use cases, FAQs, and technical specifications.',
   alternates: { canonical: '/bot/guide/' },
   openGraph: {
-    title: 'Jantra Bot User Guide — Complete product documentation',
+    title: 'Jantra Bot User Guide - Complete product documentation',
     description:
       'Every mode, command, language, and tip for using Jantra Bot inside WhatsApp.',
     url: '/bot/guide/',
@@ -46,7 +46,7 @@ const toc = [
   { n: 1, id: 'introduction', title: 'Introduction', sub: "What Jantra Bot is and who it's for" },
   { n: 2, id: 'key-features', title: 'Key Features', sub: 'Eight core capabilities at a glance' },
   { n: 3, id: 'getting-started', title: 'Getting Started', sub: 'Up and running in 30 seconds' },
-  { n: 4, id: 'modes', title: 'User Guide — Modes', sub: 'All six modes explained' },
+  { n: 4, id: 'modes', title: 'User Guide - Modes', sub: 'All six modes explained' },
   { n: 5, id: 'languages', title: 'Supported Languages', sub: '10 languages with scripts & codes' },
   { n: 6, id: 'voice', title: 'Voice Support', sub: 'Using voice notes with Jantra Bot' },
   { n: 7, id: 'images', title: 'Image Understanding', sub: 'Send a photo, get a description' },
@@ -63,12 +63,12 @@ const audiences = [
   {
     label: 'Learners & students',
     body:
-      'Instant explanations, definitions, and study help — homework support in your own language without flipping a dictionary.',
+      'Instant explanations, definitions, and study help - homework support in your own language without flipping a dictionary.',
   },
   {
     label: 'Working professionals',
     body:
-      'Quick research, translations, draft emails, summarise documents, and AI-powered advice on the go — without leaving WhatsApp.',
+      'Quick research, translations, draft emails, summarise documents, and AI-powered advice on the go - without leaving WhatsApp.',
   },
   {
     label: 'First-time AI users',
@@ -78,12 +78,12 @@ const audiences = [
   {
     label: 'Regional language users',
     body:
-      'Ask in Assamese, Kannada, Bengali, Tamil, Hindi, Odia, or Malayalam — or mix scripts freely. Replies come back in your chosen tongue.',
+      'Ask in Assamese, Kannada, Bengali, Tamil, Hindi, Odia, or Malayalam - or mix scripts freely. Replies come back in your chosen tongue.',
   },
   {
     label: 'Voice-first users',
     body:
-      'Too tired to type? Just hold the mic in WhatsApp and speak — Jantra Bot transcribes Indian languages accurately and replies in text.',
+      'Too tired to type? Just hold the mic in WhatsApp and speak - Jantra Bot transcribes Indian languages accurately and replies in text.',
   },
 ];
 
@@ -92,7 +92,7 @@ const features = [
     icon: MessageSquareText,
     title: 'Universal AI Assistant',
     body:
-      'Ask anything — general knowledge, science, history, advice, creative writing, coding help, and more. Jantra Bot handles open-ended conversations just like a knowledgeable friend would.',
+      'Ask anything - general knowledge, science, history, advice, creative writing, coding help, and more. Jantra Bot handles open-ended conversations just like a knowledgeable friend would.',
   },
   {
     icon: Languages,
@@ -104,7 +104,7 @@ const features = [
     icon: CheckCircle2,
     title: 'WhatsApp Native',
     body:
-      'Zero setup. No downloads, no logins, no separate app. Works directly inside the WhatsApp app on any smartphone — Android, iOS, or web.',
+      'Zero setup. No downloads, no logins, no separate app. Works directly inside the WhatsApp app on any smartphone - Android, iOS, or web.',
   },
   {
     icon: Layers,
@@ -122,19 +122,19 @@ const features = [
     icon: ImageIcon,
     title: 'Image Understanding',
     body:
-      "Send any photo — food, documents, street signs, plants, artwork — and Jantra Bot describes what it sees, in your language, powered by Google Gemini's vision AI.",
+      "Send any photo - food, documents, street signs, plants, artwork - and Jantra Bot describes what it sees, in your language, powered by Google Gemini's vision AI.",
   },
   {
     icon: Receipt,
     title: 'Personal Accounts Mode',
     body:
-      'Track income, expenses, and balances by chatting naturally. Export any time as CSV — no spreadsheets, no apps, just messages.',
+      'Track income, expenses, and balances by chatting naturally. Export any time as CSV - no spreadsheets, no apps, just messages.',
   },
   {
     icon: Landmark,
     title: 'Jantra Civic Built-in',
     body:
-      'Civic mode opens a dedicated sub-product: government schemes you qualify for, civic services, your representatives, and local alerts — covered fully in the Jantra Civic Guide.',
+      'Civic mode opens a dedicated sub-product: government schemes you qualify for, civic services, your representatives, and local alerts - covered fully in the Jantra Civic Guide.',
   },
 ];
 
@@ -142,7 +142,7 @@ const gettingStarted = [
   {
     step: 'Step 1',
     title: 'Open WhatsApp',
-    body: 'Open WhatsApp on your phone (iOS or Android), or on WhatsApp Web / Desktop — no installation needed.',
+    body: 'Open WhatsApp on your phone (iOS or Android), or on WhatsApp Web / Desktop - no installation needed.',
   },
   {
     step: 'Step 2',
@@ -162,7 +162,7 @@ const gettingStarted = [
   {
     step: 'Step 5',
     title: 'Start talking',
-    body: "Type anything, send a voice note, or send a photo. That's it — you're in!",
+    body: "Type anything, send a voice note, or send a photo. That's it - you're in!",
   },
 ];
 
@@ -170,7 +170,7 @@ const modes = [
   {
     title: '4.1 Assistant Mode (Default)',
     body:
-      'The default mode — a general-purpose AI for open-ended questions, explanations, creative writing, advice, and anything else you can think of. Responses are conversational, context-aware, and delivered in your chosen language.',
+      'The default mode - a general-purpose AI for open-ended questions, explanations, creative writing, advice, and anything else you can think of. Responses are conversational, context-aware, and delivered in your chosen language.',
     examplesLabel: 'Example questions',
     examples: [
       '"What are the health benefits of turmeric?"',
@@ -183,7 +183,7 @@ const modes = [
   {
     title: '4.2 Dictionary Mode',
     body:
-      'Send a single word and receive its meaning, origin, and an example sentence — all in your chosen language. Perfect for vocabulary building and language learning. Note: only single words are accepted in this mode.',
+      'Send a single word and receive its meaning, origin, and an example sentence - all in your chosen language. Perfect for vocabulary building and language learning. Note: only single words are accepted in this mode.',
     examplesLabel: 'Example inputs',
     examples: ['"Ephemeral"', '"ಸಮುದ್ರ (Kannada)"', '"Serendipity"', '"নদী (Assamese)"'],
   },
@@ -202,7 +202,7 @@ const modes = [
   {
     title: '4.4 Accounts Mode',
     body:
-      'A natural-language expense tracker. Add transactions by typing what you spent, view recent activity, see your running balance, and export your records as CSV — all by chatting in any supported language.',
+      'A natural-language expense tracker. Add transactions by typing what you spent, view recent activity, see your running balance, and export your records as CSV - all by chatting in any supported language.',
     examplesLabel: 'Example inputs',
     examples: [
       '"Spent 250 on groceries today"',
@@ -215,18 +215,18 @@ const modes = [
   {
     title: '4.5 Play Mode',
     body:
-      'A relaxing, multilingual word-game mode. Riddles, vocabulary puzzles, and quick quizzes — perfect for unwinding or for parents to share with children. Games run in your chosen language.',
+      'A relaxing, multilingual word-game mode. Riddles, vocabulary puzzles, and quick quizzes - perfect for unwinding or for parents to share with children. Games run in your chosen language.',
     examplesLabel: "What's inside",
     examples: [
       'Riddles and word puzzles in 10 languages',
       'Multilingual word-association games',
-      'Short, snackable quizzes — play for one minute or fifteen',
+      'Short, snackable quizzes - play for one minute or fifteen',
     ],
   },
   {
     title: '4.6 Civic Mode (Jantra Civic)',
     body:
-      'Civic mode opens a dedicated government-services sub-product — Jantra Civic. From here you can find schemes you qualify for, look up civic services, know your representatives, get help with forms, and see local alerts. Type /civic from anywhere to enter.',
+      'Civic mode opens a dedicated government-services sub-product - Jantra Civic. From here you can find schemes you qualify for, look up civic services, know your representatives, get help with forms, and see local alerts. Type /civic from anywhere to enter.',
     examplesLabel: 'See also',
     examples: ['For full documentation, read the separate Jantra Civic Guide.'],
     civicLink: true,
@@ -251,7 +251,7 @@ const voiceSteps = [
   {
     n: 2,
     title: 'Receive & route',
-    body: 'Jantra Bot receives the audio and sends it to Sarvam AI — a speech-to-text engine built specifically for Indian languages.',
+    body: 'Jantra Bot receives the audio and sends it to Sarvam AI - a speech-to-text engine built specifically for Indian languages.',
   },
   {
     n: 3,
@@ -267,16 +267,16 @@ const voiceSteps = [
 
 const voiceTips = [
   { label: 'Quiet environment', body: 'Record in a quiet room for best accuracy.' },
-  { label: 'Speak naturally', body: "Don't slow down unnaturally — speak as you normally would." },
+  { label: 'Speak naturally', body: "Don't slow down unnaturally - speak as you normally would." },
   { label: 'Good connection', body: 'Ensure your internet connection is stable when sending audio.' },
-  { label: 'Any length', body: "Short or long — there's no strict time limit on voice notes." },
+  { label: 'Any length', body: "Short or long - there's no strict time limit on voice notes." },
 ];
 
 const imageSteps = [
-  { n: 1, title: 'Attach', body: 'Attach and send any photo from your camera roll, or take a new one — JPEG, PNG, and WEBP are all accepted.' },
+  { n: 1, title: 'Attach', body: 'Attach and send any photo from your camera roll, or take a new one - JPEG, PNG, and WEBP are all accepted.' },
   { n: 2, title: 'Acknowledge', body: 'Jantra Bot immediately replies in your language with a wait message such as "Let me read the image for you, please wait…"' },
-  { n: 3, title: 'Analyse', body: 'Google Gemini analyses the image and identifies its content — objects, scene, text, context.' },
-  { n: 4, title: 'Describe', body: "You receive a detailed description in your chosen language — useful for reading, summarising, or translating what's in the photo." },
+  { n: 3, title: 'Analyse', body: 'Google Gemini analyses the image and identifies its content - objects, scene, text, context.' },
+  { n: 4, title: 'Describe', body: "You receive a detailed description in your chosen language - useful for reading, summarising, or translating what's in the photo." },
 ];
 
 const imageTypes = [
@@ -315,11 +315,11 @@ const tips = [
   },
   {
     title: 'Mix languages freely',
-    body: "You don't have to type in your set language. Ask in English even when your language is set to Kannada — the bot will reply in Kannada regardless.",
+    body: "You don't have to type in your set language. Ask in English even when your language is set to Kannada - the bot will reply in Kannada regardless.",
   },
   {
     title: 'Follow-up questions',
-    body: '"Tell me more", "Give me an example", "Explain that differently" — the bot remembers your recent conversation in Assistant mode.',
+    body: '"Tell me more", "Give me an example", "Explain that differently" - the bot remembers your recent conversation in Assistant mode.',
   },
   {
     title: 'Photograph text for translation',
@@ -331,17 +331,17 @@ const tips = [
   },
   {
     title: 'Kanglish / Hinglish for comfort',
-    body: 'If reading Devanagari or Kannada script is tiring, switch to Hinglish or Kanglish — you get the same language in easy-to-read English letters.',
+    body: 'If reading Devanagari or Kannada script is tiring, switch to Hinglish or Kanglish - you get the same language in easy-to-read English letters.',
   },
   {
     title: 'Ask for structured output',
-    body: '"Give me a bullet-point list", "Summarise in 3 lines", "Give me a table comparing X and Y" — the bot formats its output based on your instruction.',
+    body: '"Give me a bullet-point list", "Summarise in 3 lines", "Give me a table comparing X and Y" - the bot formats its output based on your instruction.',
   },
 ];
 
 const useCases = [
   { scenario: 'Student studying for exams', help: 'Switch to Dictionary mode for tough English words with Assamese meanings, then back to Assistant for chemistry explanations in your language.' },
-  { scenario: 'Understanding a medical report', help: 'Photograph the report and ask "What does this mean?" — get a plain-language explanation, no medical jargon.' },
+  { scenario: 'Understanding a medical report', help: 'Photograph the report and ask "What does this mean?" - get a plain-language explanation, no medical jargon.' },
   { scenario: 'Shopping at a new market', help: 'Photograph an unfamiliar label and instantly know what it says, in your language.' },
   { scenario: 'Travel assistant', help: 'Ask for local food recommendations, cultural tips, or translate phrases you need at a local shop.' },
   { scenario: 'Professional writing help', help: 'Draft formal emails, summarise documents, or suggest phrasing for tricky situations in any supported language.' },
@@ -349,27 +349,27 @@ const useCases = [
   { scenario: 'Cooking companion', help: 'Send a photo of ingredients and ask "What can I cook with these?" or request recipes in your regional language.' },
   { scenario: 'Rural & semi-urban users', help: 'Ask farming questions, scheme queries, or health questions in your native language without needing English.' },
   { scenario: 'Personal expense tracker', help: 'Log spends in chat with Accounts mode, see balances, and export CSV when you need to share.' },
-  { scenario: 'Government & civic queries', help: 'Jump to Civic mode for schemes, services, and your representatives — see the Jantra Civic Guide.' },
+  { scenario: 'Government & civic queries', help: 'Jump to Civic mode for schemes, services, and your representatives - see the Jantra Civic Guide.' },
 ];
 
 const faqs = [
   { q: 'Is Jantra Bot free to use?', a: 'Yes, Jantra Bot is currently free during the beta period. Standard WhatsApp data charges from your network provider may apply.' },
   { q: 'Do I need to create an account?', a: 'No. There are no accounts, logins, or passwords. Your WhatsApp number is your identity.' },
   { q: 'Does the bot store my conversations?', a: 'Jantra Bot stores recent conversation in Assistant mode so follow-up questions work. You can clear it any time with /clear. Images and voice recordings are not stored after processing.' },
-  { q: 'Can I use Jantra Bot on WhatsApp Web?', a: 'Yes — Jantra Bot works wherever WhatsApp works: mobile app, WhatsApp Web, and WhatsApp Desktop.' },
+  { q: 'Can I use Jantra Bot on WhatsApp Web?', a: 'Yes - Jantra Bot works wherever WhatsApp works: mobile app, WhatsApp Web, and WhatsApp Desktop.' },
   { q: "What if the bot doesn't understand my voice note?", a: 'Try recording in a quieter environment or speak more clearly. If the problem persists, type your question instead.' },
   { q: 'Can I use multiple languages in one session?', a: "You can ask in any language, but the bot's replies will be in your currently set language. Use /lang to change it at any time." },
-  { q: 'What is the difference between Kanglish and Kannada?', a: 'Kannada uses the native Kannada script. Kanglish is the same language written in English/Roman letters — easier to read for those not fluent in the native script. Hinglish is the equivalent for Hindi.' },
+  { q: 'What is the difference between Kanglish and Kannada?', a: 'Kannada uses the native Kannada script. Kanglish is the same language written in English/Roman letters - easier to read for those not fluent in the native script. Hinglish is the equivalent for Hindi.' },
   { q: 'Is there a message limit?', a: 'There is no strict daily limit for regular usage. Extremely high-volume usage may be rate-limited automatically.' },
   { q: 'What AI powers Jantra Bot?', a: 'Jantra Bot uses Google Gemini for language understanding and image analysis, and Sarvam AI for voice transcription.' },
   { q: 'Can businesses use Jantra Bot?', a: 'Jantra Bot is built for individuals. For business or institutional deployments, contact Coding Ryder directly.' },
-  { q: 'How do I give feedback?', a: 'WhatsApp Rakesh directly at wa.me/918720951721 — he personally reads all feedback.' },
+  { q: 'How do I give feedback?', a: 'WhatsApp Rakesh directly at wa.me/918720951721 - he personally reads all feedback.' },
 ];
 
 const specs = [
   { k: 'Platform', v: 'WhatsApp Business API (via Twilio & Meta Cloud API)' },
   { k: 'AI / Language Model', v: 'Google Gemini 2.5 Flash (text + vision)' },
-  { k: 'Voice Transcription', v: 'Sarvam AI — saarika:v2.5 + saaras:v3 (Assamese)' },
+  { k: 'Voice Transcription', v: 'Sarvam AI - saarika:v2.5 + saaras:v3 (Assamese)' },
   { k: 'Backend Framework', v: 'Python · FastAPI · Uvicorn (async)' },
   { k: 'Database', v: 'PostgreSQL on Neon (serverless, cloud-hosted)' },
   { k: 'Hosting', v: 'Render (cloud deployment, always-on)' },
@@ -378,7 +378,7 @@ const specs = [
   { k: 'Context Window', v: 'Rolling conversation history per user, Assistant mode' },
   { k: 'Modes', v: 'Assistant · Dictionary · Translator · Accounts · Play · Civic' },
   { k: 'Languages Supported', v: '10 (Assamese, Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, English, Kanglish, Hinglish)' },
-  { k: 'Current Status', v: 'Beta — actively developed by Coding Ryder' },
+  { k: 'Current Status', v: 'Beta - actively developed by Coding Ryder' },
 ];
 
 export default function JantraBotGuidePage() {
@@ -392,7 +392,7 @@ export default function JantraBotGuidePage() {
               <BookOpen className="h-3.5 w-3.5" aria-hidden />
               Complete user guide
             </span>
-            <h1 className="heading-display mt-5">Jantra Bot — User Guide</h1>
+            <h1 className="heading-display mt-5">Jantra Bot - User Guide</h1>
             <p className="prose-lead mt-5">
               Your multilingual AI assistant on WhatsApp. Answers anything · 10 languages ·
               Voice & image · No downloads.
@@ -438,20 +438,20 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 1 — Introduction */}
+      {/* Section 1 - Introduction */}
       <section id="introduction" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
             <SectionHeading n={1} title="Introduction" icon={MessageSquareText} />
             <p className="prose-lead mt-6">
-              Jantra Bot is a multilingual AI assistant that lives entirely inside WhatsApp — the
+              Jantra Bot is a multilingual AI assistant that lives entirely inside WhatsApp - the
               messaging app you already use every day. There are no downloads, no signups, no new
               apps to learn. Just open a chat with the bot and start asking questions in any of 10
               supported languages.
             </p>
             <p className="mt-5 text-base leading-7 text-slate-700">
               Built by Coding Ryder and powered by Google Gemini and Sarvam AI, Jantra Bot
-              combines cutting-edge AI with deep support for Indian languages — including Assamese,
+              combines cutting-edge AI with deep support for Indian languages - including Assamese,
               Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, and the beloved romanised hybrids
               Kanglish and Hinglish.
             </p>
@@ -469,13 +469,13 @@ export default function JantraBotGuidePage() {
             <h3 className="mt-12 text-xl font-bold text-slate-900">Mission</h3>
             <p className="mt-3 text-base leading-7 text-slate-700">
               To make world-class AI accessible in every Indian language, for every person,
-              without any barrier — through a platform they already trust: WhatsApp.
+              without any barrier - through a platform they already trust: WhatsApp.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Section 2 — Key Features */}
+      {/* Section 2 - Key Features */}
       <section id="key-features" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-5xl">
@@ -495,7 +495,7 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 3 — Getting Started */}
+      {/* Section 3 - Getting Started */}
       <section id="getting-started" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -524,11 +524,11 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 4 — Modes */}
+      {/* Section 4 - Modes */}
       <section id="modes" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
-            <SectionHeading n={4} title="User Guide — Modes" icon={Terminal} />
+            <SectionHeading n={4} title="User Guide - Modes" icon={Terminal} />
             <p className="mt-6 text-base text-slate-700">
               Jantra Bot operates in six distinct modes. Your active mode determines how the bot
               interprets and responds to your messages. You can switch at any time by typing{' '}
@@ -565,14 +565,14 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 5 — Languages */}
+      {/* Section 5 - Languages */}
       <section id="languages" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-4xl">
             <SectionHeading n={5} title="Supported Languages" icon={Languages} />
             <p className="mt-6 text-base text-slate-700">
               Jantra Bot supports 10 languages. For each language, you can send messages in the
-              native script or in romanised (English letters) form — the bot understands both.
+              native script or in romanised (English letters) form - the bot understands both.
             </p>
             <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200">
               <table className="min-w-full divide-y divide-slate-200 text-sm">
@@ -594,7 +594,7 @@ export default function JantraBotGuidePage() {
                       <td className="px-4 py-3">
                         <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{l.code}</code>
                       </td>
-                      <td className="px-4 py-3 text-slate-700">{l.voice ? '✓' : '—'}</td>
+                      <td className="px-4 py-3 text-slate-700">{l.voice ? '✓' : '-'}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -602,19 +602,19 @@ export default function JantraBotGuidePage() {
             </div>
             <p className="mt-6 text-sm text-slate-600">
               To switch language, type <code className="rounded bg-slate-100 px-1.5 py-0.5">/lang</code> or
-              say "change language" — an interactive menu will appear with all 10 options.
+              say "change language" - an interactive menu will appear with all 10 options.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Section 6 — Voice */}
+      {/* Section 6 - Voice */}
       <section id="voice" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
             <SectionHeading n={6} title="Voice Support" icon={Mic} />
             <p className="mt-6 text-base text-slate-700">
-              Jantra Bot understands voice notes. No typing needed — just hold the microphone
+              Jantra Bot understands voice notes. No typing needed - just hold the microphone
               button in WhatsApp and speak naturally. The bot will transcribe your voice and
               respond in your chosen language.
             </p>
@@ -634,9 +634,9 @@ export default function JantraBotGuidePage() {
               ))}
             </ol>
 
-            <h3 className="mt-10 text-lg font-bold text-slate-900">Voice technology — Sarvam AI</h3>
+            <h3 className="mt-10 text-lg font-bold text-slate-900">Voice technology - Sarvam AI</h3>
             <p className="mt-3 text-sm leading-6 text-slate-700">
-              Jantra Bot uses Sarvam AI (sarvam.ai) for voice transcription — an Indian startup
+              Jantra Bot uses Sarvam AI (sarvam.ai) for voice transcription - an Indian startup
               whose models are trained natively on Indian languages including Assamese, Kannada,
               Hindi, Bengali, and Tamil. This makes it significantly more accurate for Indian
               accents and regional speech patterns than generic speech engines.
@@ -654,13 +654,13 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 7 — Images */}
+      {/* Section 7 - Images */}
       <section id="images" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
             <SectionHeading n={7} title="Image Understanding" icon={ImageIcon} />
             <p className="mt-6 text-base text-slate-700">
-              Send any photo to Jantra Bot and it will describe what it sees — in your chosen
+              Send any photo to Jantra Bot and it will describe what it sees - in your chosen
               language. Powered by Google Gemini's multimodal vision AI, the bot can identify
               objects, scenes, text, food, animals, landmarks, and much more.
             </p>
@@ -707,13 +707,13 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 8 — Commands */}
+      {/* Section 8 - Commands */}
       <section id="commands" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
             <SectionHeading n={8} title="Commands Reference" icon={Terminal} />
             <p className="mt-6 text-base text-slate-700">
-              Type any of these commands at any time — they work in all modes and languages.
+              Type any of these commands at any time - they work in all modes and languages.
             </p>
             <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200">
               <table className="min-w-full divide-y divide-slate-200 text-sm">
@@ -739,7 +739,7 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 9 — Tips */}
+      {/* Section 9 - Tips */}
       <section id="tips" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -756,7 +756,7 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 10 — Use Cases */}
+      {/* Section 10 - Use Cases */}
       <section id="use-cases" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-4xl">
@@ -783,7 +783,7 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 11 — FAQs */}
+      {/* Section 11 - FAQs */}
       <section id="faqs" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -800,7 +800,7 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 12 — Specs */}
+      {/* Section 12 - Specs */}
       <section id="specs" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -821,7 +821,7 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 13 — Developer */}
+      {/* Section 13 - Developer */}
       <section id="developer" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -839,8 +839,8 @@ export default function JantraBotGuidePage() {
               </div>
               <p className="mt-5 text-sm leading-6 text-slate-700">
                 Rakesh Gogoi is the solo developer behind Jantra Bot and the Coding Ryder brand.
-                With a passion for making technology accessible to everyone — regardless of
-                language, literacy, or location — Rakesh built Jantra Bot to bridge the gap
+                With a passion for making technology accessible to everyone - regardless of
+                language, literacy, or location - Rakesh built Jantra Bot to bridge the gap
                 between powerful AI tools and everyday users across India.
               </p>
               <p className="mt-3 text-sm leading-6 text-slate-700">
@@ -855,10 +855,10 @@ export default function JantraBotGuidePage() {
             <p className="mt-3 text-sm leading-6 text-slate-700">
               Coding Ryder is an indie tech brand focused on building practical, language-inclusive
               digital products for everyday users. The brand's philosophy: "Technology should speak
-              your language — not the other way around."
+              your language - not the other way around."
             </p>
             <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              <li>Independent, bootstrapped — no VC funding, no corporate agenda.</li>
+              <li>Independent, bootstrapped - no VC funding, no corporate agenda.</li>
               <li>Focused on Indian-language users and underserved digital communities.</li>
               <li>Open to collaboration, feedback, and community-driven development.</li>
               <li>All products are built with privacy and simplicity as first principles.</li>
@@ -870,7 +870,7 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 14 — Contact */}
+      {/* Section 14 - Contact */}
       <section id="contact" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">

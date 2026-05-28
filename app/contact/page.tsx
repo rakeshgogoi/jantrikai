@@ -25,7 +25,7 @@ export default function ContactPage() {
             <span className="badge">Contact</span>
             <h1 className="heading-display mt-5">Let&apos;s talk.</h1>
             <p className="prose-lead mt-5">
-              Partnerships, press, language requests, or just a hello — we&apos;d
+              Partnerships, press, language requests, or just a hello - we&apos;d
               love to hear from you. Drop a note below and we&apos;ll get back
               to you soon.
             </p>

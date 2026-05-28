@@ -13,12 +13,12 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Jantra Civic — Government schemes & forms in your language',
+  title: 'Jantra Civic - Government schemes & forms in your language',
   description:
-    'Jantra Civic helps Indian citizens discover central and state government schemes, fill forms, find elected representatives, and access jobs and tenders — on WhatsApp, in their language.',
+    'Jantra Civic helps Indian citizens discover central and state government schemes, fill forms, find elected representatives, and access jobs and tenders - on WhatsApp, in their language.',
   alternates: { canonical: '/civic/' },
   openGraph: {
-    title: 'Jantra Civic — Government schemes & forms in your language',
+    title: 'Jantra Civic - Government schemes & forms in your language',
     description:
       'Discover government schemes, fill forms, and access civic services on WhatsApp in your language.',
     url: '/civic/',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jantra Civic — Government services in your language',
+    title: 'Jantra Civic - Government services in your language',
     description:
       'Discover schemes, fill forms, and access civic services on WhatsApp in your language.',
   },
@@ -41,12 +41,12 @@ const services = [
   {
     icon: BadgeCheck,
     title: 'Forms',
-    body: 'Discover and access common government forms — application templates, eligibility, where to apply, and what to carry.',
+    body: 'Discover and access common government forms - application templates, eligibility, where to apply, and what to carry.',
   },
   {
     icon: Users,
     title: 'Representatives',
-    body: 'Find your elected representatives — MP, MLA, ward councillor — based on the state you select.',
+    body: 'Find your elected representatives - MP, MLA, ward councillor - based on the state you select.',
   },
   {
     icon: Briefcase,
@@ -80,7 +80,7 @@ export default function JantraCivicPage() {
             <p className="prose-lead mt-5">
               Civic information made conversational. Jantra Civic helps Indian
               citizens discover government schemes, find their elected
-              representatives, access common forms, and track jobs and tenders —
+              representatives, access common forms, and track jobs and tenders -
               all on WhatsApp, in the language they prefer.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -106,7 +106,7 @@ export default function JantraCivicPage() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="heading-section">Six everyday civic surfaces.</h2>
             <p className="prose-lead mt-4">
-              Built for citizens — not bureaucrats. Plain language, your tongue,
+              Built for citizens - not bureaucrats. Plain language, your tongue,
               answers that fit on a phone screen.
             </p>
           </div>
@@ -135,7 +135,7 @@ export default function JantraCivicPage() {
               <h2 className="heading-section">Personalised to you, not the average.</h2>
               <p className="prose-lead mt-4">
                 A one-time onboarding captures your state, age band, gender,
-                occupation, and income bracket — used only to filter the schemes
+                occupation, and income bracket - used only to filter the schemes
                 and jobs you see. Skip anything you&apos;d rather not share; you can
                 update later.
               </p>
@@ -150,7 +150,7 @@ export default function JantraCivicPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-none rounded-full bg-amber-600" />
-                  Free-text questions get grounded answers — not links to dig
+                  Free-text questions get grounded answers - not links to dig
                   through.
                 </li>
               </ul>
@@ -165,7 +165,7 @@ export default function JantraCivicPage() {
                   Show me schemes for women entrepreneurs in Assam.
                 </div>
                 <div className="ml-6 rounded-2xl bg-amber-50 px-4 py-3 text-amber-900 ring-1 ring-inset ring-amber-100">
-                  Here are 3 schemes that match — Stand-Up India, PMEGP, and
+                  Here are 3 schemes that match - Stand-Up India, PMEGP, and
                   Assam&apos;s Mahila Udyamita Abhiyaan. Tap a name for eligibility,
                   benefits, and how to apply.
                 </div>
@@ -183,7 +183,7 @@ export default function JantraCivicPage() {
             <p className="prose-lead mt-4">
               Government services are dense, fragmented, and rarely written in the
               language people actually speak at home. Jantra Civic puts a
-              language-first, conversational front-end on top — so getting to the
+              language-first, conversational front-end on top - so getting to the
               right scheme, the right form, or the right office takes seconds, not
               hours.
             </p>

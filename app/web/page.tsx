@@ -14,12 +14,12 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Jantra Web — Multilingual AI workspace in 19 languages',
+  title: 'Jantra Web - Multilingual AI workspace in 19 languages',
   description:
-    'A browser-based multilingual AI assistant. Chat, translate, scan bank statements, digitise handwritten Indic pages, and play language games — across 19 languages.',
+    'A browser-based multilingual AI assistant. Chat, translate, scan bank statements, digitise handwritten Indic pages, and play language games - across 19 languages.',
   alternates: { canonical: '/web/' },
   openGraph: {
-    title: 'Jantra Web — Multilingual AI workspace in 19 languages',
+    title: 'Jantra Web - Multilingual AI workspace in 19 languages',
     description:
       'Chat, translate, scan statements, and digitise handwritten Indic pages in your language.',
     url: '/web/',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jantra Web — Multilingual AI workspace',
+    title: 'Jantra Web - Multilingual AI workspace',
     description:
       'Chat, translate, scan statements, and digitise handwritten Indic pages in your language.',
   },
@@ -42,12 +42,12 @@ const modes = [
   {
     icon: Languages,
     title: 'Translate',
-    body: 'Translate text or whole documents between any two supported languages — including long-form PDFs and Word files.',
+    body: 'Translate text or whole documents between any two supported languages - including long-form PDFs and Word files.',
   },
   {
     icon: BookOpen,
     title: 'Dictionary',
-    body: 'Word meanings, pronunciations, and example usages — explained in your chosen language.',
+    body: 'Word meanings, pronunciations, and example usages - explained in your chosen language.',
   },
   {
     icon: Gamepad2,
@@ -109,7 +109,7 @@ export default function JantraWebPage() {
             <p className="prose-lead mt-5">
               A multilingual AI workspace in your browser. Chat, translate, look up
               words, play language games, scan financial statements, and digitise
-              handwritten regional-script pages — all in your own language.
+              handwritten regional-script pages - all in your own language.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
@@ -177,7 +177,7 @@ export default function JantraWebPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <PenLine className="mt-0.5 h-4 w-4 flex-none text-brand-600" />
-                  Script-aware rendering — proper Bengali, Assamese, and other
+                  Script-aware rendering - proper Bengali, Assamese, and other
                   Indic fonts loaded so glyphs render correctly.
                 </li>
               </ul>
@@ -191,19 +191,19 @@ export default function JantraWebPage() {
                 <ul className="mt-4 space-y-3 text-sm text-slate-700">
                   <li>
                     <span className="font-medium text-slate-900">Google Gemini</span>{' '}
-                    — 2.5 Pro for OCR, 2.5 Flash elsewhere
+                    - 2.5 Pro for OCR, 2.5 Flash elsewhere
                   </li>
                   <li>
                     <span className="font-medium text-slate-900">Sarvam AI</span>{' '}
-                    — saarika:v2 speech recognition, Bulbul v3 text-to-speech
+                    - saarika:v2 speech recognition, Bulbul v3 text-to-speech
                   </li>
                   <li>
                     <span className="font-medium text-slate-900">Next.js + FastAPI</span>{' '}
-                    — Web app, Python backend, PostgreSQL data
+                    - Web app, Python backend, PostgreSQL data
                   </li>
                   <li>
                     <span className="font-medium text-slate-900">pgvector</span>{' '}
-                    — Embeddings and semantic search on PostgreSQL
+                    - Embeddings and semantic search on PostgreSQL
                   </li>
                 </ul>
               </div>

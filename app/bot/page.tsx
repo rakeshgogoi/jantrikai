@@ -13,12 +13,12 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Jantra Bot — AI on WhatsApp in 10 Indian languages',
+  title: 'Jantra Bot - AI on WhatsApp in 10 Indian languages',
   description:
-    'Jantra Bot is a WhatsApp AI assistant in 10 Indian languages plus English. Ask anything, translate, look up words, play language games — no app to install.',
+    'Jantra Bot is a WhatsApp AI assistant in 10 Indian languages plus English. Ask anything, translate, look up words, play language games - no app to install.',
   alternates: { canonical: '/bot/' },
   openGraph: {
-    title: 'Jantra Bot — AI on WhatsApp in 10 Indian languages',
+    title: 'Jantra Bot - AI on WhatsApp in 10 Indian languages',
     description:
       'A WhatsApp AI assistant fluent in 10 Indian languages and English. Translate, chat, learn, play.',
     url: '/bot/',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jantra Bot — AI on WhatsApp',
+    title: 'Jantra Bot - AI on WhatsApp',
     description:
       'A WhatsApp AI assistant fluent in 10 Indian languages and English.',
   },
@@ -36,12 +36,12 @@ const features = [
   {
     icon: MessageSquareText,
     title: 'Assistant',
-    body: 'Ask anything — facts, advice, summaries, drafts. Replies in your chosen language; pulls live information from the web when needed.',
+    body: 'Ask anything - facts, advice, summaries, drafts. Replies in your chosen language; pulls live information from the web when needed.',
   },
   {
     icon: BookOpen,
     title: 'Dictionary',
-    body: 'Send a word, get its meaning, pronunciation, and an example sentence — explained in your language.',
+    body: 'Send a word, get its meaning, pronunciation, and an example sentence - explained in your language.',
   },
   {
     icon: Languages,
@@ -56,7 +56,7 @@ const features = [
   {
     icon: Gamepad2,
     title: 'Play',
-    body: 'Hangman, quizzes, riddles, and word games — all running in your chosen language right inside WhatsApp.',
+    body: 'Hangman, quizzes, riddles, and word games - all running in your chosen language right inside WhatsApp.',
   },
   {
     icon: Mic,
@@ -91,7 +91,7 @@ export default function JantraBotPage() {
             </span>
             <h1 className="heading-display mt-5">Jantra Bot</h1>
             <p className="prose-lead mt-5">
-              An AI assistant that lives inside WhatsApp — fluent in 10 Indian
+              An AI assistant that lives inside WhatsApp - fluent in 10 Indian
               languages and Indic-Roman variants. Ask anything, translate, look up
               words, play games, send voice notes. All inside the chat app you
               already use every day.
@@ -145,10 +145,10 @@ export default function JantraBotPage() {
       <section className="section bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="heading-section">Pick your language — once.</h2>
+            <h2 className="heading-section">Pick your language - once.</h2>
             <p className="prose-lead mt-4">
               On first chat, Jantra Bot asks you to choose a language. Every reply
-              after that — including help text and menus — comes back in it.
+              after that - including help text and menus - comes back in it.
             </p>
           </div>
 
@@ -175,7 +175,7 @@ export default function JantraBotPage() {
             <ol className="mt-10 space-y-6">
               {[
                 { n: 1, t: 'Save the number', d: 'Add Jantra Bot to your contacts and open WhatsApp.' },
-                { n: 2, t: 'Send "Hi"', d: 'You\'ll be shown a language picker — choose your preferred language.' },
+                { n: 2, t: 'Send "Hi"', d: 'You\'ll be shown a language picker - choose your preferred language.' },
                 { n: 3, t: 'Ask anything', d: 'Type, speak a voice note, or pick a mode like Translator or Dictionary.' },
               ].map((s) => (
                 <li key={s.n} className="flex items-start gap-5">

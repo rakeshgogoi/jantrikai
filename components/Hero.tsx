@@ -52,7 +52,7 @@ export default function Hero() {
 
           <p className="prose-lead mt-6">
             Jantrik AI is a multilingual AI platform built for India and the world.
-            Chat, translate, transcribe, scan, and digitise — across 11 Indian
+            Chat, translate, transcribe, scan, and digitise - across 11 Indian
             languages and 8 international ones, on WhatsApp and the web.
           </p>
 

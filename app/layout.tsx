@@ -15,11 +15,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Jantrik AI — Multilingual AI for the World in 19 languages',
+    default: 'Jantrik AI - Multilingual AI for the World in 19 languages',
     template: '%s · Jantrik AI',
   },
   description:
-    'Jantrik AI builds multilingual AI products for India in 19 languages — Jantra Web (browser workspace), Jantra Bot (WhatsApp assistant), and Jantra Civic (government schemes & forms).',
+    'Jantrik AI builds multilingual AI products for India in 19 languages - Jantra Web (browser workspace), Jantra Bot (WhatsApp assistant), and Jantra Civic (government schemes & forms).',
   applicationName: 'Jantrik AI',
   authors: [{ name: 'Coding Ryder Enterprises', url: 'https://codingryder.com' }],
   creator: 'Coding Ryder Enterprises',
@@ -48,17 +48,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Jantrik AI',
-    title: 'Jantrik AI — Multilingual AI for the World in 19 languages',
+    title: 'Jantrik AI - Multilingual AI for the World in 19 languages',
     description:
-      'Jantra Web, Jantra Bot, and Jantra Civic — three multilingual AI products for India, across 19 languages.',
+      'Jantra Web, Jantra Bot, and Jantra Civic - three multilingual AI products for India, across 19 languages.',
     url: siteUrl,
     locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jantrik AI — Multilingual AI for the World in 19 languages',
+    title: 'Jantrik AI - Multilingual AI for the World in 19 languages',
     description:
-      'Jantra Web, Jantra Bot, and Jantra Civic — three multilingual AI products for India, across 19 languages.',
+      'Jantra Web, Jantra Bot, and Jantra Civic - three multilingual AI products for India, across 19 languages.',
   },
   robots: {
     index: true,

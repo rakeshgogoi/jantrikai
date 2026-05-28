@@ -15,7 +15,7 @@ const capabilities = [
   {
     icon: Languages,
     title: '19 languages',
-    body: '11 Indian regional languages — Hindi, Assamese, Bengali, Tamil, Kannada, Telugu, Malayalam, Marathi, Punjabi, Gujarati, Odia — plus 8 international.',
+    body: '11 Indian regional languages - Hindi, Assamese, Bengali, Tamil, Kannada, Telugu, Malayalam, Marathi, Punjabi, Gujarati, Odia - plus 8 international.',
   },
   {
     icon: Mic,
@@ -45,8 +45,8 @@ export default function HomePage() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="heading-section">Three products. One language-first ecosystem.</h2>
             <p className="prose-lead mt-4">
-              Whichever surface you prefer — a browser tab, WhatsApp, or a dedicated
-              civic-services line — Jantrik AI meets you in your language.
+              Whichever surface you prefer - a browser tab, WhatsApp, or a dedicated
+              civic-services line - Jantrik AI meets you in your language.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export default function HomePage() {
             <ProductCard
               name="Jantra Web"
               tagline="A full multilingual AI workspace"
-              description="Chat, translate, dictionary, language games, bank-statement scanning, and handwriting OCR — all in 19 languages, in your browser."
+              description="Chat, translate, dictionary, language games, bank-statement scanning, and handwriting OCR - all in 19 languages, in your browser."
               href="/web/"
               icon={Globe2}
               accent="indigo"
@@ -62,7 +62,7 @@ export default function HomePage() {
             <ProductCard
               name="Jantra Bot"
               tagline="AI on WhatsApp, in your language"
-              description="Ask anything, translate, look up word meanings, play language games — directly inside WhatsApp. No app to install."
+              description="Ask anything, translate, look up word meanings, play language games - directly inside WhatsApp. No app to install."
               href="/bot/"
               icon={MessageSquareText}
               accent="emerald"
@@ -70,7 +70,7 @@ export default function HomePage() {
             <ProductCard
               name="Jantra Civic"
               tagline="Civic services that speak your language"
-              description="Schemes, government forms, elected representatives, jobs and tenders — surfaced on WhatsApp, personalised to your state and demographics."
+              description="Schemes, government forms, elected representatives, jobs and tenders - surfaced on WhatsApp, personalised to your state and demographics."
               href="/civic/"
               icon={Landmark}
               accent="amber"
@@ -93,7 +93,7 @@ export default function HomePage() {
             </h2>
             <p className="prose-lead mt-4">
               Most AI products were built English-first and translated outward.
-              Jantrik AI is built language-first — Indic scripts, romanised forms,
+              Jantrik AI is built language-first - Indic scripts, romanised forms,
               code-mixed inputs, and voice are all first-class citizens.
             </p>
           </div>
@@ -124,7 +124,7 @@ export default function HomePage() {
                 Start in your language. Today.
               </h2>
               <p className="mt-4 text-base text-brand-100 sm:text-lg">
-                Pick the surface that fits how you work — and meet AI in a language
+                Pick the surface that fits how you work - and meet AI in a language
                 you actually think in.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

@@ -26,14 +26,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Jantra Web User Guide — Complete information & user guide',
+  title: 'Jantra Web User Guide - Complete information & user guide',
   description:
     'The complete Jantra Web user guide: 19 languages, five chat modes, profile, plans, privacy, tips, troubleshooting, FAQs, and technical reference.',
   alternates: { canonical: '/web/guide/' },
   openGraph: {
-    title: 'Jantra Web User Guide — Complete information & user guide',
+    title: 'Jantra Web User Guide - Complete information & user guide',
     description:
-      'Every mode, language, command, and tip for using Jantra Web — the free multilingual AI workspace in your browser.',
+      'Every mode, language, command, and tip for using Jantra Web - the free multilingual AI workspace in your browser.',
     url: '/web/guide/',
     type: 'article',
   },
@@ -63,14 +63,14 @@ const toc = [
 ];
 
 const highlights = [
-  '100% free to use — no credit card or payment required',
+  '100% free to use - no credit card or payment required',
   'Supports 19 languages (11 Indian + 8 international)',
   'Five specialised chat modes inside a single application',
-  'Powered by Google Gemini 2.5 Flash — fast, multimodal AI',
+  'Powered by Google Gemini 2.5 Flash - fast, multimodal AI',
   'Works on any device: desktop, tablet, and mobile browsers',
-  'Passwordless sign-in — just an email address gets you started',
+  'Passwordless sign-in - just an email address gets you started',
   'Built-in image understanding for OCR and transaction tracking',
-  'Privacy-first design — minimal data collection, no third-party tracking',
+  'Privacy-first design - minimal data collection, no third-party tracking',
 ];
 
 const platformInfo = [
@@ -79,7 +79,7 @@ const platformInfo = [
   { k: 'Developer', v: 'Coding Ryder (codingryder.com)' },
   { k: 'AI Engine', v: 'Google Gemini 2.5 Flash' },
   { k: 'Category', v: 'AI Assistant / Language Tool' },
-  { k: 'Pricing', v: 'Free (Rookie tier — no payment required)' },
+  { k: 'Pricing', v: 'Free (Rookie tier - no payment required)' },
   { k: 'Hosting', v: 'Render (cloud-hosted, Oregon region)' },
   { k: 'First released', v: '2026' },
 ];
@@ -97,7 +97,7 @@ const systemReqs = [
   { k: 'Browser', v: 'Latest Chrome, Firefox, Safari or Edge' },
   { k: 'Operating System', v: 'Any (Windows, macOS, Linux, iOS, Android)' },
   { k: 'Internet Connection', v: 'Stable broadband or mobile data' },
-  { k: 'Screen Size', v: 'Any — responsive layout for phone, tablet, desktop' },
+  { k: 'Screen Size', v: 'Any - responsive layout for phone, tablet, desktop' },
   { k: 'Identifier', v: 'A valid, accessible email address' },
 ];
 
@@ -108,7 +108,7 @@ const signupSteps = [
   'Select your country from the dropdown list.',
   'Read and accept the Terms of Service and Privacy Policy by ticking the checkbox.',
   'Click the Get Started button.',
-  'Wait a moment while your account is provisioned — you will be taken to the language picker.',
+  'Wait a moment while your account is provisioned - you will be taken to the language picker.',
 ];
 
 const indianLanguages = ['Hindi', 'Bengali', 'Tamil', 'Telugu', 'Kannada', 'Malayalam', 'Marathi', 'Punjabi', 'Gujarati', 'Odia', 'Assamese'];
@@ -130,13 +130,13 @@ const interfaceAreas = [
 const inputCapabilities = [
   'Type your message and press Enter (or tap the Send button) to submit it.',
   'Use Shift+Enter to insert a line break without sending.',
-  'Upload an image by clicking the image icon next to the input field — supported in Chat and Accounts modes.',
+  'Upload an image by clicking the image icon next to the input field - supported in Chat and Accounts modes.',
   'Use the suggested starter chips displayed above the input on a fresh session to begin a conversation quickly.',
   'Tap the microphone icon (where shown) to record a voice prompt that will be transcribed.',
 ];
 
 const modes = [
-  { mode: 'Chat', purpose: 'General AI conversation — ask any question in your language', icon: MessageCircle },
+  { mode: 'Chat', purpose: 'General AI conversation - ask any question in your language', icon: MessageCircle },
   { mode: 'Translate', purpose: 'Translate text between any of the 19 supported languages', icon: Languages },
   { mode: 'Dictionary', purpose: 'Look up word meanings, pronunciation and usage examples', icon: BookOpen },
   { mode: 'Play', purpose: 'Interactive word games: Hangman, Quiz, Riddle and Word Game', icon: Gamepad2 },
@@ -144,10 +144,10 @@ const modes = [
 ];
 
 const chatUses = [
-  'Asking questions on any topic — science, history, cooking, technology',
+  'Asking questions on any topic - science, history, cooking, technology',
   'Getting explanations of complex ideas in your own language',
   'Brainstorming, creative writing, drafting emails or social posts',
-  'Multi-turn conversations — the AI remembers context within the session',
+  'Multi-turn conversations - the AI remembers context within the session',
   'Uploading an image and asking questions about it (vision-enabled)',
 ];
 
@@ -170,7 +170,7 @@ const games = [
   { name: 'Hangman', body: 'Guess the hidden word one letter at a time before the figure is completed.' },
   { name: 'Quiz', body: 'Answer multiple-choice questions on language, grammar and general knowledge.' },
   { name: 'Riddle', body: 'The AI poses a riddle in your language; you try to solve it.' },
-  { name: 'Word Game', body: 'Various vocabulary challenges — antonyms, synonyms, word associations.' },
+  { name: 'Word Game', body: 'Various vocabulary challenges - antonyms, synonyms, word associations.' },
 ];
 
 const accountsSteps = [
@@ -202,7 +202,7 @@ const profileFields = [
 ];
 
 const tiers = [
-  { name: 'Rookie', status: 'Active', body: 'Chat, Translate, Dictionary, Play and Accounts — get started today, free of cost.' },
+  { name: 'Rookie', status: 'Active', body: 'Chat, Translate, Dictionary, Play and Accounts - get started today, free of cost.' },
   { name: 'Seasoned', status: 'Coming Soon', body: 'Advanced features, priority response time, higher daily message limits and enhanced capabilities.' },
   { name: 'Maestro', status: 'Coming Soon', body: 'Full access, highest message limits and early access to new features as they launch.' },
 ];
@@ -226,10 +226,10 @@ const tipGroups = [
   {
     title: 'Getting better responses',
     items: [
-      'Be specific — detailed questions get more useful answers.',
-      'Provide context — for a follow-up, briefly mention what was discussed before.',
-      'Use your preferred language — the AI responds best in the language you selected.',
-      'Break complex tasks into steps — ask one question at a time for the best clarity.',
+      'Be specific - detailed questions get more useful answers.',
+      'Provide context - for a follow-up, briefly mention what was discussed before.',
+      'Use your preferred language - the AI responds best in the language you selected.',
+      'Break complex tasks into steps - ask one question at a time for the best clarity.',
     ],
   },
   {
@@ -245,7 +245,7 @@ const tipGroups = [
     items: [
       'Single words or short phrases give the richest output.',
       "Ask for the word's etymology or regional usage for extra depth.",
-      'Use it as a learning aid — ask for sample sentences at different difficulty levels.',
+      'Use it as a learning aid - ask for sample sentences at different difficulty levels.',
     ],
   },
   {
@@ -255,7 +255,7 @@ const tipGroups = [
       'Screenshot the transaction confirmation screen, not the home or history screen.',
       'Use /summary regularly to keep track of your spending at a glance.',
       'Export your data with /export before clearing, to keep a local backup.',
-      'If the AI misreads a field, simply correct it in chat — "change the amount to ₹500".',
+      'If the AI misreads a field, simply correct it in chat - "change the amount to ₹500".',
     ],
   },
   {
@@ -263,7 +263,7 @@ const tipGroups = [
     items: [
       'If a response comes back in the wrong language, switch language in the top bar and try again.',
       'When mixing two languages (e.g. Hinglish), explicitly tell the AI which language you want the reply in.',
-      'Indian script rendering is fully supported — copy/paste output to other apps without losing characters.',
+      'Indian script rendering is fully supported - copy/paste output to other apps without losing characters.',
     ],
   },
 ];
@@ -280,7 +280,7 @@ const troubleshooting = [
 ];
 
 const faqs = [
-  { q: 'Is Jantra Web really free?', a: 'Yes. The Rookie tier — which includes all current features — is completely free. No credit card or payment information is required.' },
+  { q: 'Is Jantra Web really free?', a: 'Yes. The Rookie tier - which includes all current features - is completely free. No credit card or payment information is required.' },
   { q: 'Do I need to install anything?', a: 'No. Jantra Web runs entirely in your web browser. There is no app to download and nothing to install.' },
   { q: 'Which AI model powers Jantra Web?', a: 'Jantra Web is powered by Google Gemini 2.5 Flash, a fast multimodal model that supports both text and image understanding.' },
   { q: 'Can I use it on my phone?', a: 'Yes. The interface is fully responsive and works on any modern mobile browser. You can also add the website to your home screen for an app-like experience.' },
@@ -290,7 +290,7 @@ const faqs = [
   { q: 'Why does switching language clear my chat?', a: 'Each conversation is anchored to a specific language so that the AI can produce high-quality, natively-phrased responses. Rotating the session avoids mixing languages in the same context window.' },
   { q: 'Can I upload PDFs or documents?', a: 'Currently the platform supports image uploads (for OCR and vision tasks). For long text documents, paste the contents directly into Chat Mode and ask the AI for help.' },
   { q: 'How accurate is the payment screenshot reader?', a: 'OCR accuracy is high for clear, full-resolution screenshots of the confirmation screen from GPay, PhonePe and Paytm. If a field is misread, you can correct it directly in chat.' },
-  { q: 'Will more languages be added?', a: 'Yes — additional languages will be added in future releases based on user demand. Follow @codingryder for announcements.' },
+  { q: 'Will more languages be added?', a: 'Yes - additional languages will be added in future releases based on user demand. Follow @codingryder for announcements.' },
   { q: 'How do I report a bug?', a: 'Note the mode and language you were using, the message that triggered the issue, and contact Coding Ryder via the website or social channels listed in the Support section.' },
 ];
 
@@ -321,7 +321,7 @@ const apiModes = [
 ];
 
 const glossary = [
-  { term: 'AI (Artificial Intelligence)', meaning: 'Computer systems that perform tasks normally requiring human intelligence — in this case, understanding and producing natural language.' },
+  { term: 'AI (Artificial Intelligence)', meaning: 'Computer systems that perform tasks normally requiring human intelligence - in this case, understanding and producing natural language.' },
   { term: 'Bhashini', meaning: 'An Indian government initiative providing language-AI building blocks (translation, transliteration, speech) for Indian languages.' },
   { term: 'Chat Mode', meaning: 'The general-purpose AI assistant mode of Jantra Web.' },
   { term: 'Dark Theme', meaning: 'An optional visual theme using a dark background, easier on the eyes in low-light environments.' },
@@ -329,11 +329,11 @@ const glossary = [
   { term: 'Mode', meaning: 'A purpose-built chat experience inside Jantra Web. Five modes are available: Chat, Translate, Dictionary, Play and Accounts.' },
   { term: 'OCR (Optical Character Recognition)', meaning: 'Technology that reads text from images. Used in Accounts Mode to read payment screenshots.' },
   { term: 'Onboarding', meaning: 'The initial language-selection screen shown after registration.' },
-  { term: 'Passwordless', meaning: 'An authentication style that uses only an email address (and a session identifier in the browser) — no password to remember.' },
+  { term: 'Passwordless', meaning: 'An authentication style that uses only an email address (and a session identifier in the browser) - no password to remember.' },
   { term: 'Rookie / Seasoned / Maestro', meaning: 'The three tier names used by Jantra Web. Rookie is the free default; the others are coming soon.' },
   { term: 'Session', meaning: 'An identifier stored in your browser that links you to your account. Clearing browser data resets the session.' },
   { term: 'Sidebar', meaning: 'The vertical navigation panel on the left of the interface listing all chat modes.' },
-  { term: 'UPI', meaning: 'Unified Payments Interface — the Indian instant-payments system used by apps such as GPay, PhonePe and Paytm.' },
+  { term: 'UPI', meaning: 'Unified Payments Interface - the Indian instant-payments system used by apps such as GPay, PhonePe and Paytm.' },
 ];
 
 const supportLinks = [
@@ -355,7 +355,7 @@ export default function JantraWebGuidePage() {
               <BookOpenCheck className="h-3.5 w-3.5" aria-hidden />
               Complete user guide
             </span>
-            <h1 className="heading-display mt-5">Jantra Web — User Guide</h1>
+            <h1 className="heading-display mt-5">Jantra Web - User Guide</h1>
             <p className="prose-lead mt-5">
               AI chat in Indian & world languages. 19 languages · 5 modes · Free to use ·
               Powered by Google Gemini 2.5 Flash.
@@ -401,7 +401,7 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 1 — Overview */}
+      {/* Section 1 - Overview */}
       <section id="overview" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -411,7 +411,7 @@ export default function JantraWebGuidePage() {
               Ryder. It is designed to make artificial intelligence accessible to everyone, with a
               special focus on Indian languages. Users can chat naturally, translate text between
               languages, look up words in a multilingual dictionary, play interactive language
-              games, and even analyse payment-app screenshots to track financial transactions —
+              games, and even analyse payment-app screenshots to track financial transactions -
               all from a single, clean web interface and all in the language of their choice.
             </p>
 
@@ -422,8 +422,8 @@ export default function JantraWebGuidePage() {
             </blockquote>
             <p className="mt-4 text-base leading-7 text-slate-700">
               Jantra Web is the only AI chat platform built first for Indian languages and then
-              extended to serve a global audience. It removes language barriers so that anyone —
-              regardless of technical background or English fluency — can harness the power of
+              extended to serve a global audience. It removes language barriers so that anyone -
+              regardless of technical background or English fluency - can harness the power of
               modern AI for everyday tasks like learning, writing, translating, summarising and
               personal finance.
             </p>
@@ -467,14 +467,14 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 2 — Getting Started */}
+      {/* Section 2 - Getting Started */}
       <section id="getting-started" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
             <SectionHeading n={2} title="Getting Started" icon={CheckCircle2} />
             <p className="mt-6 text-base text-slate-700">
               Getting started with Jantra Web takes less than a minute. There is no app to
-              download, no password to create and no payment information to enter — just a browser
+              download, no password to create and no payment information to enter - just a browser
               and an email address.
             </p>
 
@@ -544,7 +544,7 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 3 — Languages */}
+      {/* Section 3 - Languages */}
       <section id="languages" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-4xl">
@@ -595,7 +595,7 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 4 — Chat Interface */}
+      {/* Section 4 - Chat Interface */}
       <section id="interface" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -674,7 +674,7 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 5 — Chat Modes */}
+      {/* Section 5 - Chat Modes */}
       <section id="modes" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -737,15 +737,15 @@ export default function JantraWebGuidePage() {
               ))}
             </ol>
             <p className="mt-4 rounded-lg bg-brand-50 p-4 text-xs text-brand-900 ring-1 ring-inset ring-brand-100">
-              <strong>Tip:</strong> Translate Mode works best with short-to-medium length text — a
+              <strong>Tip:</strong> Translate Mode works best with short-to-medium length text - a
               few sentences to a paragraph at a time. Break very long documents into smaller
               chunks and translate each section in turn for the most accurate results.
             </p>
 
             <h3 className="mt-10 text-lg font-bold text-slate-900">5.3 Dictionary Mode</h3>
             <p className="mt-3 text-sm leading-6 text-slate-700">
-              Dictionary Mode acts as a rich multilingual dictionary. Type any word — in your own
-              language or another language — and receive:
+              Dictionary Mode acts as a rich multilingual dictionary. Type any word - in your own
+              language or another language - and receive:
             </p>
             <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
               {dictionaryReturns.map((d) => (
@@ -785,7 +785,7 @@ export default function JantraWebGuidePage() {
             <p className="mt-3 text-sm leading-6 text-slate-700">
               Accounts Mode is a unique financial assistant that uses AI vision to read payment-app
               screenshots (Google Pay, PhonePe, Paytm) and automatically log your transactions.
-              There is no manual data entry — just upload a screenshot.
+              There is no manual data entry - just upload a screenshot.
             </p>
 
             <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-brand-700">5.5.1 Adding a transaction</p>
@@ -829,7 +829,7 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 6 — User Profile */}
+      {/* Section 6 - User Profile */}
       <section id="profile" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -880,7 +880,7 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 7 — Plans & Tiers */}
+      {/* Section 7 - Plans & Tiers */}
       <section id="plans" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -926,7 +926,7 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 8 — Privacy */}
+      {/* Section 8 - Privacy */}
       <section id="privacy" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -1000,7 +1000,7 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 9 — Tips */}
+      {/* Section 9 - Tips */}
       <section id="tips" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -1021,7 +1021,7 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 10 — Troubleshooting */}
+      {/* Section 10 - Troubleshooting */}
       <section id="troubleshooting" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-4xl">
@@ -1052,7 +1052,7 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 11 — FAQs */}
+      {/* Section 11 - FAQs */}
       <section id="faqs" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -1069,7 +1069,7 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 12 — Technical Reference */}
+      {/* Section 12 - Technical Reference */}
       <section id="technical" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-4xl">
@@ -1166,7 +1166,7 @@ Content-Type: application/json
         </div>
       </section>
 
-      {/* Section 13 — Glossary */}
+      {/* Section 13 - Glossary */}
       <section id="glossary" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -1183,7 +1183,7 @@ Content-Type: application/json
         </div>
       </section>
 
-      {/* Section 14 — Support & Contact */}
+      {/* Section 14 - Support & Contact */}
       <section id="support" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -1198,7 +1198,7 @@ Content-Type: application/json
               <li>Visit the developer website at codingryder.com for updates and announcements.</li>
               <li>Follow @codingryder on Twitter/X for news and feature previews.</li>
               <li>Review the Terms of Service and Privacy Policy for legal information.</li>
-              <li>Re-read this user guide — most everyday questions are answered in Sections 5 and 9.</li>
+              <li>Re-read this user guide - most everyday questions are answered in Sections 5 and 9.</li>
             </ul>
 
             <h3 className="mt-10 text-lg font-bold text-slate-900">14.2 Reporting Issues</h3>

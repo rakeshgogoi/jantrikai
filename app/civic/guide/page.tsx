@@ -21,14 +21,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Jantra Civic User Guide — Government services on WhatsApp',
+  title: 'Jantra Civic User Guide - Government services on WhatsApp',
   description:
     'The complete Jantra Civic user guide: schemes, services, forms, your representatives, alerts, commands, FAQs, and technical specifications. On WhatsApp, in your language.',
   alternates: { canonical: '/civic/guide/' },
   openGraph: {
-    title: 'Jantra Civic User Guide — Government services on WhatsApp',
+    title: 'Jantra Civic User Guide - Government services on WhatsApp',
     description:
-      'Find schemes, look up civic services, draft letters, find your MLA/MP, and stay informed — on WhatsApp, in your language.',
+      'Find schemes, look up civic services, draft letters, find your MLA/MP, and stay informed - on WhatsApp, in your language.',
     url: '/civic/guide/',
     type: 'article',
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jantra Civic User Guide',
     description:
-      'Find schemes, look up civic services, draft letters, find your MLA/MP, and stay informed — on WhatsApp.',
+      'Find schemes, look up civic services, draft letters, find your MLA/MP, and stay informed - on WhatsApp.',
   },
 };
 
@@ -44,7 +44,7 @@ const toc = [
   { n: 1, id: 'introduction', title: 'Introduction', sub: "What Jantra Civic is and who it's for" },
   { n: 2, id: 'key-features', title: 'Key Features', sub: 'Six core capabilities at a glance' },
   { n: 3, id: 'getting-started', title: 'Getting Started', sub: 'Enter Civic mode in under a minute' },
-  { n: 4, id: 'menu', title: 'User Guide — Main Menu', sub: 'The five menu options' },
+  { n: 4, id: 'menu', title: 'User Guide - Main Menu', sub: 'The five menu options' },
   { n: 5, id: 'services', title: 'Civic Services', sub: 'Ration, DL, Aadhaar, certificates' },
   { n: 6, id: 'schemes', title: 'Government Schemes', sub: 'Profile-based scheme matching' },
   { n: 7, id: 'forms', title: 'Forms & Letters', sub: 'Draft RTIs, complaints, leave letters' },
@@ -61,7 +61,7 @@ const audiences = [
   {
     label: 'Everyday citizens',
     body:
-      'Anyone trying to figure out a government scheme, service, or form — without trawling clunky websites or visiting offices.',
+      'Anyone trying to figure out a government scheme, service, or form - without trawling clunky websites or visiting offices.',
   },
   {
     label: 'Rural & semi-urban users',
@@ -70,12 +70,12 @@ const audiences = [
   {
     label: 'First-time applicants',
     body:
-      'Documents, eligibility, fees, where to apply — all answered in plain language. We point you to the official portals.',
+      'Documents, eligibility, fees, where to apply - all answered in plain language. We point you to the official portals.',
   },
   {
     label: 'Anyone drafting an application',
     body:
-      'RTI, civic complaints, leave letters, school admission, address proof, transfer — opens as a quick tap-to-fill form.',
+      'RTI, civic complaints, leave letters, school admission, address proof, transfer - opens as a quick tap-to-fill form.',
   },
   {
     label: 'Engaged citizens',
@@ -88,19 +88,19 @@ const features = [
     icon: ListChecks,
     title: 'Civic Services Lookup',
     body:
-      'Ration card, driving licence, Aadhaar, PAN, certificates and more — eligibility, documents, where to apply, fees, and expected timelines.',
+      'Ration card, driving licence, Aadhaar, PAN, certificates and more - eligibility, documents, where to apply, fees, and expected timelines.',
   },
   {
     icon: Landmark,
     title: 'Government Schemes Matching',
     body:
-      'Build a quick profile (age, gender, occupation, income) and we shortlist central and state schemes you may qualify for — no irrelevant noise.',
+      'Build a quick profile (age, gender, occupation, income) and we shortlist central and state schemes you may qualify for - no irrelevant noise.',
   },
   {
     icon: FileSignature,
     title: 'Form & Letter Drafting',
     body:
-      'Generate civic complaints, RTI requests, address-proof letters, school admission letters, transfer requests, and leave letters — via simple WhatsApp Flows.',
+      'Generate civic complaints, RTI requests, address-proof letters, school admission letters, transfer requests, and leave letters - via simple WhatsApp Flows.',
   },
   {
     icon: Users,
@@ -129,17 +129,17 @@ const gettingStarted = [
   {
     step: 'Step 2',
     title: 'Enter Civic',
-    body: 'Type /civic — or send /mode and pick option 6 · Civic.',
+    body: 'Type /civic - or send /mode and pick option 6 · Civic.',
   },
   {
     step: 'Step 3',
     title: 'Pick your state',
-    body: 'Reply with the number or type the state / UT name. Your state is remembered for future visits — change anytime with /state.',
+    body: 'Reply with the number or type the state / UT name. Your state is remembered for future visits - change anytime with /state.',
   },
   {
     step: 'Step 4',
     title: 'Use the menu',
-    body: 'Tap a menu option. No commands needed — almost everything happens by tapping list items in the WhatsApp menu.',
+    body: 'Tap a menu option. No commands needed - almost everything happens by tapping list items in the WhatsApp menu.',
   },
   {
     step: 'Step 5',
@@ -152,7 +152,7 @@ const menu = [
   {
     n: 1,
     title: 'Ask about civic services',
-    body: 'Lookup for ration card, driving licence, Aadhaar, PAN, certificates, and other government services — eligibility, documents, and where to apply.',
+    body: 'Lookup for ration card, driving licence, Aadhaar, PAN, certificates, and other government services - eligibility, documents, and where to apply.',
     ref: 'Section 5',
     refId: 'services',
   },
@@ -194,11 +194,11 @@ const services = [
   { service: 'Birth & death certificate', q: 'Where to apply, supporting documents, late registration.' },
   { service: 'Income / caste / domicile', q: 'Issuing authority, supporting docs, validity, fees.' },
   { service: 'Voter ID', q: 'Enrolment, corrections, address change, online portal links.' },
-  { service: 'Property / land records', q: 'RTC / khata / mutation — the state-specific portals.' },
+  { service: 'Property / land records', q: 'RTC / khata / mutation - the state-specific portals.' },
 ];
 
 const schemeSteps = [
-  { n: 1, title: 'Build your profile', body: 'Tap the profile Flow and share basic details — age, gender, occupation, and income bracket. Stored only for scheme matching.' },
+  { n: 1, title: 'Build your profile', body: 'Tap the profile Flow and share basic details - age, gender, occupation, and income bracket. Stored only for scheme matching.' },
   { n: 2, title: 'We filter', body: 'Profile is matched against central and state-scheme rules. Schemes you do not qualify for are dropped.' },
   { n: 3, title: 'Get a shortlist', body: 'Receive a focused list of schemes you may qualify for, with a brief summary, eligibility, and where to apply.' },
   { n: 4, title: 'Drill in or save', body: 'Tap any scheme for more detail. Re-run the search anytime by typing /schemes. Update your profile with /profile.' },
@@ -230,7 +230,7 @@ const formTemplates = [
 const repSteps = [
   { n: 1, title: 'Pick your district', body: 'From the main menu, tap Know your representatives. Pick your district from the list (filtered to your state).' },
   { n: 2, title: 'Pick your Assembly Constituency', body: 'Pick your AC from the list filtered to your district. Two-screen design keeps the lists short and easy to scroll.' },
-  { n: 3, title: 'Get your representatives', body: 'Jantra Civic returns the MLA and MP for that constituency — name, party, phone, email, and office address where on record.' },
+  { n: 3, title: 'Get your representatives', body: 'Jantra Civic returns the MLA and MP for that constituency - name, party, phone, email, and office address where on record.' },
   { n: 4, title: 'Use the contact details', body: 'Tap the phone or email straight from WhatsApp. Cross-check on the official ECI / Lok Sabha portal before contacting.' },
 ];
 
@@ -246,25 +246,25 @@ const commands = [
 ];
 
 const tips = [
-  { title: 'Set the right state first', body: 'Many entitlements and services are state-specific. If you have moved, update with /state before you search — it changes the data you see.' },
+  { title: 'Set the right state first', body: 'Many entitlements and services are state-specific. If you have moved, update with /state before you search - it changes the data you see.' },
   { title: 'Complete your profile', body: 'More accurate profile means more relevant schemes. Takes ~30 seconds; you can update anytime with /profile.' },
   { title: 'Tap menus, not commands', body: 'Jantra Civic is designed for tapping. The list menus produce faster, more accurate routes than free-form questions.' },
-  { title: 'Use your language', body: 'All replies follow your /lang setting. Civic content is translated to your language — change anytime.' },
+  { title: 'Use your language', body: 'All replies follow your /lang setting. Civic content is translated to your language - change anytime.' },
   { title: 'Verify before applying', body: 'Always cross-check on the official portal before paying any fee. Jantra Civic surfaces information; it does not file applications for you.' },
-  { title: 'Save the letter you generated', body: "After a Flow returns a letter, forward it to yourself or copy it to your notes — WhatsApp won't keep an editable version indefinitely." },
+  { title: 'Save the letter you generated', body: "After a Flow returns a letter, forward it to yourself or copy it to your notes - WhatsApp won't keep an editable version indefinitely." },
   { title: 'Re-open Civic any time', body: 'Civic mode persists across sessions. Even days later, type /civic to land back on the menu with your state remembered.' },
 ];
 
 const faqs = [
   { q: 'Is Jantra Civic free?', a: 'Yes. Jantra Civic is currently free, like the rest of Jantra Bot. Standard WhatsApp data charges may apply.' },
   { q: 'Do I need to install anything?', a: "No. Jantra Civic runs entirely inside WhatsApp. If you have Jantra Bot's number saved, you already have Civic too." },
-  { q: 'Will Jantra Civic submit forms on my behalf?', a: 'No. Jantra Civic generates draft letters and points you to official portals — you remain in control of every submission.' },
+  { q: 'Will Jantra Civic submit forms on my behalf?', a: 'No. Jantra Civic generates draft letters and points you to official portals - you remain in control of every submission.' },
   { q: 'Which states are covered?', a: 'All Indian states and Union Territories. Some states have deeper data (full services KB); states marked "(limited)" on the picker still answer core queries.' },
-  { q: 'How is scheme matching done?', a: "Your profile (age, gender, occupation, income) is matched against central and state-scheme eligibility rules — schemes you don't qualify for are dropped before you see them." },
+  { q: 'How is scheme matching done?', a: "Your profile (age, gender, occupation, income) is matched against central and state-scheme eligibility rules - schemes you don't qualify for are dropped before you see them." },
   { q: 'What data is stored about me?', a: "Only what's needed to remember your state and (if you build one) your schemes profile. You can re-do or clear your profile anytime with /profile." },
   { q: 'Are the representative details verified?', a: 'Representative data is sourced from publicly available directories. Always cross-check on the official ECI / Lok Sabha portal before reaching out.' },
   { q: 'How recent are jobs and tenders?', a: 'Jobs and tenders are refreshed on a rolling schedule from trusted government feeds. Treat them as a quick scan, not a compliance-grade source.' },
-  { q: 'Can I use Jantra Civic in my language?', a: 'Yes — all 10 Jantra Bot languages are supported. Switch with /lang anytime.' },
+  { q: 'Can I use Jantra Civic in my language?', a: 'Yes - all 10 Jantra Bot languages are supported. Switch with /lang anytime.' },
   { q: 'How do I leave Civic mode?', a: 'Type 0 to return to Jantra Bot. Civic state is preserved so you can come back later.' },
 ];
 
@@ -279,7 +279,7 @@ const specs = [
   { k: 'Knowledge Base', v: 'Curated services KB · representative directories · schemes catalogue · grounded web search' },
   { k: 'Languages', v: '10 (same set as Jantra Bot)' },
   { k: 'Modes', v: 'Civic services · Schemes · Forms · Reps · Alerts · Jobs & Tenders' },
-  { k: 'Current Status', v: 'Beta — actively developed by Coding Ryder' },
+  { k: 'Current Status', v: 'Beta - actively developed by Coding Ryder' },
 ];
 
 const dataSources = [
@@ -301,7 +301,7 @@ export default function JantraCivicGuidePage() {
               <BookOpen className="h-3.5 w-3.5" aria-hidden />
               Complete user guide
             </span>
-            <h1 className="heading-display mt-5">Jantra Civic — User Guide</h1>
+            <h1 className="heading-display mt-5">Jantra Civic - User Guide</h1>
             <p className="prose-lead mt-5">
               Government & civic help on WhatsApp. Schemes · Services · Representatives · Forms ·
               Alerts.
@@ -347,13 +347,13 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 1 — Introduction */}
+      {/* Section 1 - Introduction */}
       <section id="introduction" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
             <SectionHeading n={1} title="Introduction" icon={Landmark} />
             <p className="prose-lead mt-6">
-              Jantra Civic is a WhatsApp service that helps you navigate Indian government — find
+              Jantra Civic is a WhatsApp service that helps you navigate Indian government - find
               schemes you qualify for, look up civic services (ration card, driving licence,
               certificates), know your elected representatives, get help drafting forms and
               letters, and stay informed about alerts in your area. All in your language, with no
@@ -362,7 +362,7 @@ export default function JantraCivicGuidePage() {
             <p className="mt-5 text-base leading-7 text-slate-700">
               Jantra Civic is built into Jantra Bot. Type{' '}
               <code className="rounded bg-slate-100 px-1.5 py-0.5">/civic</code> from any Jantra Bot
-              conversation to enter Civic mode — or pick option 6 from{' '}
+              conversation to enter Civic mode - or pick option 6 from{' '}
               <code className="rounded bg-slate-100 px-1.5 py-0.5">/mode</code>.
             </p>
 
@@ -379,13 +379,13 @@ export default function JantraCivicGuidePage() {
             <h3 className="mt-12 text-xl font-bold text-slate-900">Mission</h3>
             <p className="mt-3 text-base leading-7 text-slate-700">
               To make Indian government accessible to every citizen in their own language, on the
-              platform they already use — without barriers, without forms, without paperwork.
+              platform they already use - without barriers, without forms, without paperwork.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Section 2 — Key Features */}
+      {/* Section 2 - Key Features */}
       <section id="key-features" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-5xl">
@@ -405,7 +405,7 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 3 — Getting Started */}
+      {/* Section 3 - Getting Started */}
       <section id="getting-started" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -435,11 +435,11 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 4 — Main Menu */}
+      {/* Section 4 - Main Menu */}
       <section id="menu" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
-            <SectionHeading n={4} title="User Guide — the Main Menu" icon={Terminal} />
+            <SectionHeading n={4} title="User Guide - the Main Menu" icon={Terminal} />
             <p className="mt-6 text-base text-slate-700">
               Every Jantra Civic session opens with a five-option main menu, once your state is set.
               Each option is explained in detail in later sections.
@@ -474,14 +474,14 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 5 — Civic Services */}
+      {/* Section 5 - Civic Services */}
       <section id="services" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-4xl">
             <SectionHeading n={5} title="Civic Services" icon={ListChecks} />
             <p className="mt-6 text-base text-slate-700">
               Lookup answers for everyday government services. Ask in natural language (in any of
-              the supported languages) or pick from the menu — Jantra Civic returns eligibility,
+              the supported languages) or pick from the menu - Jantra Civic returns eligibility,
               required documents, fees, and where to apply.
             </p>
 
@@ -516,7 +516,7 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 6 — Schemes */}
+      {/* Section 6 - Schemes */}
       <section id="schemes" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -552,14 +552,14 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 7 — Forms & Letters */}
+      {/* Section 7 - Forms & Letters */}
       <section id="forms" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-4xl">
             <SectionHeading n={7} title="Forms & Letters" icon={FileSignature} />
             <p className="mt-6 text-base text-slate-700">
               Drafting a formal letter is one of the slowest parts of dealing with government or
-              institutions. Jantra Civic generates the draft for you — you just fill a
+              institutions. Jantra Civic generates the draft for you - you just fill a
               tap-friendly mini-form on WhatsApp.
             </p>
 
@@ -585,14 +585,14 @@ export default function JantraCivicGuidePage() {
               </table>
             </div>
             <p className="mt-6 text-sm italic text-slate-500">
-              Each form opens as a WhatsApp Flow — a native tap-to-fill experience. After you submit,
+              Each form opens as a WhatsApp Flow - a native tap-to-fill experience. After you submit,
               the letter is generated and sent back so you can copy, save, or forward it.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Section 8 — Representatives */}
+      {/* Section 8 - Representatives */}
       <section id="representatives" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -624,7 +624,7 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 9 — Alerts / Jobs / Tenders */}
+      {/* Section 9 - Alerts / Jobs / Tenders */}
       <section id="alerts" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -632,7 +632,7 @@ export default function JantraCivicGuidePage() {
 
             <h3 className="mt-10 text-lg font-bold text-slate-900">Local civic alerts</h3>
             <p className="mt-3 text-sm leading-6 text-slate-700">
-              Civic alerts surface short notices for your selected area — power cuts, water
+              Civic alerts surface short notices for your selected area - power cuts, water
               disruptions, road closures, and public notices published by state and municipal
               authorities. Alerts are scoped to your state and surfaced in your language.
             </p>
@@ -660,7 +660,7 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 10 — Commands */}
+      {/* Section 10 - Commands */}
       <section id="commands" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -693,7 +693,7 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 11 — Tips */}
+      {/* Section 11 - Tips */}
       <section id="tips" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -710,7 +710,7 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 12 — FAQs */}
+      {/* Section 12 - FAQs */}
       <section id="faqs" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -727,7 +727,7 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 13 — Specs */}
+      {/* Section 13 - Specs */}
       <section id="specs" className="section scroll-mt-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -755,7 +755,7 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 14 — Contact */}
+      {/* Section 14 - Contact */}
       <section id="contact" className="section scroll-mt-24 bg-slate-50">
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
