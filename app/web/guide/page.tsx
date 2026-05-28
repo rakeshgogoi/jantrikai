@@ -407,8 +407,9 @@ export default function JantraWebGuidePage() {
               <SectionHeading n={1} title="Overview" icon={Sparkles} />
               <p className="prose-lead mt-6">
                 Jantra Web is a free, AI-powered multilingual chatbot platform developed by Coding
-                Ryder. It is designed to make artificial intelligence accessible to everyone, with
-                a special focus on Indian languages.
+                Ryder. It is designed to make artificial intelligence accessible to everyone -
+                across both Indian and international languages, with a special focus on languages
+                that mainstream AI tools under-serve.
               </p>
 
               <h3 className="mt-10 text-xl font-bold text-slate-900">1.1 Vision & Purpose</h3>

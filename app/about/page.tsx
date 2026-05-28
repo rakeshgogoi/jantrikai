@@ -4,12 +4,12 @@ import { Mail, Globe } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'About Jantrik AI - Built by Coding Ryder Enterprises',
   description:
-    'Jantrik AI is built by Coding Ryder Enterprises to make AI accessible in the languages Indians actually speak. Learn about the team and our language-first principles.',
+    'Jantrik AI is built by Coding Ryder Enterprises to make AI accessible in the languages people actually speak - across India and the world. Learn about the team and our language-first principles.',
   alternates: { canonical: '/about/' },
   openGraph: {
     title: 'About Jantrik AI - Built by Coding Ryder Enterprises',
     description:
-      'Language-first AI for India. Learn about the team behind Jantra Web, Jantra Bot, and Jantra Civic.',
+      'Language-first AI for India and the world. Learn about the team behind Jantra Web, Jantra Bot, and Jantra Civic.',
     url: '/about/',
     type: 'website',
   },
@@ -42,7 +42,7 @@ export default function AboutPage() {
         <div className="container-page section">
           <div className="mx-auto max-w-3xl text-center">
             <span className="badge">About</span>
-            <h1 className="heading-display mt-5">Bridging India&apos;s languages with AI.</h1>
+            <h1 className="heading-display mt-5">Language-first AI for India and the world.</h1>
             <p className="prose-lead mt-5">
               Jantrik AI is a product family from{' '}
               <a
@@ -64,17 +64,18 @@ export default function AboutPage() {
           <div className="mx-auto max-w-3xl space-y-6 text-slate-700">
             <p>
               Most AI products were designed English-first and translated outward.
-              That works fine if English is how you think - but for the majority of
-              India, the result feels foreign: stilted phrasing, lost nuance,
-              missing scripts.
+              That works fine if English is how you think - but for the billions
+              of people who don&apos;t, the result feels foreign: stilted phrasing,
+              lost nuance, missing scripts.
             </p>
             <p>
               Jantrik AI flips the default. Every product - Jantra Web in the
               browser, Jantra Bot on WhatsApp, Jantra Civic for government services
               - starts from the assumption that a user might think, type, or speak
-              in Assamese, Hindi, Tamil, Bengali, or any of the 19 languages we
-              support today. Indic scripts, romanised forms, voice notes, and
-              code-mixed inputs are treated as the norm.
+              in Assamese, Hindi, Tamil, Bengali, Spanish, French, Arabic, Japanese,
+              or any of the 19 languages we support today - 11 Indian, 8
+              international. Indic and international scripts, romanised forms,
+              voice notes, and code-mixed inputs are all treated as the norm.
             </p>
             <p>
               We&apos;re a small team, and we&apos;d rather ship a few tools that
