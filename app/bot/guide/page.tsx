@@ -21,6 +21,10 @@ import {
   ArrowLeft,
   CheckCircle2,
 } from 'lucide-react';
+import GuideTOC, { type TocItem } from '@/components/GuideTOC';
+import FAQItem from '@/components/FAQItem';
+
+const ACCENT = 'emerald' as const;
 
 export const metadata: Metadata = {
   title: 'Jantra Bot User Guide - Complete product documentation',
@@ -42,7 +46,7 @@ export const metadata: Metadata = {
   },
 };
 
-const toc = [
+const toc: TocItem[] = [
   { n: 1, id: 'introduction', title: 'Introduction', sub: "What Jantra Bot is and who it's for" },
   { n: 2, id: 'key-features', title: 'Key Features', sub: 'Eight core capabilities at a glance' },
   { n: 3, id: 'getting-started', title: 'Getting Started', sub: 'Up and running in 30 seconds' },
@@ -57,6 +61,13 @@ const toc = [
   { n: 12, id: 'specs', title: 'Technical Specifications', sub: 'Architecture & tech stack' },
   { n: 13, id: 'developer', title: 'About the Developer', sub: 'Rakesh Gogoi & Coding Ryder' },
   { n: 14, id: 'contact', title: 'Contact & Feedback', sub: 'How to reach us' },
+];
+
+const heroStats = [
+  { label: 'Languages', value: '10' },
+  { label: 'Modes', value: '6' },
+  { label: 'Setup', value: 'None' },
+  { label: 'Price', value: 'Free' },
 ];
 
 const audiences = [
@@ -385,8 +396,8 @@ export default function JantraBotGuidePage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-slate-200 bg-gradient-to-b from-emerald-50/50 to-white">
-        <div className="container-page section">
+      <section className="border-b border-slate-200 bg-gradient-to-b from-emerald-50/60 via-emerald-50/20 to-white">
+        <div className="container-page py-16 sm:py-20">
           <div className="mx-auto max-w-3xl text-center">
             <span className="badge">
               <BookOpen className="h-3.5 w-3.5" aria-hidden />
@@ -407,392 +418,14 @@ export default function JantraBotGuidePage() {
                 Back to Jantra Bot
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TOC */}
-      <section className="border-b border-slate-200 bg-white">
-        <div className="container-page py-16">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">Table of Contents</h2>
-            <ol className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {toc.map((t) => (
-                <li key={t.id}>
-                  <a
-                    href={`#${t.id}`}
-                    className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-emerald-300 hover:bg-emerald-50/50"
-                  >
-                    <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-md bg-emerald-50 text-xs font-semibold text-emerald-700">
-                      {t.n}
-                    </span>
-                    <span>
-                      <span className="block text-sm font-semibold text-slate-900">{t.title}</span>
-                      <span className="mt-0.5 block text-xs text-slate-500">{t.sub}</span>
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 1 - Introduction */}
-      <section id="introduction" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={1} title="Introduction" icon={MessageSquareText} />
-            <p className="prose-lead mt-6">
-              Jantra Bot is a multilingual AI assistant that lives entirely inside WhatsApp - the
-              messaging app you already use every day. There are no downloads, no signups, no new
-              apps to learn. Just open a chat with the bot and start asking questions in any of 10
-              supported languages.
-            </p>
-            <p className="mt-5 text-base leading-7 text-slate-700">
-              Built by Coding Ryder and powered by Google Gemini and Sarvam AI, Jantra Bot
-              combines cutting-edge AI with deep support for Indian languages - including Assamese,
-              Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, and the beloved romanised hybrids
-              Kanglish and Hinglish.
-            </p>
-
-            <h3 className="mt-12 text-xl font-bold text-slate-900">Who is it for?</h3>
-            <div className="mt-6 space-y-4">
-              {audiences.map((a) => (
-                <div key={a.label} className="rounded-xl border border-slate-200 bg-white p-5">
-                  <h4 className="text-base font-semibold text-emerald-700">{a.label}</h4>
-                  <p className="mt-1 text-sm leading-6 text-slate-700">{a.body}</p>
-                </div>
-              ))}
-            </div>
-
-            <h3 className="mt-12 text-xl font-bold text-slate-900">Mission</h3>
-            <p className="mt-3 text-base leading-7 text-slate-700">
-              To make world-class AI accessible in every Indian language, for every person,
-              without any barrier - through a platform they already trust: WhatsApp.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2 - Key Features */}
-      <section id="key-features" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-5xl">
-            <SectionHeading n={2} title="Key Features" icon={Layers} />
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-              {features.map((f) => (
-                <div key={f.title} className="rounded-2xl border border-slate-200 bg-white p-6">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700">
-                    <f.icon className="h-5 w-5" aria-hidden />
-                  </div>
-                  <h3 className="mt-4 text-base font-semibold text-slate-900">{f.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-700">{f.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3 - Getting Started */}
-      <section id="getting-started" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={3} title="Getting Started" icon={CheckCircle2} />
-            <p className="mt-6 text-base text-slate-700">You can be up and running in under 30 seconds.</p>
-            <ol className="mt-8 space-y-4">
-              {gettingStarted.map((s) => (
-                <li
-                  key={s.step}
-                  className="rounded-xl border border-slate-200 bg-white p-5"
+            <dl className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+              {heroStats.map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-xl border border-emerald-100 bg-white/70 px-4 py-3 text-center shadow-sm backdrop-blur"
                 >
-                  <div className="text-xs font-medium uppercase tracking-wider text-emerald-700">{s.step}</div>
-                  <h3 className="mt-1 text-base font-semibold text-slate-900">{s.title}</h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-700">{s.body}</p>
-                </li>
-              ))}
-            </ol>
-            <a
-              href="https://wa.me/916361245647"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-emerald-600"
-            >
-              Try it now: wa.me/916361245647
-              <ArrowRight className="h-4 w-4" aria-hidden />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4 - Modes */}
-      <section id="modes" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={4} title="User Guide - Modes" icon={Terminal} />
-            <p className="mt-6 text-base text-slate-700">
-              Jantra Bot operates in six distinct modes. Your active mode determines how the bot
-              interprets and responds to your messages. You can switch at any time by typing{' '}
-              <code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm">/mode</code>.
-            </p>
-
-            <div className="mt-10 space-y-8">
-              {modes.map((m) => (
-                <div key={m.title} className="rounded-2xl border border-slate-200 bg-white p-6">
-                  <h3 className="text-lg font-bold text-emerald-700">{m.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-700">{m.body}</p>
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                    {m.examplesLabel}
-                  </p>
-                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
-                    {m.examples.map((e) => (
-                      <li key={e}>{e}</li>
-                    ))}
-                  </ul>
-                  {m.tip && <p className="mt-4 text-xs italic text-slate-500">{m.tip}</p>}
-                  {m.civicLink && (
-                    <Link
-                      href="/civic/guide/"
-                      className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-emerald-700 hover:text-emerald-800"
-                    >
-                      Read the Jantra Civic Guide
-                      <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-                    </Link>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 5 - Languages */}
-      <section id="languages" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-4xl">
-            <SectionHeading n={5} title="Supported Languages" icon={Languages} />
-            <p className="mt-6 text-base text-slate-700">
-              Jantra Bot supports 10 languages. For each language, you can send messages in the
-              native script or in romanised (English letters) form - the bot understands both.
-            </p>
-            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-emerald-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-emerald-900">#</th>
-                    <th className="px-4 py-3 text-left font-semibold text-emerald-900">Language</th>
-                    <th className="px-4 py-3 text-left font-semibold text-emerald-900">Native Script</th>
-                    <th className="px-4 py-3 text-left font-semibold text-emerald-900">Code</th>
-                    <th className="px-4 py-3 text-left font-semibold text-emerald-900">Voice</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {languages.map((l) => (
-                    <tr key={l.code}>
-                      <td className="px-4 py-3 text-slate-500">{l.n}</td>
-                      <td className="px-4 py-3 font-medium text-slate-900">{l.name}</td>
-                      <td className="px-4 py-3 text-slate-700">{l.script}</td>
-                      <td className="px-4 py-3">
-                        <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{l.code}</code>
-                      </td>
-                      <td className="px-4 py-3 text-slate-700">{l.voice ? '✓' : '-'}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-6 text-sm text-slate-600">
-              To switch language, type <code className="rounded bg-slate-100 px-1.5 py-0.5">/lang</code> or
-              say "change language" - an interactive menu will appear with all 10 options.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 6 - Voice */}
-      <section id="voice" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={6} title="Voice Support" icon={Mic} />
-            <p className="mt-6 text-base text-slate-700">
-              Jantra Bot understands voice notes. No typing needed - just hold the microphone
-              button in WhatsApp and speak naturally. The bot will transcribe your voice and
-              respond in your chosen language.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">How it works</h3>
-            <ol className="mt-4 space-y-3">
-              {voiceSteps.map((s) => (
-                <li key={s.n} className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4">
-                  <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-emerald-600 text-xs font-semibold text-white">
-                    {s.n}
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">{s.title}</p>
-                    <p className="mt-1 text-sm text-slate-700">{s.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">Voice technology - Sarvam AI</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Jantra Bot uses Sarvam AI (sarvam.ai) for voice transcription - an Indian startup
-              whose models are trained natively on Indian languages including Assamese, Kannada,
-              Hindi, Bengali, and Tamil. This makes it significantly more accurate for Indian
-              accents and regional speech patterns than generic speech engines.
-            </p>
-
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {voiceTips.map((v) => (
-                <div key={v.label} className="rounded-xl border border-slate-200 bg-white p-4">
-                  <p className="text-sm font-semibold text-emerald-700">{v.label}</p>
-                  <p className="mt-1 text-sm text-slate-700">{v.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 7 - Images */}
-      <section id="images" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={7} title="Image Understanding" icon={ImageIcon} />
-            <p className="mt-6 text-base text-slate-700">
-              Send any photo to Jantra Bot and it will describe what it sees - in your chosen
-              language. Powered by Google Gemini's multimodal vision AI, the bot can identify
-              objects, scenes, text, food, animals, landmarks, and much more.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">How it works</h3>
-            <ol className="mt-4 space-y-3">
-              {imageSteps.map((s) => (
-                <li key={s.n} className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4">
-                  <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-emerald-600 text-xs font-semibold text-white">
-                    {s.n}
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">{s.title}</p>
-                    <p className="mt-1 text-sm text-slate-700">{s.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">What kinds of images work best</h3>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-emerald-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-emerald-900">Type</th>
-                    <th className="px-4 py-3 text-left font-semibold text-emerald-900">Examples</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {imageTypes.map((row) => (
-                    <tr key={row.type}>
-                      <td className="px-4 py-3 font-medium text-slate-900">{row.type}</td>
-                      <td className="px-4 py-3 text-slate-700">{row.examples}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-6 text-sm italic text-slate-500">
-              Privacy note: Images are sent to Google Gemini for analysis and are not stored by
-              Jantra Bot. Only the text description is saved in your conversation history.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 8 - Commands */}
-      <section id="commands" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={8} title="Commands Reference" icon={Terminal} />
-            <p className="mt-6 text-base text-slate-700">
-              Type any of these commands at any time - they work in all modes and languages.
-            </p>
-            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-emerald-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-emerald-900">Command</th>
-                    <th className="px-4 py-3 text-left font-semibold text-emerald-900">What it does</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {commands.map((c) => (
-                    <tr key={c.cmd}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top">
-                        <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{c.cmd}</code>
-                      </td>
-                      <td className="px-4 py-3 text-slate-700">{c.does}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 9 - Tips */}
-      <section id="tips" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={9} title="Tips & Tricks" icon={Lightbulb} />
-            <div className="mt-8 space-y-5">
-              {tips.map((t) => (
-                <div key={t.title} className="border-l-2 border-emerald-500 pl-5">
-                  <h3 className="text-base font-semibold text-emerald-700">› {t.title}</h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-700">{t.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 10 - Use Cases */}
-      <section id="use-cases" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-4xl">
-            <SectionHeading n={10} title="Use Cases" icon={CheckCircle2} />
-            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-emerald-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-emerald-900">Scenario</th>
-                    <th className="px-4 py-3 text-left font-semibold text-emerald-900">How Jantra Bot helps</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {useCases.map((u) => (
-                    <tr key={u.scenario}>
-                      <td className="px-4 py-3 align-top font-medium text-slate-900">{u.scenario}</td>
-                      <td className="px-4 py-3 text-slate-700">{u.help}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 11 - FAQs */}
-      <section id="faqs" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={11} title="Frequently Asked Questions" icon={HelpCircle} />
-            <dl className="mt-8 space-y-6">
-              {faqs.map((f) => (
-                <div key={f.q} className="rounded-xl border border-slate-200 bg-white p-5">
-                  <dt className="text-base font-semibold text-emerald-700">Q: {f.q}</dt>
-                  <dd className="mt-2 text-sm leading-6 text-slate-700">A: {f.a}</dd>
+                  <dt className="text-xs font-medium uppercase tracking-wider text-slate-500">{s.label}</dt>
+                  <dd className="mt-1 text-lg font-bold text-emerald-700">{s.value}</dd>
                 </div>
               ))}
             </dl>
@@ -800,128 +433,477 @@ export default function JantraBotGuidePage() {
         </div>
       </section>
 
-      {/* Section 12 - Specs */}
-      <section id="specs" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={12} title="Technical Specifications" icon={Cpu} />
-            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {specs.map((s) => (
-                    <tr key={s.k}>
-                      <td className="w-1/3 px-4 py-3 align-top font-semibold text-emerald-700">{s.k}</td>
-                      <td className="px-4 py-3 text-slate-700">{s.v}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Two-column body */}
+      <div className="container-page py-12 sm:py-16">
+        <div className="lg:grid lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[260px_minmax(0,1fr)] xl:gap-16">
+          <GuideTOC items={toc} accent={ACCENT} />
 
-      {/* Section 13 - Developer */}
-      <section id="developer" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={13} title="About the Developer" icon={User} />
-            <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6">
-              <div className="flex items-start gap-4">
-                <div className="inline-flex h-12 w-12 flex-none items-center justify-center rounded-full bg-emerald-100 text-base font-bold text-emerald-700">
-                  RG
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900">Rakesh Gogoi</h3>
-                  <p className="text-sm text-slate-600">Founder · Developer · Designer</p>
-                  <p className="mt-1 text-sm font-medium text-emerald-700">Coding Ryder</p>
-                </div>
+          <article className="mt-10 min-w-0 space-y-20 lg:mt-0">
+            {/* Section 1 — Introduction */}
+            <section id="introduction" className="scroll-mt-24">
+              <SectionHeading n={1} title="Introduction" icon={MessageSquareText} />
+              <p className="prose-lead mt-6">
+                Jantra Bot is a multilingual AI assistant that lives entirely inside WhatsApp - the
+                messaging app you already use every day. There are no downloads, no signups, no new
+                apps to learn. Just open a chat with the bot and start asking questions in any of 10
+                supported languages.
+              </p>
+              <p className="mt-5 text-base leading-7 text-slate-700">
+                Built by Coding Ryder and powered by Google Gemini and Sarvam AI, Jantra Bot
+                combines cutting-edge AI with deep support for Indian languages - including
+                Assamese, Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, and the beloved
+                romanised hybrids Kanglish and Hinglish.
+              </p>
+
+              <h3 className="mt-10 text-xl font-bold text-slate-900">Who is it for?</h3>
+              <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {audiences.map((a) => (
+                  <div
+                    key={a.label}
+                    className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-emerald-300 hover:shadow-sm"
+                  >
+                    <h4 className="text-sm font-semibold text-emerald-700">{a.label}</h4>
+                    <p className="mt-1.5 text-sm leading-6 text-slate-700">{a.body}</p>
+                  </div>
+                ))}
               </div>
-              <p className="mt-5 text-sm leading-6 text-slate-700">
-                Rakesh Gogoi is the solo developer behind Jantra Bot and the Coding Ryder brand.
-                With a passion for making technology accessible to everyone - regardless of
-                language, literacy, or location - Rakesh built Jantra Bot to bridge the gap
-                between powerful AI tools and everyday users across India.
+
+              <Callout kind="mission" title="Our mission">
+                To make world-class AI accessible in every Indian language, for every person,
+                without any barrier - through a platform they already trust: WhatsApp.
+              </Callout>
+            </section>
+
+            {/* Section 2 — Key Features */}
+            <section id="key-features" className="scroll-mt-24">
+              <SectionHeading n={2} title="Key Features" icon={Layers} />
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {features.map((f) => (
+                  <div
+                    key={f.title}
+                    className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-emerald-300 hover:shadow-md"
+                  >
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 transition group-hover:bg-emerald-100">
+                      <f.icon className="h-5 w-5" aria-hidden />
+                    </div>
+                    <h3 className="mt-4 text-base font-semibold text-slate-900">{f.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{f.body}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 3 — Getting Started */}
+            <section id="getting-started" className="scroll-mt-24">
+              <SectionHeading n={3} title="Getting Started" icon={CheckCircle2} />
+              <p className="mt-6 text-base text-slate-700">
+                You can be up and running in under 30 seconds.
               </p>
-              <p className="mt-3 text-sm leading-6 text-slate-700">
-                Jantra Bot is a personal passion project, built and maintained entirely by Rakesh
-                during his own time. Every feature, language addition, and improvement comes from
-                direct conversations with real users and a genuine desire to make AI useful for
-                people in their own language.
-              </p>
-            </div>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">About Coding Ryder</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Coding Ryder is an indie tech brand focused on building practical, language-inclusive
-              digital products for everyday users. The brand's philosophy: "Technology should speak
-              your language - not the other way around."
-            </p>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              <li>Independent, bootstrapped - no VC funding, no corporate agenda.</li>
-              <li>Focused on Indian-language users and underserved digital communities.</li>
-              <li>Open to collaboration, feedback, and community-driven development.</li>
-              <li>All products are built with privacy and simplicity as first principles.</li>
-            </ul>
-            <p className="mt-6 text-xs text-slate-500">
-              Powered by Google Gemini · Sarvam AI · FastAPI · PostgreSQL · WhatsApp Business API
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 14 - Contact */}
-      <section id="contact" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={14} title="Contact & Feedback" icon={PhoneCall} />
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <ContactCard
-                label="Try Jantra Bot"
-                value="+91 63612 45647"
-                sub="Start a chat with the bot directly on WhatsApp"
-                href="https://wa.me/916361245647"
-              />
-              <ContactCard
-                label="Feedback / Support"
-                value="+91 87209 51721"
-                sub="WhatsApp Rakesh directly with feedback, bugs, or ideas"
-                href="https://wa.me/918720951721"
-              />
-              <ContactCard
-                label="Website"
-                value="codingryder.com"
-                sub="Product page, user guide, and updates"
-                href="https://codingryder.com"
-              />
-              <ContactCard
-                label="Jantrik AI"
-                value="jantrikai.com"
-                sub="The platform homepage for all Jantra products"
-                href="/"
-                internal
-              />
-            </div>
-
-            <div className="mt-10 rounded-2xl bg-emerald-500 p-8 text-center text-white">
-              <p className="text-xl font-bold">Ready to try it?</p>
+              <ol className="mt-6 space-y-3">
+                {gettingStarted.map((s, idx) => (
+                  <li
+                    key={s.step}
+                    className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5"
+                  >
+                    <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white">
+                      {idx + 1}
+                    </span>
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wider text-emerald-700">{s.step}</p>
+                      <h3 className="mt-0.5 text-base font-semibold text-slate-900">{s.title}</h3>
+                      <p className="mt-1 text-sm leading-6 text-slate-700">{s.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
               <a
                 href="https://wa.me/916361245647"
-                className="mt-3 inline-flex items-center gap-2 text-lg font-semibold underline decoration-2 underline-offset-4 hover:text-emerald-50"
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-emerald-600"
               >
-                wa.me/916361245647
-                <ArrowRight className="h-5 w-5" aria-hidden />
+                Try it now: wa.me/916361245647
+                <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
-            </div>
+            </section>
 
-            <p className="mt-8 text-center text-xs text-slate-500">
-              © 2026 Coding Ryder · All rights reserved · Currently in Beta
-              <br />
-              Jantra Bot is a product of Coding Ryder · Powered by Google Gemini & Sarvam AI
-            </p>
-          </div>
+            {/* Section 4 — Modes */}
+            <section id="modes" className="scroll-mt-24">
+              <SectionHeading n={4} title="User Guide - Modes" icon={Terminal} />
+              <p className="mt-6 text-base text-slate-700">
+                Jantra Bot operates in six distinct modes. Your active mode determines how the bot
+                interprets and responds to your messages. You can switch at any time by typing{' '}
+                <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm">/mode</code>.
+              </p>
+
+              <div className="mt-8 space-y-5">
+                {modes.map((m) => (
+                  <div key={m.title} className="rounded-2xl border border-slate-200 bg-white p-6">
+                    <h3 className="text-base font-bold text-emerald-700 sm:text-lg">{m.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-700">{m.body}</p>
+                    <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                      {m.examplesLabel}
+                    </p>
+                    <ul className="mt-2 space-y-1.5 text-sm text-slate-700">
+                      {m.examples.map((e) => (
+                        <li key={e} className="flex items-start gap-2">
+                          <span className="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-emerald-500" />
+                          <span>{e}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {m.tip && (
+                      <p className="mt-4 rounded-lg bg-emerald-50 px-3 py-2 text-xs italic text-emerald-900 ring-1 ring-inset ring-emerald-100">
+                        {m.tip}
+                      </p>
+                    )}
+                    {m.civicLink && (
+                      <Link
+                        href="/civic/guide/"
+                        className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-emerald-700 hover:text-emerald-800"
+                      >
+                        Read the Jantra Civic Guide
+                        <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 5 — Languages */}
+            <section id="languages" className="scroll-mt-24">
+              <SectionHeading n={5} title="Supported Languages" icon={Languages} />
+              <p className="mt-6 text-base text-slate-700">
+                Jantra Bot supports 10 languages. For each language, you can send messages in the
+                native script or in romanised (English letters) form - the bot understands both.
+              </p>
+              <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-emerald-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-emerald-900">#</th>
+                      <th className="px-4 py-3 text-left font-semibold text-emerald-900">Language</th>
+                      <th className="px-4 py-3 text-left font-semibold text-emerald-900">Script</th>
+                      <th className="px-4 py-3 text-left font-semibold text-emerald-900">Code</th>
+                      <th className="px-4 py-3 text-left font-semibold text-emerald-900">Voice</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {languages.map((l) => (
+                      <tr key={l.code} className="hover:bg-emerald-50/40">
+                        <td className="px-4 py-3 text-slate-500">{l.n}</td>
+                        <td className="px-4 py-3 font-medium text-slate-900">{l.name}</td>
+                        <td className="px-4 py-3 text-slate-700">{l.script}</td>
+                        <td className="px-4 py-3">
+                          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{l.code}</code>
+                        </td>
+                        <td className="px-4 py-3">
+                          {l.voice ? (
+                            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                              <CheckCircle2 className="h-3.5 w-3.5" aria-hidden />
+                            </span>
+                          ) : (
+                            <span className="text-slate-400">—</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-4 text-sm text-slate-600">
+                To switch language, type <code className="rounded bg-slate-100 px-1.5 py-0.5">/lang</code> or
+                say "change language" - an interactive menu will appear with all 10 options.
+              </p>
+            </section>
+
+            {/* Section 6 — Voice */}
+            <section id="voice" className="scroll-mt-24">
+              <SectionHeading n={6} title="Voice Support" icon={Mic} />
+              <p className="mt-6 text-base text-slate-700">
+                Jantra Bot understands voice notes. No typing needed - just hold the microphone
+                button in WhatsApp and speak naturally. The bot will transcribe your voice and
+                respond in your chosen language.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">How it works</h3>
+              <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {voiceSteps.map((s) => (
+                  <li
+                    key={s.n}
+                    className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4"
+                  >
+                    <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-emerald-600 text-xs font-semibold text-white">
+                      {s.n}
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-900">{s.title}</p>
+                      <p className="mt-1 text-sm text-slate-700">{s.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">Voice technology - Sarvam AI</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Jantra Bot uses Sarvam AI (sarvam.ai) for voice transcription - an Indian startup
+                whose models are trained natively on Indian languages including Assamese, Kannada,
+                Hindi, Bengali, and Tamil. This makes it significantly more accurate for Indian
+                accents and regional speech patterns than generic speech engines.
+              </p>
+
+              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {voiceTips.map((v) => (
+                  <div key={v.label} className="rounded-xl border border-slate-200 bg-white p-4">
+                    <p className="text-sm font-semibold text-emerald-700">{v.label}</p>
+                    <p className="mt-1 text-sm text-slate-700">{v.body}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 7 — Images */}
+            <section id="images" className="scroll-mt-24">
+              <SectionHeading n={7} title="Image Understanding" icon={ImageIcon} />
+              <p className="mt-6 text-base text-slate-700">
+                Send any photo to Jantra Bot and it will describe what it sees - in your chosen
+                language. Powered by Google Gemini's multimodal vision AI, the bot can identify
+                objects, scenes, text, food, animals, landmarks, and much more.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">How it works</h3>
+              <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {imageSteps.map((s) => (
+                  <li
+                    key={s.n}
+                    className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4"
+                  >
+                    <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-emerald-600 text-xs font-semibold text-white">
+                      {s.n}
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-900">{s.title}</p>
+                      <p className="mt-1 text-sm text-slate-700">{s.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">What kinds of images work best</h3>
+              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {imageTypes.map((row) => (
+                  <div key={row.type} className="rounded-xl border border-slate-200 bg-white p-4">
+                    <p className="text-sm font-semibold text-emerald-700">{row.type}</p>
+                    <p className="mt-1 text-sm text-slate-700">{row.examples}</p>
+                  </div>
+                ))}
+              </div>
+              <Callout kind="note" title="Privacy">
+                Images are sent to Google Gemini for analysis and are not stored by Jantra Bot.
+                Only the text description is saved in your conversation history.
+              </Callout>
+            </section>
+
+            {/* Section 8 — Commands */}
+            <section id="commands" className="scroll-mt-24">
+              <SectionHeading n={8} title="Commands Reference" icon={Terminal} />
+              <p className="mt-6 text-base text-slate-700">
+                Type any of these commands at any time - they work in all modes and languages.
+              </p>
+              <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-emerald-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-emerald-900">Command</th>
+                      <th className="px-4 py-3 text-left font-semibold text-emerald-900">What it does</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {commands.map((c) => (
+                      <tr key={c.cmd} className="hover:bg-emerald-50/40">
+                        <td className="whitespace-nowrap px-4 py-3 align-top">
+                          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{c.cmd}</code>
+                        </td>
+                        <td className="px-4 py-3 text-slate-700">{c.does}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Section 9 — Tips */}
+            <section id="tips" className="scroll-mt-24">
+              <SectionHeading n={9} title="Tips & Tricks" icon={Lightbulb} />
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {tips.map((t) => (
+                  <div
+                    key={t.title}
+                    className="rounded-xl border border-slate-200 bg-white p-5"
+                  >
+                    <h3 className="flex items-start gap-2 text-base font-semibold text-emerald-700">
+                      <Lightbulb className="mt-0.5 h-4 w-4 flex-none" aria-hidden />
+                      {t.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-700">{t.body}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 10 — Use Cases */}
+            <section id="use-cases" className="scroll-mt-24">
+              <SectionHeading n={10} title="Use Cases" icon={CheckCircle2} />
+              <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-emerald-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-emerald-900">Scenario</th>
+                      <th className="px-4 py-3 text-left font-semibold text-emerald-900">How Jantra Bot helps</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {useCases.map((u) => (
+                      <tr key={u.scenario} className="hover:bg-emerald-50/40">
+                        <td className="px-4 py-3 align-top font-medium text-slate-900">{u.scenario}</td>
+                        <td className="px-4 py-3 text-slate-700">{u.help}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Section 11 — FAQs */}
+            <section id="faqs" className="scroll-mt-24">
+              <SectionHeading n={11} title="Frequently Asked Questions" icon={HelpCircle} />
+              <p className="mt-4 text-sm text-slate-600">Tap any question to expand the answer.</p>
+              <div className="mt-6 space-y-3">
+                {faqs.map((f) => (
+                  <FAQItem key={f.q} q={f.q} a={f.a} accent={ACCENT} />
+                ))}
+              </div>
+            </section>
+
+            {/* Section 12 — Specs */}
+            <section id="specs" className="scroll-mt-24">
+              <SectionHeading n={12} title="Technical Specifications" icon={Cpu} />
+              <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {specs.map((s) => (
+                      <tr key={s.k} className="hover:bg-emerald-50/40">
+                        <td className="w-2/5 px-4 py-3 align-top font-semibold text-emerald-700">{s.k}</td>
+                        <td className="px-4 py-3 text-slate-700">{s.v}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Section 13 — Developer */}
+            <section id="developer" className="scroll-mt-24">
+              <SectionHeading n={13} title="About the Developer" icon={User} />
+              <div className="mt-6 rounded-2xl border border-slate-200 bg-gradient-to-br from-emerald-50/70 to-white p-6">
+                <div className="flex items-start gap-4">
+                  <div className="inline-flex h-14 w-14 flex-none items-center justify-center rounded-full bg-emerald-600 text-base font-bold text-white shadow-sm">
+                    RG
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900">Rakesh Gogoi</h3>
+                    <p className="text-sm text-slate-600">Founder · Developer · Designer</p>
+                    <p className="mt-1 text-sm font-medium text-emerald-700">Coding Ryder</p>
+                  </div>
+                </div>
+                <p className="mt-5 text-sm leading-6 text-slate-700">
+                  Rakesh Gogoi is the solo developer behind Jantra Bot and the Coding Ryder brand.
+                  With a passion for making technology accessible to everyone - regardless of
+                  language, literacy, or location - Rakesh built Jantra Bot to bridge the gap
+                  between powerful AI tools and everyday users across India.
+                </p>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  Jantra Bot is a personal passion project, built and maintained entirely by Rakesh
+                  during his own time. Every feature, language addition, and improvement comes from
+                  direct conversations with real users and a genuine desire to make AI useful for
+                  people in their own language.
+                </p>
+              </div>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">About Coding Ryder</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Coding Ryder is an indie tech brand focused on building practical, language-inclusive
+                digital products for everyday users. The brand's philosophy: "Technology should
+                speak your language - not the other way around."
+              </p>
+              <ul className="mt-4 grid grid-cols-1 gap-2 text-sm text-slate-700">
+                {[
+                  'Independent, bootstrapped - no VC funding, no corporate agenda.',
+                  'Focused on Indian-language users and underserved digital communities.',
+                  'Open to collaboration, feedback, and community-driven development.',
+                  'All products are built with privacy and simplicity as first principles.',
+                ].map((it) => (
+                  <li key={it} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-emerald-600" aria-hidden />
+                    <span>{it}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-xs text-slate-500">
+                Powered by Google Gemini · Sarvam AI · FastAPI · PostgreSQL · WhatsApp Business API
+              </p>
+            </section>
+
+            {/* Section 14 — Contact */}
+            <section id="contact" className="scroll-mt-24">
+              <SectionHeading n={14} title="Contact & Feedback" icon={PhoneCall} />
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <ContactCard
+                  label="Try Jantra Bot"
+                  value="+91 63612 45647"
+                  sub="Start a chat with the bot directly on WhatsApp"
+                  href="https://wa.me/916361245647"
+                />
+                <ContactCard
+                  label="Feedback / Support"
+                  value="+91 87209 51721"
+                  sub="WhatsApp Rakesh directly with feedback, bugs, or ideas"
+                  href="https://wa.me/918720951721"
+                />
+                <ContactCard
+                  label="Website"
+                  value="codingryder.com"
+                  sub="Product page, user guide, and updates"
+                  href="https://codingryder.com"
+                />
+                <ContactCard
+                  label="Jantrik AI"
+                  value="jantrikai.com"
+                  sub="The platform homepage for all Jantra products"
+                  href="/"
+                  internal
+                />
+              </div>
+
+              <div className="mt-8 overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 p-8 text-center text-white shadow-md">
+                <p className="text-xl font-bold">Ready to try it?</p>
+                <a
+                  href="https://wa.me/916361245647"
+                  className="mt-3 inline-flex items-center gap-2 text-lg font-semibold underline decoration-2 underline-offset-4 hover:text-emerald-50"
+                >
+                  wa.me/916361245647
+                  <ArrowRight className="h-5 w-5" aria-hidden />
+                </a>
+              </div>
+
+              <p className="mt-8 text-center text-xs text-slate-500">
+                © 2026 Coding Ryder · All rights reserved · Currently in Beta
+                <br />
+                Jantra Bot is a product of Coding Ryder · Powered by Google Gemini & Sarvam AI
+              </p>
+            </section>
+          </article>
         </div>
-      </section>
+      </div>
     </>
   );
 }
@@ -937,13 +919,38 @@ function SectionHeading({
 }) {
   return (
     <div className="flex items-center gap-4 border-b border-slate-200 pb-4">
-      <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+      <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 ring-1 ring-inset ring-emerald-100">
         <Icon className="h-5 w-5" aria-hidden />
       </span>
       <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
         <span className="text-emerald-600">{n}.</span> {title}
       </h2>
     </div>
+  );
+}
+
+function Callout({
+  kind,
+  title,
+  children,
+}: {
+  kind: 'note' | 'mission' | 'tip';
+  title: string;
+  children: React.ReactNode;
+}) {
+  const styles =
+    kind === 'mission'
+      ? 'border-emerald-200 bg-gradient-to-br from-emerald-50 to-white'
+      : kind === 'tip'
+      ? 'border-emerald-200 bg-emerald-50/60'
+      : 'border-amber-200 bg-amber-50/60';
+  const titleColor =
+    kind === 'mission' ? 'text-emerald-800' : kind === 'tip' ? 'text-emerald-800' : 'text-amber-800';
+  return (
+    <aside className={`mt-8 rounded-2xl border ${styles} p-5`}>
+      <p className={`text-xs font-semibold uppercase tracking-wider ${titleColor}`}>{title}</p>
+      <div className="mt-2 text-sm leading-6 text-slate-700">{children}</div>
+    </aside>
   );
 }
 
@@ -961,7 +968,7 @@ function ContactCard({
   internal?: boolean;
 }) {
   const className =
-    'block rounded-xl border border-slate-200 bg-white p-5 transition hover:border-emerald-300 hover:bg-emerald-50/50';
+    'block rounded-xl border border-slate-200 bg-white p-5 transition hover:border-emerald-300 hover:bg-emerald-50/50 hover:shadow-sm';
   const content = (
     <>
       <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{label}</p>

@@ -19,6 +19,10 @@ import {
   ArrowRight,
   ArrowLeft,
 } from 'lucide-react';
+import GuideTOC, { type TocItem } from '@/components/GuideTOC';
+import FAQItem from '@/components/FAQItem';
+
+const ACCENT = 'amber' as const;
 
 export const metadata: Metadata = {
   title: 'Jantra Civic User Guide - Government services on WhatsApp',
@@ -40,7 +44,7 @@ export const metadata: Metadata = {
   },
 };
 
-const toc = [
+const toc: TocItem[] = [
   { n: 1, id: 'introduction', title: 'Introduction', sub: "What Jantra Civic is and who it's for" },
   { n: 2, id: 'key-features', title: 'Key Features', sub: 'Six core capabilities at a glance' },
   { n: 3, id: 'getting-started', title: 'Getting Started', sub: 'Enter Civic mode in under a minute' },
@@ -55,6 +59,13 @@ const toc = [
   { n: 12, id: 'faqs', title: 'FAQs', sub: 'Frequently asked questions' },
   { n: 13, id: 'specs', title: 'Technical Specifications', sub: 'Architecture & data sources' },
   { n: 14, id: 'contact', title: 'Contact & Feedback', sub: 'How to reach us' },
+];
+
+const heroStats = [
+  { label: 'States & UTs', value: 'All' },
+  { label: 'Languages', value: '10' },
+  { label: 'On WhatsApp', value: 'Yes' },
+  { label: 'Price', value: 'Free' },
 ];
 
 const audiences = [
@@ -294,8 +305,8 @@ export default function JantraCivicGuidePage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-slate-200 bg-gradient-to-b from-amber-50/60 to-white">
-        <div className="container-page section">
+      <section className="border-b border-slate-200 bg-gradient-to-b from-amber-50/70 via-amber-50/20 to-white">
+        <div className="container-page py-16 sm:py-20">
           <div className="mx-auto max-w-3xl text-center">
             <span className="badge">
               <BookOpen className="h-3.5 w-3.5" aria-hidden />
@@ -316,410 +327,14 @@ export default function JantraCivicGuidePage() {
                 Back to Jantra Civic
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TOC */}
-      <section className="border-b border-slate-200 bg-white">
-        <div className="container-page py-16">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">Table of Contents</h2>
-            <ol className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {toc.map((t) => (
-                <li key={t.id}>
-                  <a
-                    href={`#${t.id}`}
-                    className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-amber-300 hover:bg-amber-50/50"
-                  >
-                    <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-md bg-amber-50 text-xs font-semibold text-amber-700">
-                      {t.n}
-                    </span>
-                    <span>
-                      <span className="block text-sm font-semibold text-slate-900">{t.title}</span>
-                      <span className="mt-0.5 block text-xs text-slate-500">{t.sub}</span>
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 1 - Introduction */}
-      <section id="introduction" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={1} title="Introduction" icon={Landmark} />
-            <p className="prose-lead mt-6">
-              Jantra Civic is a WhatsApp service that helps you navigate Indian government - find
-              schemes you qualify for, look up civic services (ration card, driving licence,
-              certificates), know your elected representatives, get help drafting forms and
-              letters, and stay informed about alerts in your area. All in your language, with no
-              app to install.
-            </p>
-            <p className="mt-5 text-base leading-7 text-slate-700">
-              Jantra Civic is built into Jantra Bot. Type{' '}
-              <code className="rounded bg-slate-100 px-1.5 py-0.5">/civic</code> from any Jantra Bot
-              conversation to enter Civic mode - or pick option 6 from{' '}
-              <code className="rounded bg-slate-100 px-1.5 py-0.5">/mode</code>.
-            </p>
-
-            <h3 className="mt-12 text-xl font-bold text-slate-900">Who is it for?</h3>
-            <div className="mt-6 space-y-4">
-              {audiences.map((a) => (
-                <div key={a.label} className="rounded-xl border border-slate-200 bg-white p-5">
-                  <h4 className="text-base font-semibold text-amber-700">{a.label}</h4>
-                  <p className="mt-1 text-sm leading-6 text-slate-700">{a.body}</p>
-                </div>
-              ))}
-            </div>
-
-            <h3 className="mt-12 text-xl font-bold text-slate-900">Mission</h3>
-            <p className="mt-3 text-base leading-7 text-slate-700">
-              To make Indian government accessible to every citizen in their own language, on the
-              platform they already use - without barriers, without forms, without paperwork.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2 - Key Features */}
-      <section id="key-features" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-5xl">
-            <SectionHeading n={2} title="Key Features" icon={Layers} />
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {features.map((f) => (
-                <div key={f.title} className="rounded-2xl border border-slate-200 bg-white p-6">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50 text-amber-700">
-                    <f.icon className="h-5 w-5" aria-hidden />
-                  </div>
-                  <h3 className="mt-4 text-base font-semibold text-slate-900">{f.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-700">{f.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3 - Getting Started */}
-      <section id="getting-started" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={3} title="Getting Started" icon={CheckCircle2} />
-            <p className="mt-6 text-base text-slate-700">
-              You can be using Jantra Civic in under a minute.
-            </p>
-            <ol className="mt-8 space-y-4">
-              {gettingStarted.map((s) => (
-                <li key={s.step} className="rounded-xl border border-slate-200 bg-white p-5">
-                  <div className="text-xs font-medium uppercase tracking-wider text-amber-700">
-                    {s.step}
-                  </div>
-                  <h3 className="mt-1 text-base font-semibold text-slate-900">{s.title}</h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-700">{s.body}</p>
-                </li>
-              ))}
-            </ol>
-            <a
-              href="https://wa.me/916361245647"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-emerald-600"
-            >
-              Open Jantra Bot, then type: /civic
-              <ArrowRight className="h-4 w-4" aria-hidden />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4 - Main Menu */}
-      <section id="menu" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={4} title="User Guide - the Main Menu" icon={Terminal} />
-            <p className="mt-6 text-base text-slate-700">
-              Every Jantra Civic session opens with a five-option main menu, once your state is set.
-              Each option is explained in detail in later sections.
-            </p>
-            <ol className="mt-8 space-y-4">
-              {menu.map((m) => (
-                <li key={m.n} className="rounded-2xl border border-slate-200 bg-white p-5">
-                  <div className="flex items-start gap-4">
-                    <span className="inline-flex h-8 w-8 flex-none items-center justify-center rounded-full bg-amber-600 text-sm font-semibold text-white">
-                      {m.n}
-                    </span>
-                    <div>
-                      <h3 className="text-base font-bold text-slate-900">{m.title}</h3>
-                      <p className="mt-1 text-sm leading-6 text-slate-700">{m.body}</p>
-                      <a
-                        href={`#${m.refId}`}
-                        className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-amber-700 hover:text-amber-800"
-                      >
-                        → {m.ref}
-                      </a>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ol>
-            <p className="mt-6 text-sm text-slate-600">
-              You can return to this menu anytime by typing{' '}
-              <code className="rounded bg-slate-100 px-1.5 py-0.5">/civic</code>. To exit Jantra Civic
-              and return to Jantra Bot, type <code className="rounded bg-slate-100 px-1.5 py-0.5">0</code>.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 5 - Civic Services */}
-      <section id="services" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-4xl">
-            <SectionHeading n={5} title="Civic Services" icon={ListChecks} />
-            <p className="mt-6 text-base text-slate-700">
-              Lookup answers for everyday government services. Ask in natural language (in any of
-              the supported languages) or pick from the menu - Jantra Civic returns eligibility,
-              required documents, fees, and where to apply.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">Common services covered</h3>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-amber-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-amber-900">Service</th>
-                    <th className="px-4 py-3 text-left font-semibold text-amber-900">
-                      Typical questions answered
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {services.map((s) => (
-                    <tr key={s.service}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top font-medium text-slate-900">
-                        {s.service}
-                      </td>
-                      <td className="px-4 py-3 text-slate-700">{s.q}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-6 text-sm italic text-slate-500">
-              Coverage varies by state. Better-covered states return more specific answers; states
-              marked "(limited)" on the picker still answer core queries from grounded web search.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 6 - Schemes */}
-      <section id="schemes" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={6} title="Government Schemes" icon={Landmark} />
-            <p className="mt-6 text-base text-slate-700">
-              Jantra Civic shortlists central and state schemes you may qualify for, based on a
-              short profile you build inside WhatsApp. No scrolling through irrelevant scheme
-              catalogues.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">How matching works</h3>
-            <ol className="mt-4 space-y-3">
-              {schemeSteps.map((s) => (
-                <li key={s.n} className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4">
-                  <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-amber-600 text-xs font-semibold text-white">
-                    {s.n}
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">{s.title}</p>
-                    <p className="mt-1 text-sm text-slate-700">{s.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">Categories covered</h3>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              {schemeCategories.map((c) => (
-                <li key={c}>{c}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 7 - Forms & Letters */}
-      <section id="forms" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-4xl">
-            <SectionHeading n={7} title="Forms & Letters" icon={FileSignature} />
-            <p className="mt-6 text-base text-slate-700">
-              Drafting a formal letter is one of the slowest parts of dealing with government or
-              institutions. Jantra Civic generates the draft for you - you just fill a
-              tap-friendly mini-form on WhatsApp.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">Available form templates</h3>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-amber-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-amber-900">Template</th>
-                    <th className="px-4 py-3 text-left font-semibold text-amber-900">What it generates</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {formTemplates.map((t) => (
-                    <tr key={t.template}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top font-medium text-slate-900">
-                        {t.template}
-                      </td>
-                      <td className="px-4 py-3 text-slate-700">{t.body}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-6 text-sm italic text-slate-500">
-              Each form opens as a WhatsApp Flow - a native tap-to-fill experience. After you submit,
-              the letter is generated and sent back so you can copy, save, or forward it.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 8 - Representatives */}
-      <section id="representatives" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={8} title="Know Your Representatives" icon={Users} />
-            <p className="mt-6 text-base text-slate-700">
-              Find out who represents you in the State Assembly and Parliament. Jantra Civic uses
-              your selected state plus an Assembly Constituency picker to look up your MLA and MP.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">How the lookup works</h3>
-            <ol className="mt-4 space-y-3">
-              {repSteps.map((s) => (
-                <li key={s.n} className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4">
-                  <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-amber-600 text-xs font-semibold text-white">
-                    {s.n}
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">{s.title}</p>
-                    <p className="mt-1 text-sm text-slate-700">{s.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-            <p className="mt-6 text-sm italic text-slate-500">
-              Representative data is sourced from publicly available directories. Coverage varies by
-              state; states without curated AC data show a placeholder.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 9 - Alerts / Jobs / Tenders */}
-      <section id="alerts" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={9} title="Alerts, Jobs & Tenders" icon={Bell} />
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">Local civic alerts</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Civic alerts surface short notices for your selected area - power cuts, water
-              disruptions, road closures, and public notices published by state and municipal
-              authorities. Alerts are scoped to your state and surfaced in your language.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">Government jobs</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Recent state and central government job announcements, including department, post,
-              key dates, and the official application portal. Useful for quick scanning without
-              trawling individual sites.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">Tenders</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Recent tender notices relevant to your state, with publishing department, key dates,
-              and where to download the tender document. Quick visibility for small businesses and
-              contractors.
-            </p>
-
-            <p className="mt-6 text-sm italic text-slate-500">
-              Jobs and tenders are refreshed on a rolling schedule from trusted government feeds.
-              For mission-critical applications, always cross-check on the issuing department's
-              official portal.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 10 - Commands */}
-      <section id="commands" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={10} title="Commands Reference" icon={Terminal} />
-            <p className="mt-6 text-base text-slate-700">
-              Most users navigate Jantra Civic entirely through menu taps. These commands are
-              optional shortcuts.
-            </p>
-            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-amber-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-amber-900">Command</th>
-                    <th className="px-4 py-3 text-left font-semibold text-amber-900">What it does</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {commands.map((c) => (
-                    <tr key={c.cmd}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top">
-                        <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{c.cmd}</code>
-                      </td>
-                      <td className="px-4 py-3 text-slate-700">{c.does}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 11 - Tips */}
-      <section id="tips" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={11} title="Tips & Tricks" icon={Lightbulb} />
-            <div className="mt-8 space-y-5">
-              {tips.map((t) => (
-                <div key={t.title} className="border-l-2 border-amber-500 pl-5">
-                  <h3 className="text-base font-semibold text-amber-700">› {t.title}</h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-700">{t.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 12 - FAQs */}
-      <section id="faqs" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={12} title="Frequently Asked Questions" icon={HelpCircle} />
-            <dl className="mt-8 space-y-6">
-              {faqs.map((f) => (
-                <div key={f.q} className="rounded-xl border border-slate-200 bg-white p-5">
-                  <dt className="text-base font-semibold text-amber-700">Q: {f.q}</dt>
-                  <dd className="mt-2 text-sm leading-6 text-slate-700">A: {f.a}</dd>
+            <dl className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+              {heroStats.map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-xl border border-amber-100 bg-white/70 px-4 py-3 text-center shadow-sm backdrop-blur"
+                >
+                  <dt className="text-xs font-medium uppercase tracking-wider text-slate-500">{s.label}</dt>
+                  <dd className="mt-1 text-lg font-bold text-amber-700">{s.value}</dd>
                 </div>
               ))}
             </dl>
@@ -727,86 +342,451 @@ export default function JantraCivicGuidePage() {
         </div>
       </section>
 
-      {/* Section 13 - Specs */}
-      <section id="specs" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={13} title="Technical Specifications" icon={Cpu} />
-            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {specs.map((s) => (
-                    <tr key={s.k}>
-                      <td className="w-1/3 px-4 py-3 align-top font-semibold text-amber-700">{s.k}</td>
-                      <td className="px-4 py-3 text-slate-700">{s.v}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+      {/* Two-column body */}
+      <div className="container-page py-12 sm:py-16">
+        <div className="lg:grid lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[260px_minmax(0,1fr)] xl:gap-16">
+          <GuideTOC items={toc} accent={ACCENT} />
 
-            <h3 className="mt-10 text-lg font-bold text-slate-900">Data sources</h3>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              {dataSources.map((d) => (
-                <li key={d}>{d}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+          <article className="mt-10 min-w-0 space-y-20 lg:mt-0">
+            {/* Section 1 — Introduction */}
+            <section id="introduction" className="scroll-mt-24">
+              <SectionHeading n={1} title="Introduction" icon={Landmark} />
+              <p className="prose-lead mt-6">
+                Jantra Civic is a WhatsApp service that helps you navigate Indian government - find
+                schemes you qualify for, look up civic services (ration card, driving licence,
+                certificates), know your elected representatives, get help drafting forms and
+                letters, and stay informed about alerts in your area. All in your language, with no
+                app to install.
+              </p>
+              <p className="mt-5 text-base leading-7 text-slate-700">
+                Jantra Civic is built into Jantra Bot. Type{' '}
+                <code className="rounded bg-slate-100 px-1.5 py-0.5">/civic</code> from any Jantra
+                Bot conversation to enter Civic mode - or pick option 6 from{' '}
+                <code className="rounded bg-slate-100 px-1.5 py-0.5">/mode</code>.
+              </p>
 
-      {/* Section 14 - Contact */}
-      <section id="contact" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={14} title="Contact & Feedback" icon={PhoneCall} />
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <ContactCard
-                label="Try Jantra Civic"
-                value="+91 63612 45647"
-                sub="WhatsApp Jantra Bot and type /civic"
-                href="https://wa.me/916361245647"
-              />
-              <ContactCard
-                label="Feedback / Support"
-                value="+91 87209 51721"
-                sub="WhatsApp Rakesh directly with feedback, bugs, or ideas"
-                href="https://wa.me/918720951721"
-              />
-              <ContactCard
-                label="Website"
-                value="codingryder.com"
-                sub="Product page, user guide, and updates"
-                href="https://codingryder.com"
-              />
-              <ContactCard
-                label="Jantrik AI"
-                value="jantrikai.com"
-                sub="The platform homepage for all Jantra products"
-                href="/"
-                internal
-              />
-            </div>
+              <h3 className="mt-10 text-xl font-bold text-slate-900">Who is it for?</h3>
+              <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {audiences.map((a) => (
+                  <div
+                    key={a.label}
+                    className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-amber-300 hover:shadow-sm"
+                  >
+                    <h4 className="text-sm font-semibold text-amber-700">{a.label}</h4>
+                    <p className="mt-1.5 text-sm leading-6 text-slate-700">{a.body}</p>
+                  </div>
+                ))}
+              </div>
 
-            <div className="mt-10 rounded-2xl bg-emerald-500 p-8 text-center text-white">
-              <p className="text-xl font-bold">Ready to try it?</p>
+              <Callout kind="mission" title="Our mission">
+                To make Indian government accessible to every citizen in their own language, on
+                the platform they already use - without barriers, without forms, without
+                paperwork.
+              </Callout>
+            </section>
+
+            {/* Section 2 — Key Features */}
+            <section id="key-features" className="scroll-mt-24">
+              <SectionHeading n={2} title="Key Features" icon={Layers} />
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {features.map((f) => (
+                  <div
+                    key={f.title}
+                    className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-amber-300 hover:shadow-md"
+                  >
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-700 transition group-hover:bg-amber-100">
+                      <f.icon className="h-5 w-5" aria-hidden />
+                    </div>
+                    <h3 className="mt-4 text-base font-semibold text-slate-900">{f.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{f.body}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 3 — Getting Started */}
+            <section id="getting-started" className="scroll-mt-24">
+              <SectionHeading n={3} title="Getting Started" icon={CheckCircle2} />
+              <p className="mt-6 text-base text-slate-700">
+                You can be using Jantra Civic in under a minute.
+              </p>
+              <ol className="mt-6 space-y-3">
+                {gettingStarted.map((s, idx) => (
+                  <li
+                    key={s.step}
+                    className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5"
+                  >
+                    <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-full bg-amber-600 text-sm font-bold text-white">
+                      {idx + 1}
+                    </span>
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wider text-amber-700">{s.step}</p>
+                      <h3 className="mt-0.5 text-base font-semibold text-slate-900">{s.title}</h3>
+                      <p className="mt-1 text-sm leading-6 text-slate-700">{s.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
               <a
                 href="https://wa.me/916361245647"
-                className="mt-3 inline-flex items-center gap-2 text-lg font-semibold underline decoration-2 underline-offset-4 hover:text-emerald-50"
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-emerald-600"
               >
-                Open WhatsApp → wa.me/916361245647 → /civic
-                <ArrowRight className="h-5 w-5" aria-hidden />
+                Open Jantra Bot, then type: /civic
+                <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
-            </div>
+            </section>
 
-            <p className="mt-8 text-center text-xs text-slate-500">
-              © 2026 Coding Ryder · All rights reserved · Currently in Beta
-              <br />
-              Jantra Civic is a sub-product of Jantra Bot · Powered by Google Gemini
-            </p>
-          </div>
+            {/* Section 4 — Main Menu */}
+            <section id="menu" className="scroll-mt-24">
+              <SectionHeading n={4} title="User Guide - the Main Menu" icon={Terminal} />
+              <p className="mt-6 text-base text-slate-700">
+                Every Jantra Civic session opens with a five-option main menu, once your state is
+                set. Each option is explained in detail in later sections.
+              </p>
+              <ol className="mt-6 space-y-3">
+                {menu.map((m) => (
+                  <li key={m.n} className="rounded-2xl border border-slate-200 bg-white p-5">
+                    <div className="flex items-start gap-4">
+                      <span className="inline-flex h-9 w-9 flex-none items-center justify-center rounded-full bg-amber-600 text-sm font-bold text-white">
+                        {m.n}
+                      </span>
+                      <div className="min-w-0">
+                        <h3 className="text-base font-bold text-slate-900">{m.title}</h3>
+                        <p className="mt-1 text-sm leading-6 text-slate-700">{m.body}</p>
+                        <a
+                          href={`#${m.refId}`}
+                          className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-amber-700 hover:text-amber-800"
+                        >
+                          → {m.ref}
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-6 text-sm text-slate-600">
+                You can return to this menu anytime by typing{' '}
+                <code className="rounded bg-slate-100 px-1.5 py-0.5">/civic</code>. To exit Jantra
+                Civic and return to Jantra Bot, type{' '}
+                <code className="rounded bg-slate-100 px-1.5 py-0.5">0</code>.
+              </p>
+            </section>
+
+            {/* Section 5 — Civic Services */}
+            <section id="services" className="scroll-mt-24">
+              <SectionHeading n={5} title="Civic Services" icon={ListChecks} />
+              <p className="mt-6 text-base text-slate-700">
+                Lookup answers for everyday government services. Ask in natural language (in any
+                of the supported languages) or pick from the menu - Jantra Civic returns
+                eligibility, required documents, fees, and where to apply.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">Common services covered</h3>
+              <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-amber-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-amber-900">Service</th>
+                      <th className="px-4 py-3 text-left font-semibold text-amber-900">
+                        Typical questions answered
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {services.map((s) => (
+                      <tr key={s.service} className="hover:bg-amber-50/40">
+                        <td className="whitespace-nowrap px-4 py-3 align-top font-medium text-slate-900">
+                          {s.service}
+                        </td>
+                        <td className="px-4 py-3 text-slate-700">{s.q}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <Callout kind="note" title="Coverage">
+                Coverage varies by state. Better-covered states return more specific answers;
+                states marked "(limited)" on the picker still answer core queries from grounded
+                web search.
+              </Callout>
+            </section>
+
+            {/* Section 6 — Schemes */}
+            <section id="schemes" className="scroll-mt-24">
+              <SectionHeading n={6} title="Government Schemes" icon={Landmark} />
+              <p className="mt-6 text-base text-slate-700">
+                Jantra Civic shortlists central and state schemes you may qualify for, based on a
+                short profile you build inside WhatsApp. No scrolling through irrelevant scheme
+                catalogues.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">How matching works</h3>
+              <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {schemeSteps.map((s) => (
+                  <li
+                    key={s.n}
+                    className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4"
+                  >
+                    <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-amber-600 text-xs font-semibold text-white">
+                      {s.n}
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-900">{s.title}</p>
+                      <p className="mt-1 text-sm text-slate-700">{s.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">Categories covered</h3>
+              <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {schemeCategories.map((c) => (
+                  <div
+                    key={c}
+                    className="flex items-start gap-2 rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-700 ring-1 ring-inset ring-slate-200"
+                  >
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-amber-600" aria-hidden />
+                    <span>{c}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 7 — Forms & Letters */}
+            <section id="forms" className="scroll-mt-24">
+              <SectionHeading n={7} title="Forms & Letters" icon={FileSignature} />
+              <p className="mt-6 text-base text-slate-700">
+                Drafting a formal letter is one of the slowest parts of dealing with government or
+                institutions. Jantra Civic generates the draft for you - you just fill a
+                tap-friendly mini-form on WhatsApp.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">Available form templates</h3>
+              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {formTemplates.map((t) => (
+                  <div key={t.template} className="rounded-xl border border-slate-200 bg-white p-4">
+                    <p className="text-sm font-semibold text-amber-700">{t.template}</p>
+                    <p className="mt-1 text-sm leading-6 text-slate-700">{t.body}</p>
+                  </div>
+                ))}
+              </div>
+              <Callout kind="tip" title="How it works">
+                Each form opens as a WhatsApp Flow - a native tap-to-fill experience. After you
+                submit, the letter is generated and sent back so you can copy, save, or forward
+                it.
+              </Callout>
+            </section>
+
+            {/* Section 8 — Representatives */}
+            <section id="representatives" className="scroll-mt-24">
+              <SectionHeading n={8} title="Know Your Representatives" icon={Users} />
+              <p className="mt-6 text-base text-slate-700">
+                Find out who represents you in the State Assembly and Parliament. Jantra Civic
+                uses your selected state plus an Assembly Constituency picker to look up your MLA
+                and MP.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">How the lookup works</h3>
+              <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {repSteps.map((s) => (
+                  <li
+                    key={s.n}
+                    className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4"
+                  >
+                    <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-amber-600 text-xs font-semibold text-white">
+                      {s.n}
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-900">{s.title}</p>
+                      <p className="mt-1 text-sm text-slate-700">{s.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <Callout kind="note" title="Coverage">
+                Representative data is sourced from publicly available directories. Coverage
+                varies by state; states without curated AC data show a placeholder.
+              </Callout>
+            </section>
+
+            {/* Section 9 — Alerts / Jobs / Tenders */}
+            <section id="alerts" className="scroll-mt-24">
+              <SectionHeading n={9} title="Alerts, Jobs & Tenders" icon={Bell} />
+
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <div className="rounded-2xl border border-slate-200 bg-white p-5">
+                  <Bell className="h-5 w-5 text-amber-600" aria-hidden />
+                  <h3 className="mt-3 text-base font-bold text-slate-900">Local civic alerts</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-700">
+                    Short notices for your selected area - power cuts, water disruptions, road
+                    closures, and public notices published by state and municipal authorities.
+                    Scoped to your state and surfaced in your language.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-5">
+                  <Users className="h-5 w-5 text-amber-600" aria-hidden />
+                  <h3 className="mt-3 text-base font-bold text-slate-900">Government jobs</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-700">
+                    Recent state and central government job announcements, including department,
+                    post, key dates, and the official application portal. Useful for quick
+                    scanning without trawling individual sites.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-5">
+                  <ScrollText className="h-5 w-5 text-amber-600" aria-hidden />
+                  <h3 className="mt-3 text-base font-bold text-slate-900">Tenders</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-700">
+                    Recent tender notices relevant to your state, with publishing department, key
+                    dates, and where to download the tender document. Quick visibility for small
+                    businesses and contractors.
+                  </p>
+                </div>
+              </div>
+
+              <Callout kind="note" title="Freshness">
+                Jobs and tenders are refreshed on a rolling schedule from trusted government
+                feeds. For mission-critical applications, always cross-check on the issuing
+                department's official portal.
+              </Callout>
+            </section>
+
+            {/* Section 10 — Commands */}
+            <section id="commands" className="scroll-mt-24">
+              <SectionHeading n={10} title="Commands Reference" icon={Terminal} />
+              <p className="mt-6 text-base text-slate-700">
+                Most users navigate Jantra Civic entirely through menu taps. These commands are
+                optional shortcuts.
+              </p>
+              <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-amber-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-amber-900">Command</th>
+                      <th className="px-4 py-3 text-left font-semibold text-amber-900">What it does</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {commands.map((c) => (
+                      <tr key={c.cmd} className="hover:bg-amber-50/40">
+                        <td className="whitespace-nowrap px-4 py-3 align-top">
+                          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{c.cmd}</code>
+                        </td>
+                        <td className="px-4 py-3 text-slate-700">{c.does}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Section 11 — Tips */}
+            <section id="tips" className="scroll-mt-24">
+              <SectionHeading n={11} title="Tips & Tricks" icon={Lightbulb} />
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {tips.map((t) => (
+                  <div key={t.title} className="rounded-xl border border-slate-200 bg-white p-5">
+                    <h3 className="flex items-start gap-2 text-base font-semibold text-amber-700">
+                      <Lightbulb className="mt-0.5 h-4 w-4 flex-none" aria-hidden />
+                      {t.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-700">{t.body}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 12 — FAQs */}
+            <section id="faqs" className="scroll-mt-24">
+              <SectionHeading n={12} title="Frequently Asked Questions" icon={HelpCircle} />
+              <p className="mt-4 text-sm text-slate-600">Tap any question to expand the answer.</p>
+              <div className="mt-6 space-y-3">
+                {faqs.map((f) => (
+                  <FAQItem key={f.q} q={f.q} a={f.a} accent={ACCENT} />
+                ))}
+              </div>
+            </section>
+
+            {/* Section 13 — Specs */}
+            <section id="specs" className="scroll-mt-24">
+              <SectionHeading n={13} title="Technical Specifications" icon={Cpu} />
+              <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {specs.map((s) => (
+                      <tr key={s.k} className="hover:bg-amber-50/40">
+                        <td className="w-2/5 px-4 py-3 align-top font-semibold text-amber-700">{s.k}</td>
+                        <td className="px-4 py-3 text-slate-700">{s.v}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">Data sources</h3>
+              <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {dataSources.map((d) => (
+                  <div
+                    key={d}
+                    className="flex items-start gap-2 rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-700 ring-1 ring-inset ring-slate-200"
+                  >
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-amber-600" aria-hidden />
+                    <span>{d}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 14 — Contact */}
+            <section id="contact" className="scroll-mt-24">
+              <SectionHeading n={14} title="Contact & Feedback" icon={PhoneCall} />
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <ContactCard
+                  label="Try Jantra Civic"
+                  value="+91 63612 45647"
+                  sub="WhatsApp Jantra Bot and type /civic"
+                  href="https://wa.me/916361245647"
+                />
+                <ContactCard
+                  label="Feedback / Support"
+                  value="+91 87209 51721"
+                  sub="WhatsApp Rakesh directly with feedback, bugs, or ideas"
+                  href="https://wa.me/918720951721"
+                />
+                <ContactCard
+                  label="Website"
+                  value="codingryder.com"
+                  sub="Product page, user guide, and updates"
+                  href="https://codingryder.com"
+                />
+                <ContactCard
+                  label="Jantrik AI"
+                  value="jantrikai.com"
+                  sub="The platform homepage for all Jantra products"
+                  href="/"
+                  internal
+                />
+              </div>
+
+              <div className="mt-8 overflow-hidden rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 p-8 text-center text-white shadow-md">
+                <p className="text-xl font-bold">Ready to try it?</p>
+                <a
+                  href="https://wa.me/916361245647"
+                  className="mt-3 inline-flex items-center gap-2 text-lg font-semibold underline decoration-2 underline-offset-4 hover:text-amber-50"
+                >
+                  Open WhatsApp → wa.me/916361245647 → /civic
+                  <ArrowRight className="h-5 w-5" aria-hidden />
+                </a>
+              </div>
+
+              <p className="mt-8 text-center text-xs text-slate-500">
+                © 2026 Coding Ryder · All rights reserved · Currently in Beta
+                <br />
+                Jantra Civic is a sub-product of Jantra Bot · Powered by Google Gemini
+              </p>
+            </section>
+          </article>
         </div>
-      </section>
+      </div>
     </>
   );
 }
@@ -822,13 +802,38 @@ function SectionHeading({
 }) {
   return (
     <div className="flex items-center gap-4 border-b border-slate-200 pb-4">
-      <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-700">
+      <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-700 ring-1 ring-inset ring-amber-100">
         <Icon className="h-5 w-5" aria-hidden />
       </span>
       <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
         <span className="text-amber-600">{n}.</span> {title}
       </h2>
     </div>
+  );
+}
+
+function Callout({
+  kind,
+  title,
+  children,
+}: {
+  kind: 'note' | 'mission' | 'tip';
+  title: string;
+  children: React.ReactNode;
+}) {
+  const styles =
+    kind === 'mission'
+      ? 'border-amber-200 bg-gradient-to-br from-amber-50 to-white'
+      : kind === 'tip'
+      ? 'border-amber-200 bg-amber-50/60'
+      : 'border-slate-200 bg-slate-50/80';
+  const titleColor =
+    kind === 'mission' ? 'text-amber-800' : kind === 'tip' ? 'text-amber-800' : 'text-slate-700';
+  return (
+    <aside className={`mt-8 rounded-2xl border ${styles} p-5`}>
+      <p className={`text-xs font-semibold uppercase tracking-wider ${titleColor}`}>{title}</p>
+      <div className="mt-2 text-sm leading-6 text-slate-700">{children}</div>
+    </aside>
   );
 }
 
@@ -846,7 +851,7 @@ function ContactCard({
   internal?: boolean;
 }) {
   const className =
-    'block rounded-xl border border-slate-200 bg-white p-5 transition hover:border-amber-300 hover:bg-amber-50/50';
+    'block rounded-xl border border-slate-200 bg-white p-5 transition hover:border-amber-300 hover:bg-amber-50/50 hover:shadow-sm';
   const content = (
     <>
       <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{label}</p>

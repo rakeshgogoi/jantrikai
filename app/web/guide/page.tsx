@@ -24,6 +24,10 @@ import {
   Gamepad2,
   BookOpenCheck,
 } from 'lucide-react';
+import GuideTOC, { type TocItem } from '@/components/GuideTOC';
+import FAQItem from '@/components/FAQItem';
+
+const ACCENT = 'brand' as const;
 
 export const metadata: Metadata = {
   title: 'Jantra Web User Guide - Complete information & user guide',
@@ -45,7 +49,7 @@ export const metadata: Metadata = {
   },
 };
 
-const toc = [
+const toc: TocItem[] = [
   { n: 1, id: 'overview', title: 'Overview', sub: 'Vision, highlights, and who it is for' },
   { n: 2, id: 'getting-started', title: 'Getting Started', sub: 'Sign up and choose your language' },
   { n: 3, id: 'languages', title: 'Supported Languages', sub: '19 languages, Indian + international' },
@@ -60,6 +64,13 @@ const toc = [
   { n: 12, id: 'technical', title: 'Technical Reference', sub: 'Stack, endpoints, request example' },
   { n: 13, id: 'glossary', title: 'Glossary', sub: 'Key terms explained' },
   { n: 14, id: 'support', title: 'Support & Contact', sub: 'How to reach us' },
+];
+
+const heroStats = [
+  { label: 'Languages', value: '19' },
+  { label: 'Chat modes', value: '5' },
+  { label: 'Sign-in', value: 'Email' },
+  { label: 'Price', value: 'Free' },
 ];
 
 const highlights = [
@@ -122,9 +133,9 @@ const switchingEffects = [
 ];
 
 const interfaceAreas = [
-  { area: 'Sidebar (left)', body: 'Mode navigation and language switcher' },
-  { area: 'Chat Area (centre)', body: 'Conversation messages and input bar' },
-  { area: 'Top Bar (header)', body: 'App title, theme toggle, profile access and settings' },
+  { area: 'Sidebar (left)', body: 'Mode navigation and language switcher', icon: LayoutGrid },
+  { area: 'Chat Area (centre)', body: 'Conversation messages and input bar', icon: MessageCircle },
+  { area: 'Top Bar (header)', body: 'App title, theme toggle, profile access and settings', icon: Sparkles },
 ];
 
 const inputCapabilities = [
@@ -348,8 +359,8 @@ export default function JantraWebGuidePage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-slate-200 bg-gradient-to-b from-brand-50/60 to-white">
-        <div className="container-page section">
+      <section className="border-b border-slate-200 bg-gradient-to-b from-brand-50/70 via-brand-50/20 to-white">
+        <div className="container-page py-16 sm:py-20">
           <div className="mx-auto max-w-3xl text-center">
             <span className="badge">
               <BookOpenCheck className="h-3.5 w-3.5" aria-hidden />
@@ -370,698 +381,14 @@ export default function JantraWebGuidePage() {
                 Back to Jantra Web
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TOC */}
-      <section className="border-b border-slate-200 bg-white">
-        <div className="container-page py-16">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">Table of Contents</h2>
-            <ol className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {toc.map((t) => (
-                <li key={t.id}>
-                  <a
-                    href={`#${t.id}`}
-                    className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-300 hover:bg-brand-50/50"
-                  >
-                    <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-md bg-brand-50 text-xs font-semibold text-brand-700">
-                      {t.n}
-                    </span>
-                    <span>
-                      <span className="block text-sm font-semibold text-slate-900">{t.title}</span>
-                      <span className="mt-0.5 block text-xs text-slate-500">{t.sub}</span>
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 1 - Overview */}
-      <section id="overview" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={1} title="Overview" icon={Sparkles} />
-            <p className="prose-lead mt-6">
-              Jantra Web is a free, AI-powered multilingual chatbot platform developed by Coding
-              Ryder. It is designed to make artificial intelligence accessible to everyone, with a
-              special focus on Indian languages. Users can chat naturally, translate text between
-              languages, look up words in a multilingual dictionary, play interactive language
-              games, and even analyse payment-app screenshots to track financial transactions -
-              all from a single, clean web interface and all in the language of their choice.
-            </p>
-
-            <h3 className="mt-12 text-xl font-bold text-slate-900">1.1 Vision &amp; Purpose</h3>
-            <p className="mt-3 text-base leading-7 text-slate-700">The platform was built around a single guiding principle:</p>
-            <blockquote className="mt-4 border-l-4 border-brand-500 bg-brand-50/50 p-5 text-lg italic text-brand-900">
-              "Your AI companion, in your language."
-            </blockquote>
-            <p className="mt-4 text-base leading-7 text-slate-700">
-              Jantra Web is the only AI chat platform built first for Indian languages and then
-              extended to serve a global audience. It removes language barriers so that anyone -
-              regardless of technical background or English fluency - can harness the power of
-              modern AI for everyday tasks like learning, writing, translating, summarising and
-              personal finance.
-            </p>
-
-            <h3 className="mt-12 text-xl font-bold text-slate-900">1.2 Key Highlights</h3>
-            <ul className="mt-4 space-y-2">
-              {highlights.map((h) => (
-                <li key={h} className="flex items-start gap-3 text-sm text-slate-700">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
-                  <span>{h}</span>
-                </li>
-              ))}
-            </ul>
-
-            <h3 className="mt-12 text-xl font-bold text-slate-900">1.3 Platform Information</h3>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {platformInfo.map((p) => (
-                    <tr key={p.k}>
-                      <td className="w-1/3 px-4 py-3 align-top font-semibold text-brand-700">{p.k}</td>
-                      <td className="px-4 py-3 text-slate-700">{p.v}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <h3 className="mt-12 text-xl font-bold text-slate-900">1.4 Who Is It For?</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Jantra Web is designed for anyone who wants the benefits of a modern AI assistant
-              without paying a subscription or struggling with English-only tools. Typical users
-              include:
-            </p>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              {audiences.map((a) => (
-                <li key={a}>{a}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2 - Getting Started */}
-      <section id="getting-started" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={2} title="Getting Started" icon={CheckCircle2} />
-            <p className="mt-6 text-base text-slate-700">
-              Getting started with Jantra Web takes less than a minute. There is no app to
-              download, no password to create and no payment information to enter - just a browser
-              and an email address.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">2.1 System Requirements</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Jantra Web is a fully web-based application. Nothing needs to be installed locally.
-            </p>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-brand-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Requirement</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Recommended</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {systemReqs.map((r) => (
-                    <tr key={r.k}>
-                      <td className="px-4 py-3 font-medium text-slate-900">{r.k}</td>
-                      <td className="px-4 py-3 text-slate-700">{r.v}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">2.2 Creating an Account</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Account creation is passwordless. You only need an email address.
-            </p>
-            <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm text-slate-700">
-              {signupSteps.map((s) => (
-                <li key={s}>{s}</li>
-              ))}
-            </ol>
-            <p className="mt-4 rounded-lg bg-amber-50 p-4 text-xs text-amber-900 ring-1 ring-inset ring-amber-100">
-              <strong>Note:</strong> If you have previously signed in on the same device and
-              browser, Jantra Web will recognise your session and skip the registration step,
-              taking you directly to your last-used chat interface.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">2.3 Signing In on a New Device</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Because Jantra Web does not use passwords, signing in on a different device or
-              browser starts a fresh session. Simply visit the website and enter the same email
-              address you used previously to be reconnected to your account.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">2.4 Choosing Your Language</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              After signing up, you will land on the Language Selection page (also known as the
-              Onboarding screen). This is where you tell Jantra Web which language you would like
-              to chat in.
-            </p>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              <li>Browse the list of 19 available languages, grouped by region.</li>
-              <li>Indian Languages are listed first, followed by International Languages.</li>
-              <li>Tap or click your preferred language to confirm.</li>
-              <li>You will be taken directly into the chat interface in the selected language.</li>
-            </ul>
-            <p className="mt-4 rounded-lg bg-brand-50 p-4 text-xs text-brand-900 ring-1 ring-inset ring-brand-100">
-              <strong>Tip:</strong> You can change your language at any time from within the chat
-              interface using the language switcher in the top navigation bar. Switching language
-              starts a fresh session in the chosen mode so that responses are properly localised.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3 - Languages */}
-      <section id="languages" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-4xl">
-            <SectionHeading n={3} title="Supported Languages" icon={Languages} />
-            <p className="mt-6 text-base text-slate-700">
-              Jantra Web supports 19 languages across two groups. Every chat mode (Chat,
-              Translate, Dictionary, Play and Accounts) is available in every supported language.
-              The AI replies natively in your chosen language without needing any prompt
-              translation on your part.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">3.1 Indian Languages (11)</h3>
-            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {indianLanguages.map((l) => (
+            <dl className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+              {heroStats.map((s) => (
                 <div
-                  key={l}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-medium text-slate-900 shadow-sm"
+                  key={s.label}
+                  className="rounded-xl border border-brand-100 bg-white/70 px-4 py-3 text-center shadow-sm backdrop-blur"
                 >
-                  {l}
-                </div>
-              ))}
-            </div>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">3.2 International Languages (8)</h3>
-            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {intlLanguages.map((l) => (
-                <div
-                  key={l}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-medium text-slate-900 shadow-sm"
-                >
-                  {l}
-                </div>
-              ))}
-            </div>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">3.3 Switching Languages</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              The language selector appears in the top bar of the chat interface. Tapping it opens
-              a language picker showing the same list as the onboarding screen. Selecting a new
-              language:
-            </p>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              {switchingEffects.map((e) => (
-                <li key={e}>{e}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4 - Chat Interface */}
-      <section id="interface" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={4} title="The Chat Interface" icon={LayoutGrid} />
-            <p className="mt-6 text-base text-slate-700">
-              The Chat Interface is the heart of Jantra Web. It has been designed to be intuitive,
-              clean and distraction-free across every screen size. This section explains each
-              component of the interface and how to use it efficiently.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">4.1 Interface Layout</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">The interface is divided into three main areas:</p>
-            <div className="mt-4 space-y-3">
-              {interfaceAreas.map((a) => (
-                <div key={a.area} className="rounded-xl border border-slate-200 bg-white p-4">
-                  <p className="text-sm font-semibold text-brand-700">{a.area}</p>
-                  <p className="mt-1 text-sm text-slate-700">{a.body}</p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-sm leading-6 text-slate-700">
-              On mobile devices, the sidebar collapses automatically and can be opened via the
-              hamburger menu icon in the top-left corner.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">4.2 Sidebar Navigation</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              The sidebar lists all six chat modes as clearly-labelled buttons. Click or tap any
-              mode to switch instantly. Each mode maintains its own separate conversation history,
-              so switching modes does not erase your other conversations.
-            </p>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              The sidebar also contains the language picker, a link to your profile, the theme
-              toggle (light/dark) and a quick link to the pricing page.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">4.3 Message Input</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              The text input field is located at the bottom of the chat area. You can:
-            </p>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              {inputCapabilities.map((c) => (
-                <li key={c}>{c}</li>
-              ))}
-            </ul>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">4.4 Receiving Responses</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Once you send a message, Jantra Web shows a typing indicator while the AI prepares
-              its reply. Responses are streamed into the chat as they are generated, so you
-              usually see the first words within one or two seconds. Long answers are formatted
-              with bullet points, headings and tables where appropriate.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">4.5 Language Switching Mid-Session</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              The language switcher is accessible at any time. Switching language rotates your
-              session: the chat history for the current mode is cleared and a fresh session starts
-              in the new language. This ensures the AI produces high-quality responses natively
-              in the chosen language rather than mixing languages.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">4.6 Sharing a Conversation</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Jantra Web includes a built-in share feature. Tap the share icon on any message to
-              copy the message text to your clipboard or share it via your device's native share
-              sheet. This is useful for sending a helpful AI response to a friend or colleague.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">4.7 Light &amp; Dark Themes</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Jantra Web supports both light and dark themes. Toggle the theme using the sun/moon
-              icon in the top bar. The choice is remembered across sessions on the same device.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 5 - Chat Modes */}
-      <section id="modes" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={5} title="Chat Modes" icon={Layers} />
-            <p className="mt-6 text-base text-slate-700">
-              Jantra Web offers five distinct chat modes, each tailored for a specific use case.
-              You can switch between modes at any time using the sidebar; each mode keeps its own
-              history and context.
-            </p>
-
-            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-brand-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Mode</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Purpose</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {modes.map((m) => (
-                    <tr key={m.mode}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top">
-                        <span className="inline-flex items-center gap-2 font-medium text-slate-900">
-                          <m.icon className="h-4 w-4 text-brand-600" aria-hidden />
-                          {m.mode}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3 text-slate-700">{m.purpose}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">5.1 Chat Mode</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Chat Mode is the default general-purpose AI assistant. Use it for any kind of
-              open-ended question or conversation.
-            </p>
-            <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-brand-700">Typical uses</p>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              {chatUses.map((u) => (
-                <li key={u}>{u}</li>
-              ))}
-            </ul>
-            <p className="mt-4 text-sm italic text-slate-500">
-              Welcome message: "Hello! I am Jantra Bot. How can I help you today?"
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">5.2 Translate Mode</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Translate Mode provides instant translation between any of the 19 supported
-              languages. The interface renders a side-by-side panel showing the original input and
-              the translated output for easy comparison.
-            </p>
-            <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-brand-700">How to use</p>
-            <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-slate-700">
-              {translateSteps.map((s) => (
-                <li key={s}>{s}</li>
-              ))}
-            </ol>
-            <p className="mt-4 rounded-lg bg-brand-50 p-4 text-xs text-brand-900 ring-1 ring-inset ring-brand-100">
-              <strong>Tip:</strong> Translate Mode works best with short-to-medium length text - a
-              few sentences to a paragraph at a time. Break very long documents into smaller
-              chunks and translate each section in turn for the most accurate results.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">5.3 Dictionary Mode</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Dictionary Mode acts as a rich multilingual dictionary. Type any word - in your own
-              language or another language - and receive:
-            </p>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              {dictionaryReturns.map((d) => (
-                <li key={d}>{d}</li>
-              ))}
-            </ul>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">5.4 Play Mode</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Play Mode is an interactive language game arena. It is a fun, low-pressure way to
-              practise vocabulary in any of the 19 supported languages.
-            </p>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-brand-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Game</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">How it works</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {games.map((g) => (
-                    <tr key={g.name}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top font-medium text-slate-900">{g.name}</td>
-                      <td className="px-4 py-3 text-slate-700">{g.body}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-4 text-sm leading-6 text-slate-700">
-              To start, type the name of the game you want to play (for example, "Hangman" or
-              "Quiz") and the AI will guide you through it turn by turn.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">5.5 Accounts Mode</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Accounts Mode is a unique financial assistant that uses AI vision to read payment-app
-              screenshots (Google Pay, PhonePe, Paytm) and automatically log your transactions.
-              There is no manual data entry - just upload a screenshot.
-            </p>
-
-            <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-brand-700">5.5.1 Adding a transaction</p>
-            <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-slate-700">
-              {accountsSteps.map((s) => (
-                <li key={s}>{s}</li>
-              ))}
-            </ol>
-
-            <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-brand-700">5.5.2 Accounts commands</p>
-            <p className="mt-2 text-sm leading-6 text-slate-700">
-              Once transactions are recorded, use the following slash-commands to query and manage
-              your data:
-            </p>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-brand-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Command</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">What it does</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {accountsCommands.map((c) => (
-                    <tr key={c.cmd}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top">
-                        <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{c.cmd}</code>
-                      </td>
-                      <td className="px-4 py-3 text-slate-700">{c.does}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-4 rounded-lg bg-amber-50 p-4 text-xs text-amber-900 ring-1 ring-inset ring-amber-100">
-              <strong>Note:</strong> Accounts data lives inside your current session. Use{' '}
-              <code className="rounded bg-amber-100 px-1 py-0.5">/export</code> regularly to
-              download a CSV backup before clearing or rotating your session.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 6 - User Profile */}
-      <section id="profile" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={6} title="User Profile" icon={UserCircle2} />
-            <p className="mt-6 text-base text-slate-700">
-              Your profile page gives you a personalised view of your account and lets you update
-              your display information.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">6.1 Accessing Your Profile</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Click the profile avatar (your initial letter shown as a circular badge) in the
-              top-right corner of the interface to open the Profile page.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">6.2 Profile Information</h3>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-brand-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Field</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Description</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {profileFields.map((p) => (
-                    <tr key={p.f}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top font-medium text-slate-900">{p.f}</td>
-                      <td className="px-4 py-3 text-slate-700">{p.d}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">6.3 Editing Your Profile</h3>
-            <ol className="mt-4 list-decimal space-y-1 pl-5 text-sm text-slate-700">
-              <li>Open the Profile page from the avatar in the top-right.</li>
-              <li>Tap the Edit icon next to Name or Username.</li>
-              <li>Type the new value.</li>
-              <li>Tap Save to confirm.</li>
-            </ol>
-            <p className="mt-4 rounded-lg bg-amber-50 p-4 text-xs text-amber-900 ring-1 ring-inset ring-amber-100">
-              <strong>Note:</strong> Email and country cannot be edited after registration. If you
-              need to change either, contact Coding Ryder support.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 7 - Plans & Tiers */}
-      <section id="plans" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={7} title="Plans & Tiers" icon={CreditCard} />
-            <p className="mt-6 text-base text-slate-700">
-              Jantra Web uses a tiered plan system. All users start on the Rookie tier at no cost.
-              Additional tiers are planned for future release.
-            </p>
-
-            <div className="mt-8 space-y-4">
-              {tiers.map((t) => (
-                <div
-                  key={t.name}
-                  className={
-                    t.status === 'Active'
-                      ? 'rounded-2xl border-2 border-brand-600 bg-white p-6 shadow-sm ring-1 ring-brand-100'
-                      : 'rounded-2xl border border-slate-200 bg-white p-6'
-                  }
-                >
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-bold text-slate-900">{t.name}</h3>
-                    <span
-                      className={
-                        t.status === 'Active'
-                          ? 'rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-800'
-                          : 'rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600'
-                      }
-                    >
-                      {t.status}
-                    </span>
-                  </div>
-                  <p className="mt-3 text-sm leading-6 text-slate-700">{t.body}</p>
-                </div>
-              ))}
-            </div>
-
-            <p className="mt-6 rounded-lg bg-amber-50 p-4 text-xs text-amber-900 ring-1 ring-inset ring-amber-100">
-              <strong>Note:</strong> All current features are available on the free Rookie tier.
-              No payment or credit card is required to use Jantra Web today. When new tiers
-              launch, existing users will be notified in-app.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 8 - Privacy */}
-      <section id="privacy" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={8} title="Privacy & Security" icon={ShieldCheck} />
-            <p className="mt-6 text-base text-slate-700">
-              Jantra Web is built with a privacy-first philosophy. We collect only the data that is
-              strictly necessary to operate the service.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">8.1 Data We Collect</h3>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-brand-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Data</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Why it is collected</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {dataCollected.map((d) => (
-                    <tr key={d.d}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top font-medium text-slate-900">{d.d}</td>
-                      <td className="px-4 py-3 text-slate-700">{d.why}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">8.2 Data We Do Not Collect</h3>
-            <ul className="mt-4 space-y-2">
-              {dataNotCollected.map((d) => (
-                <li key={d} className="flex items-start gap-3 text-sm text-slate-700">
-                  <ShieldCheck className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
-                  <span>{d}</span>
-                </li>
-              ))}
-            </ul>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">8.3 Session Management</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Your session is identified by a unique ID stored in your browser's local storage. No
-              passwords are used. If you clear your browser data, your session will be reset.
-              Switching to a new browser or device will start a fresh session linked to the same
-              email address.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">8.4 How Your Data Is Used by the AI</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              Messages you send are processed by Google Gemini 2.5 Flash to generate a reply. Once
-              the reply has been generated, the message and response are stored only in your
-              personal session history so that follow-up messages have context. They are never
-              used to train external AI models from within Jantra Web.
-            </p>
-
-            <h3 className="mt-10 text-lg font-bold text-slate-900">8.5 Terms &amp; Privacy Policy</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              By using Jantra Web, you agree to the Terms of Service and Privacy Policy published
-              by Coding Ryder. You can read the full policy at{' '}
-              <a
-                href="https://codingryder.com/jantrabot_legal.html"
-                className="font-medium text-brand-700 underline decoration-brand-200 underline-offset-2 hover:text-brand-800"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                codingryder.com/jantrabot_legal.html
-              </a>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 9 - Tips */}
-      <section id="tips" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={9} title="Tips & Best Practices" icon={Lightbulb} />
-            <div className="mt-8 space-y-10">
-              {tipGroups.map((g) => (
-                <div key={g.title}>
-                  <h3 className="text-lg font-bold text-slate-900">{g.title}</h3>
-                  <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
-                    {g.items.map((i) => (
-                      <li key={i}>{i}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 10 - Troubleshooting */}
-      <section id="troubleshooting" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-4xl">
-            <SectionHeading n={10} title="Troubleshooting" icon={Wrench} />
-            <p className="mt-6 text-base text-slate-700">
-              Most issues with Jantra Web can be resolved by refreshing the page or starting a new
-              session. The table below lists common situations and their solutions.
-            </p>
-            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-brand-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Problem</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">What to try</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {troubleshooting.map((t) => (
-                    <tr key={t.problem}>
-                      <td className="px-4 py-3 align-top font-medium text-slate-900">{t.problem}</td>
-                      <td className="px-4 py-3 text-slate-700">{t.solution}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 11 - FAQs */}
-      <section id="faqs" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={11} title="Frequently Asked Questions" icon={HelpCircle} />
-            <dl className="mt-8 space-y-6">
-              {faqs.map((f) => (
-                <div key={f.q} className="rounded-xl border border-slate-200 bg-white p-5">
-                  <dt className="text-base font-semibold text-brand-700">Q. {f.q}</dt>
-                  <dd className="mt-2 text-sm leading-6 text-slate-700">A. {f.a}</dd>
+                  <dt className="text-xs font-medium uppercase tracking-wider text-slate-500">{s.label}</dt>
+                  <dd className="mt-1 text-lg font-bold text-brand-700">{s.value}</dd>
                 </div>
               ))}
             </dl>
@@ -1069,67 +396,737 @@ export default function JantraWebGuidePage() {
         </div>
       </section>
 
-      {/* Section 12 - Technical Reference */}
-      <section id="technical" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-4xl">
-            <SectionHeading n={12} title="Technical Reference" icon={Cpu} />
-            <p className="mt-6 text-base text-slate-700">
-              This section is intended for developers and technically-curious users. It is not
-              required reading for everyday use of Jantra Web.
-            </p>
+      {/* Two-column body */}
+      <div className="container-page py-12 sm:py-16">
+        <div className="lg:grid lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[260px_minmax(0,1fr)] xl:gap-16">
+          <GuideTOC items={toc} accent={ACCENT} />
 
-            <h3 className="mt-10 text-lg font-bold text-slate-900">12.1 Technology Stack</h3>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-brand-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Layer</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Technology</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Details</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {techStack.map((s) => (
-                    <tr key={s.layer}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top font-medium text-slate-900">{s.layer}</td>
-                      <td className="whitespace-nowrap px-4 py-3 align-top text-slate-700">{s.tech}</td>
-                      <td className="px-4 py-3 text-slate-700">{s.details}</td>
+          <article className="mt-10 min-w-0 space-y-20 lg:mt-0">
+            {/* Section 1 — Overview */}
+            <section id="overview" className="scroll-mt-24">
+              <SectionHeading n={1} title="Overview" icon={Sparkles} />
+              <p className="prose-lead mt-6">
+                Jantra Web is a free, AI-powered multilingual chatbot platform developed by Coding
+                Ryder. It is designed to make artificial intelligence accessible to everyone, with
+                a special focus on Indian languages.
+              </p>
+
+              <h3 className="mt-10 text-xl font-bold text-slate-900">1.1 Vision & Purpose</h3>
+              <blockquote className="mt-4 border-l-4 border-brand-500 bg-brand-50/50 p-5 text-lg italic text-brand-900">
+                "Your AI companion, in your language."
+              </blockquote>
+              <p className="mt-4 text-base leading-7 text-slate-700">
+                Jantra Web is the only AI chat platform built first for Indian languages and then
+                extended to serve a global audience. It removes language barriers so that anyone -
+                regardless of technical background or English fluency - can harness the power of
+                modern AI for everyday tasks like learning, writing, translating, summarising and
+                personal finance.
+              </p>
+
+              <h3 className="mt-10 text-xl font-bold text-slate-900">1.2 Key Highlights</h3>
+              <ul className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {highlights.map((h) => (
+                  <li
+                    key={h}
+                    className="flex items-start gap-2 rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-700 ring-1 ring-inset ring-slate-200"
+                  >
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <h3 className="mt-10 text-xl font-bold text-slate-900">1.3 Platform Information</h3>
+              <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {platformInfo.map((p) => (
+                      <tr key={p.k} className="hover:bg-brand-50/40">
+                        <td className="w-2/5 px-4 py-3 align-top font-semibold text-brand-700">{p.k}</td>
+                        <td className="px-4 py-3 text-slate-700">{p.v}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="mt-10 text-xl font-bold text-slate-900">1.4 Who Is It For?</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Jantra Web is designed for anyone who wants the benefits of a modern AI assistant
+                without paying a subscription or struggling with English-only tools. Typical users
+                include:
+              </p>
+              <ul className="mt-4 grid grid-cols-1 gap-2 text-sm text-slate-700">
+                {audiences.map((a) => (
+                  <li key={a} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                    <span>{a}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* Section 2 — Getting Started */}
+            <section id="getting-started" className="scroll-mt-24">
+              <SectionHeading n={2} title="Getting Started" icon={CheckCircle2} />
+              <p className="mt-6 text-base text-slate-700">
+                Getting started with Jantra Web takes less than a minute. There is no app to
+                download, no password to create and no payment information to enter - just a
+                browser and an email address.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">2.1 System Requirements</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Jantra Web is a fully web-based application. Nothing needs to be installed locally.
+              </p>
+              <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-brand-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Requirement</th>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Recommended</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {systemReqs.map((r) => (
+                      <tr key={r.k} className="hover:bg-brand-50/40">
+                        <td className="px-4 py-3 font-medium text-slate-900">{r.k}</td>
+                        <td className="px-4 py-3 text-slate-700">{r.v}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
 
-            <h3 className="mt-10 text-lg font-bold text-slate-900">12.2 Key API Endpoints</h3>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-brand-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Method</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Endpoint</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Purpose</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {endpoints.map((e) => (
-                    <tr key={e.endpoint + e.method}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top">
-                        <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs font-semibold">{e.method}</code>
-                      </td>
-                      <td className="whitespace-nowrap px-4 py-3 align-top">
-                        <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{e.endpoint}</code>
-                      </td>
-                      <td className="px-4 py-3 text-slate-700">{e.purpose}</td>
+              <h3 className="mt-10 text-lg font-bold text-slate-900">2.2 Creating an Account</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Account creation is passwordless. You only need an email address.
+              </p>
+              <ol className="mt-4 space-y-3">
+                {signupSteps.map((s, idx) => (
+                  <li
+                    key={s}
+                    className="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4"
+                  >
+                    <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
+                      {idx + 1}
+                    </span>
+                    <p className="text-sm leading-6 text-slate-700">{s}</p>
+                  </li>
+                ))}
+              </ol>
+              <Callout kind="note" title="Note">
+                If you have previously signed in on the same device and browser, Jantra Web will
+                recognise your session and skip the registration step, taking you directly to
+                your last-used chat interface.
+              </Callout>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">2.3 Signing In on a New Device</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Because Jantra Web does not use passwords, signing in on a different device or
+                browser starts a fresh session. Simply visit the website and enter the same email
+                address you used previously to be reconnected to your account.
+              </p>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">2.4 Choosing Your Language</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                After signing up, you will land on the Language Selection page (also known as the
+                Onboarding screen). This is where you tell Jantra Web which language you would
+                like to chat in.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-slate-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                  <span>Browse the list of 19 available languages, grouped by region.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                  <span>Indian Languages are listed first, followed by International Languages.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                  <span>Tap or click your preferred language to confirm.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                  <span>You will be taken directly into the chat interface in the selected language.</span>
+                </li>
+              </ul>
+              <Callout kind="tip" title="Tip">
+                You can change your language at any time from within the chat interface using the
+                language switcher in the top navigation bar. Switching language starts a fresh
+                session in the chosen mode so that responses are properly localised.
+              </Callout>
+            </section>
+
+            {/* Section 3 — Languages */}
+            <section id="languages" className="scroll-mt-24">
+              <SectionHeading n={3} title="Supported Languages" icon={Languages} />
+              <p className="mt-6 text-base text-slate-700">
+                Jantra Web supports 19 languages across two groups. Every chat mode (Chat,
+                Translate, Dictionary, Play and Accounts) is available in every supported
+                language. The AI replies natively in your chosen language without needing any
+                prompt translation on your part.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">3.1 Indian Languages (11)</h3>
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                {indianLanguages.map((l) => (
+                  <div
+                    key={l}
+                    className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-medium text-slate-900 shadow-sm transition hover:border-brand-300 hover:bg-brand-50/50"
+                  >
+                    {l}
+                  </div>
+                ))}
+              </div>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">3.2 International Languages (8)</h3>
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                {intlLanguages.map((l) => (
+                  <div
+                    key={l}
+                    className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-medium text-slate-900 shadow-sm transition hover:border-brand-300 hover:bg-brand-50/50"
+                  >
+                    {l}
+                  </div>
+                ))}
+              </div>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">3.3 Switching Languages</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                The language selector appears in the top bar of the chat interface. Tapping it
+                opens a language picker showing the same list as the onboarding screen. Selecting
+                a new language:
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-slate-700">
+                {switchingEffects.map((e) => (
+                  <li key={e} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                    <span>{e}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* Section 4 — Chat Interface */}
+            <section id="interface" className="scroll-mt-24">
+              <SectionHeading n={4} title="The Chat Interface" icon={LayoutGrid} />
+              <p className="mt-6 text-base text-slate-700">
+                The Chat Interface is the heart of Jantra Web. It has been designed to be
+                intuitive, clean and distraction-free across every screen size. This section
+                explains each component of the interface and how to use it efficiently.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">4.1 Interface Layout</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                The interface is divided into three main areas:
+              </p>
+              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                {interfaceAreas.map((a) => (
+                  <div key={a.area} className="rounded-xl border border-slate-200 bg-white p-4">
+                    <a.icon className="h-5 w-5 text-brand-600" aria-hidden />
+                    <p className="mt-2 text-sm font-semibold text-brand-700">{a.area}</p>
+                    <p className="mt-1 text-sm text-slate-700">{a.body}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-sm leading-6 text-slate-700">
+                On mobile devices, the sidebar collapses automatically and can be opened via the
+                hamburger menu icon in the top-left corner.
+              </p>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">4.2 Sidebar Navigation</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                The sidebar lists all chat modes as clearly-labelled buttons. Click or tap any
+                mode to switch instantly. Each mode maintains its own separate conversation
+                history, so switching modes does not erase your other conversations.
+              </p>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                The sidebar also contains the language picker, a link to your profile, the theme
+                toggle (light/dark) and a quick link to the pricing page.
+              </p>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">4.3 Message Input</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                The text input field is located at the bottom of the chat area. You can:
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-slate-700">
+                {inputCapabilities.map((c) => (
+                  <li key={c} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                    <span>{c}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">4.4 Receiving Responses</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Once you send a message, Jantra Web shows a typing indicator while the AI prepares
+                its reply. Responses are streamed into the chat as they are generated, so you
+                usually see the first words within one or two seconds. Long answers are formatted
+                with bullet points, headings and tables where appropriate.
+              </p>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">4.5 Language Switching Mid-Session</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                The language switcher is accessible at any time. Switching language rotates your
+                session: the chat history for the current mode is cleared and a fresh session
+                starts in the new language. This ensures the AI produces high-quality responses
+                natively in the chosen language rather than mixing languages.
+              </p>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">4.6 Sharing a Conversation</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Jantra Web includes a built-in share feature. Tap the share icon on any message
+                to copy the message text to your clipboard or share it via your device's native
+                share sheet. This is useful for sending a helpful AI response to a friend or
+                colleague.
+              </p>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">4.7 Light & Dark Themes</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Jantra Web supports both light and dark themes. Toggle the theme using the
+                sun/moon icon in the top bar. The choice is remembered across sessions on the
+                same device.
+              </p>
+            </section>
+
+            {/* Section 5 — Chat Modes */}
+            <section id="modes" className="scroll-mt-24">
+              <SectionHeading n={5} title="Chat Modes" icon={Layers} />
+              <p className="mt-6 text-base text-slate-700">
+                Jantra Web offers five distinct chat modes, each tailored for a specific use case.
+                You can switch between modes at any time using the sidebar; each mode keeps its
+                own history and context.
+              </p>
+
+              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {modes.map((m) => (
+                  <div
+                    key={m.mode}
+                    className="rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand-300 hover:shadow-sm"
+                  >
+                    <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
+                      <m.icon className="h-4.5 w-4.5" aria-hidden />
+                    </div>
+                    <h3 className="mt-3 text-base font-bold text-slate-900">{m.mode}</h3>
+                    <p className="mt-1 text-sm text-slate-700">{m.purpose}</p>
+                  </div>
+                ))}
+              </div>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">5.1 Chat Mode</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Chat Mode is the default general-purpose AI assistant. Use it for any kind of
+                open-ended question or conversation.
+              </p>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-brand-700">Typical uses</p>
+              <ul className="mt-2 space-y-1.5 text-sm text-slate-700">
+                {chatUses.map((u) => (
+                  <li key={u} className="flex items-start gap-2">
+                    <span className="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-brand-500" />
+                    <span>{u}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-sm italic text-slate-500">
+                Welcome message: "Hello! I am Jantra Bot. How can I help you today?"
+              </p>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">5.2 Translate Mode</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Translate Mode provides instant translation between any of the 19 supported
+                languages. The interface renders a side-by-side panel showing the original input
+                and the translated output for easy comparison.
+              </p>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-brand-700">How to use</p>
+              <ol className="mt-2 space-y-1.5 text-sm text-slate-700">
+                {translateSteps.map((s, idx) => (
+                  <li key={s} className="flex items-start gap-2">
+                    <span className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-brand-100 text-[11px] font-semibold text-brand-700">
+                      {idx + 1}
+                    </span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ol>
+              <Callout kind="tip" title="Tip">
+                Translate Mode works best with short-to-medium length text - a few sentences to a
+                paragraph at a time. Break very long documents into smaller chunks and translate
+                each section in turn for the most accurate results.
+              </Callout>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">5.3 Dictionary Mode</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Dictionary Mode acts as a rich multilingual dictionary. Type any word - in your
+                own language or another language - and receive:
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-slate-700">
+                {dictionaryReturns.map((d) => (
+                  <li key={d} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                    <span>{d}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">5.4 Play Mode</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Play Mode is an interactive language game arena. It is a fun, low-pressure way to
+                practise vocabulary in any of the 19 supported languages.
+              </p>
+              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {games.map((g) => (
+                  <div key={g.name} className="rounded-xl border border-slate-200 bg-white p-4">
+                    <p className="text-sm font-semibold text-brand-700">{g.name}</p>
+                    <p className="mt-1 text-sm leading-6 text-slate-700">{g.body}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-sm leading-6 text-slate-700">
+                To start, type the name of the game you want to play (for example, "Hangman" or
+                "Quiz") and the AI will guide you through it turn by turn.
+              </p>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">5.5 Accounts Mode</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Accounts Mode is a unique financial assistant that uses AI vision to read
+                payment-app screenshots (Google Pay, PhonePe, Paytm) and automatically log your
+                transactions. There is no manual data entry - just upload a screenshot.
+              </p>
+
+              <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-brand-700">5.5.1 Adding a transaction</p>
+              <ol className="mt-2 space-y-1.5 text-sm text-slate-700">
+                {accountsSteps.map((s, idx) => (
+                  <li key={s} className="flex items-start gap-2">
+                    <span className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-brand-100 text-[11px] font-semibold text-brand-700">
+                      {idx + 1}
+                    </span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ol>
+
+              <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-brand-700">5.5.2 Accounts commands</p>
+              <div className="mt-3 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-brand-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Command</th>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">What it does</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {accountsCommands.map((c) => (
+                      <tr key={c.cmd} className="hover:bg-brand-50/40">
+                        <td className="whitespace-nowrap px-4 py-3 align-top">
+                          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{c.cmd}</code>
+                        </td>
+                        <td className="px-4 py-3 text-slate-700">{c.does}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <Callout kind="note" title="Note">
+                Accounts data lives inside your current session. Use{' '}
+                <code className="rounded bg-amber-100 px-1 py-0.5">/export</code> regularly to
+                download a CSV backup before clearing or rotating your session.
+              </Callout>
+            </section>
 
-            <h3 className="mt-10 text-lg font-bold text-slate-900">12.3 Request Example</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">A typical chat request looks like:</p>
-            <pre className="mt-4 overflow-x-auto rounded-xl bg-slate-900 p-5 text-xs leading-6 text-slate-100">
+            {/* Section 6 — User Profile */}
+            <section id="profile" className="scroll-mt-24">
+              <SectionHeading n={6} title="User Profile" icon={UserCircle2} />
+              <p className="mt-6 text-base text-slate-700">
+                Your profile page gives you a personalised view of your account and lets you
+                update your display information.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">6.1 Accessing Your Profile</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Click the profile avatar (your initial letter shown as a circular badge) in the
+                top-right corner of the interface to open the Profile page.
+              </p>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">6.2 Profile Information</h3>
+              <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-brand-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Field</th>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {profileFields.map((p) => (
+                      <tr key={p.f} className="hover:bg-brand-50/40">
+                        <td className="whitespace-nowrap px-4 py-3 align-top font-medium text-slate-900">{p.f}</td>
+                        <td className="px-4 py-3 text-slate-700">{p.d}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">6.3 Editing Your Profile</h3>
+              <ol className="mt-4 space-y-2 text-sm text-slate-700">
+                {[
+                  'Open the Profile page from the avatar in the top-right.',
+                  'Tap the Edit icon next to Name or Username.',
+                  'Type the new value.',
+                  'Tap Save to confirm.',
+                ].map((s, idx) => (
+                  <li key={s} className="flex items-start gap-2">
+                    <span className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-brand-100 text-[11px] font-semibold text-brand-700">
+                      {idx + 1}
+                    </span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ol>
+              <Callout kind="note" title="Note">
+                Email and country cannot be edited after registration. If you need to change
+                either, contact Coding Ryder support.
+              </Callout>
+            </section>
+
+            {/* Section 7 — Plans & Tiers */}
+            <section id="plans" className="scroll-mt-24">
+              <SectionHeading n={7} title="Plans & Tiers" icon={CreditCard} />
+              <p className="mt-6 text-base text-slate-700">
+                Jantra Web uses a tiered plan system. All users start on the Rookie tier at no
+                cost. Additional tiers are planned for future release.
+              </p>
+
+              <div className="mt-6 space-y-4">
+                {tiers.map((t) => (
+                  <div
+                    key={t.name}
+                    className={
+                      t.status === 'Active'
+                        ? 'rounded-2xl border-2 border-brand-600 bg-white p-6 shadow-sm ring-1 ring-brand-100'
+                        : 'rounded-2xl border border-slate-200 bg-white p-6'
+                    }
+                  >
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-bold text-slate-900">{t.name}</h3>
+                      <span
+                        className={
+                          t.status === 'Active'
+                            ? 'rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-800'
+                            : 'rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600'
+                        }
+                      >
+                        {t.status}
+                      </span>
+                    </div>
+                    <p className="mt-3 text-sm leading-6 text-slate-700">{t.body}</p>
+                  </div>
+                ))}
+              </div>
+
+              <Callout kind="note" title="Note">
+                All current features are available on the free Rookie tier. No payment or credit
+                card is required to use Jantra Web today. When new tiers launch, existing users
+                will be notified in-app.
+              </Callout>
+            </section>
+
+            {/* Section 8 — Privacy */}
+            <section id="privacy" className="scroll-mt-24">
+              <SectionHeading n={8} title="Privacy & Security" icon={ShieldCheck} />
+              <p className="mt-6 text-base text-slate-700">
+                Jantra Web is built with a privacy-first philosophy. We collect only the data that
+                is strictly necessary to operate the service.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">8.1 Data We Collect</h3>
+              <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-brand-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Data</th>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Why it is collected</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {dataCollected.map((d) => (
+                      <tr key={d.d} className="hover:bg-brand-50/40">
+                        <td className="whitespace-nowrap px-4 py-3 align-top font-medium text-slate-900">{d.d}</td>
+                        <td className="px-4 py-3 text-slate-700">{d.why}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">8.2 Data We Do Not Collect</h3>
+              <ul className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {dataNotCollected.map((d) => (
+                  <li
+                    key={d}
+                    className="flex items-start gap-2 rounded-lg bg-emerald-50/50 px-3 py-2 text-sm text-slate-700 ring-1 ring-inset ring-emerald-100"
+                  >
+                    <ShieldCheck className="mt-0.5 h-4 w-4 flex-none text-emerald-600" aria-hidden />
+                    <span>{d}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">8.3 Session Management</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Your session is identified by a unique ID stored in your browser's local storage.
+                No passwords are used. If you clear your browser data, your session will be reset.
+                Switching to a new browser or device will start a fresh session linked to the same
+                email address.
+              </p>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">8.4 How Your Data Is Used by the AI</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Messages you send are processed by Google Gemini 2.5 Flash to generate a reply.
+                Once the reply has been generated, the message and response are stored only in
+                your personal session history so that follow-up messages have context. They are
+                never used to train external AI models from within Jantra Web.
+              </p>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">8.5 Terms & Privacy Policy</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                By using Jantra Web, you agree to the Terms of Service and Privacy Policy
+                published by Coding Ryder. You can read the full policy at{' '}
+                <a
+                  href="https://codingryder.com/jantrabot_legal.html"
+                  className="font-medium text-brand-700 underline decoration-brand-200 underline-offset-2 hover:text-brand-800"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  codingryder.com/jantrabot_legal.html
+                </a>
+                .
+              </p>
+            </section>
+
+            {/* Section 9 — Tips */}
+            <section id="tips" className="scroll-mt-24">
+              <SectionHeading n={9} title="Tips & Best Practices" icon={Lightbulb} />
+              <div className="mt-6 space-y-6">
+                {tipGroups.map((g) => (
+                  <div key={g.title} className="rounded-2xl border border-slate-200 bg-white p-5">
+                    <h3 className="flex items-center gap-2 text-base font-bold text-brand-700">
+                      <Lightbulb className="h-4 w-4" aria-hidden />
+                      {g.title}
+                    </h3>
+                    <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
+                      {g.items.map((i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="mt-2 inline-block h-1 w-1 flex-none rounded-full bg-brand-500" />
+                          <span>{i}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 10 — Troubleshooting */}
+            <section id="troubleshooting" className="scroll-mt-24">
+              <SectionHeading n={10} title="Troubleshooting" icon={Wrench} />
+              <p className="mt-6 text-base text-slate-700">
+                Most issues with Jantra Web can be resolved by refreshing the page or starting a
+                new session. The table below lists common situations and their solutions.
+              </p>
+              <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-brand-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Problem</th>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">What to try</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {troubleshooting.map((t) => (
+                      <tr key={t.problem} className="hover:bg-brand-50/40">
+                        <td className="px-4 py-3 align-top font-medium text-slate-900">{t.problem}</td>
+                        <td className="px-4 py-3 text-slate-700">{t.solution}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Section 11 — FAQs */}
+            <section id="faqs" className="scroll-mt-24">
+              <SectionHeading n={11} title="Frequently Asked Questions" icon={HelpCircle} />
+              <p className="mt-4 text-sm text-slate-600">Tap any question to expand the answer.</p>
+              <div className="mt-6 space-y-3">
+                {faqs.map((f) => (
+                  <FAQItem key={f.q} q={f.q} a={f.a} accent={ACCENT} />
+                ))}
+              </div>
+            </section>
+
+            {/* Section 12 — Technical Reference */}
+            <section id="technical" className="scroll-mt-24">
+              <SectionHeading n={12} title="Technical Reference" icon={Cpu} />
+              <p className="mt-6 text-base text-slate-700">
+                This section is intended for developers and technically-curious users. It is not
+                required reading for everyday use of Jantra Web.
+              </p>
+
+              <h3 className="mt-8 text-lg font-bold text-slate-900">12.1 Technology Stack</h3>
+              <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-brand-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Layer</th>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Technology</th>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Details</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {techStack.map((s) => (
+                      <tr key={s.layer} className="hover:bg-brand-50/40">
+                        <td className="whitespace-nowrap px-4 py-3 align-top font-medium text-slate-900">{s.layer}</td>
+                        <td className="whitespace-nowrap px-4 py-3 align-top text-slate-700">{s.tech}</td>
+                        <td className="px-4 py-3 text-slate-700">{s.details}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">12.2 Key API Endpoints</h3>
+              <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-brand-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Method</th>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Endpoint</th>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Purpose</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {endpoints.map((e) => (
+                      <tr key={e.endpoint + e.method} className="hover:bg-brand-50/40">
+                        <td className="whitespace-nowrap px-4 py-3 align-top">
+                          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs font-semibold">{e.method}</code>
+                        </td>
+                        <td className="whitespace-nowrap px-4 py-3 align-top">
+                          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{e.endpoint}</code>
+                        </td>
+                        <td className="px-4 py-3 text-slate-700">{e.purpose}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">12.3 Request Example</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">A typical chat request looks like:</p>
+              <pre className="mt-4 overflow-x-auto rounded-xl bg-slate-900 p-5 text-xs leading-6 text-slate-100">
 {`POST /chat
 Content-Type: application/json
 
@@ -1139,116 +1136,130 @@ Content-Type: application/json
   "mode": "translate",
   "language_code": "hin"
 }`}
-            </pre>
+              </pre>
 
-            <h3 className="mt-10 text-lg font-bold text-slate-900">12.4 Supported Modes (API)</h3>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200">
-              <table className="min-w-full divide-y divide-slate-200 text-sm">
-                <thead className="bg-brand-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Mode value</th>
-                    <th className="px-4 py-3 text-left font-semibold text-brand-900">Use case</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 bg-white">
-                  {apiModes.map((m) => (
-                    <tr key={m.value}>
-                      <td className="whitespace-nowrap px-4 py-3 align-top">
-                        <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{m.value}</code>
-                      </td>
-                      <td className="px-4 py-3 text-slate-700">{m.use}</td>
+              <h3 className="mt-10 text-lg font-bold text-slate-900">12.4 Supported Modes (API)</h3>
+              <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200 text-sm">
+                  <thead className="bg-brand-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Mode value</th>
+                      <th className="px-4 py-3 text-left font-semibold text-brand-900">Use case</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {apiModes.map((m) => (
+                      <tr key={m.value} className="hover:bg-brand-50/40">
+                        <td className="whitespace-nowrap px-4 py-3 align-top">
+                          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">{m.value}</code>
+                        </td>
+                        <td className="px-4 py-3 text-slate-700">{m.use}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
 
-      {/* Section 13 - Glossary */}
-      <section id="glossary" className="section scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={13} title="Glossary" icon={ListChecks} />
-            <dl className="mt-8 space-y-4">
-              {glossary.map((g) => (
-                <div key={g.term} className="rounded-xl border border-slate-200 bg-white p-5">
-                  <dt className="text-sm font-semibold text-brand-700">{g.term}</dt>
-                  <dd className="mt-1 text-sm leading-6 text-slate-700">{g.meaning}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </section>
+            {/* Section 13 — Glossary */}
+            <section id="glossary" className="scroll-mt-24">
+              <SectionHeading n={13} title="Glossary" icon={ListChecks} />
+              <dl className="mt-6 space-y-3">
+                {glossary.map((g) => (
+                  <div key={g.term} className="rounded-xl border border-slate-200 bg-white p-4">
+                    <dt className="text-sm font-semibold text-brand-700">{g.term}</dt>
+                    <dd className="mt-1 text-sm leading-6 text-slate-700">{g.meaning}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
 
-      {/* Section 14 - Support & Contact */}
-      <section id="support" className="section scroll-mt-24 bg-slate-50">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading n={14} title="Support & Contact" icon={PhoneCall} />
+            {/* Section 14 — Support & Contact */}
+            <section id="support" className="scroll-mt-24">
+              <SectionHeading n={14} title="Support & Contact" icon={PhoneCall} />
 
-            <h3 className="mt-10 text-lg font-bold text-slate-900">14.1 Getting Help</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              If you encounter any issues or have questions about Jantra Web, the following
-              resources are available:
-            </p>
-            <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-700">
-              <li>Visit the developer website at codingryder.com for updates and announcements.</li>
-              <li>Follow @codingryder on Twitter/X for news and feature previews.</li>
-              <li>Review the Terms of Service and Privacy Policy for legal information.</li>
-              <li>Re-read this user guide - most everyday questions are answered in Sections 5 and 9.</li>
-            </ul>
+              <h3 className="mt-8 text-lg font-bold text-slate-900">14.1 Getting Help</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                If you encounter any issues or have questions about Jantra Web, the following
+                resources are available:
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-slate-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                  <span>Visit the developer website at codingryder.com for updates and announcements.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                  <span>Follow @codingryder on Twitter/X for news and feature previews.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                  <span>Review the Terms of Service and Privacy Policy for legal information.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-brand-600" aria-hidden />
+                  <span>Re-read this user guide - most everyday questions are answered in Sections 5 and 9.</span>
+                </li>
+              </ul>
 
-            <h3 className="mt-10 text-lg font-bold text-slate-900">14.2 Reporting Issues</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700">
-              If you experience a bug or unexpected behaviour, please include the following details
-              in your report so we can reproduce and fix the issue quickly:
-            </p>
-            <ol className="mt-4 list-decimal space-y-1 pl-5 text-sm text-slate-700">
-              <li>The mode you were using (Chat, Translate, Dictionary, Play or Accounts).</li>
-              <li>The language selected at the time.</li>
-              <li>The device and browser you were using (e.g. iPhone Safari, Windows Chrome).</li>
-              <li>The message or action that caused the issue.</li>
-              <li>Any error message shown on screen.</li>
-            </ol>
+              <h3 className="mt-10 text-lg font-bold text-slate-900">14.2 Reporting Issues</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                If you experience a bug or unexpected behaviour, please include the following
+                details in your report so we can reproduce and fix the issue quickly:
+              </p>
+              <ol className="mt-4 space-y-2 text-sm text-slate-700">
+                {[
+                  'The mode you were using (Chat, Translate, Dictionary, Play or Accounts).',
+                  'The language selected at the time.',
+                  'The device and browser you were using (e.g. iPhone Safari, Windows Chrome).',
+                  'The message or action that caused the issue.',
+                  'Any error message shown on screen.',
+                ].map((s, idx) => (
+                  <li key={s} className="flex items-start gap-2">
+                    <span className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-brand-100 text-[11px] font-semibold text-brand-700">
+                      {idx + 1}
+                    </span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ol>
 
-            <h3 className="mt-10 text-lg font-bold text-slate-900">14.3 Useful Links</h3>
-            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {supportLinks.map((l) => (
+              <h3 className="mt-10 text-lg font-bold text-slate-900">14.3 Useful Links</h3>
+              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {supportLinks.map((l) => (
+                  <a
+                    key={l.resource}
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-xl border border-slate-200 bg-white p-5 transition hover:border-brand-300 hover:bg-brand-50/50 hover:shadow-sm"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{l.resource}</p>
+                    <p className="mt-2 text-sm font-semibold text-brand-700">{l.url}</p>
+                  </a>
+                ))}
+              </div>
+
+              <div className="mt-8 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 p-8 text-center text-white shadow-md">
+                <p className="text-xl font-bold">Ready to start?</p>
                 <a
-                  key={l.resource}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block rounded-xl border border-slate-200 bg-white p-5 transition hover:border-brand-300 hover:bg-brand-50/50"
+                  href="https://jantraweb.codingryder.com"
+                  className="mt-3 inline-flex items-center gap-2 text-lg font-semibold underline decoration-2 underline-offset-4 hover:text-brand-50"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{l.resource}</p>
-                  <p className="mt-2 text-sm font-semibold text-brand-700">{l.url}</p>
+                  jantraweb.codingryder.com
+                  <ArrowRight className="h-5 w-5" aria-hidden />
                 </a>
-              ))}
-            </div>
+              </div>
 
-            <div className="mt-10 rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 p-8 text-center text-white">
-              <p className="text-xl font-bold">Ready to start?</p>
-              <a
-                href="https://jantraweb.codingryder.com"
-                className="mt-3 inline-flex items-center gap-2 text-lg font-semibold underline decoration-2 underline-offset-4 hover:text-brand-50"
-              >
-                jantraweb.codingryder.com
-                <ArrowRight className="h-5 w-5" aria-hidden />
-              </a>
-            </div>
-
-            <p className="mt-8 text-center text-xs text-slate-500">
-              Jantra Web is a product of Coding Ryder. Free to use. Powered by Google Gemini 2.5 Flash.
-              <br />
-              © 2026 Coding Ryder. All rights reserved.
-            </p>
-          </div>
+              <p className="mt-8 text-center text-xs text-slate-500">
+                Jantra Web is a product of Coding Ryder. Free to use. Powered by Google Gemini 2.5 Flash.
+                <br />
+                © 2026 Coding Ryder. All rights reserved.
+              </p>
+            </section>
+          </article>
         </div>
-      </section>
+      </div>
     </>
   );
 }
@@ -1264,12 +1275,34 @@ function SectionHeading({
 }) {
   return (
     <div className="flex items-center gap-4 border-b border-slate-200 pb-4">
-      <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+      <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-inset ring-brand-100">
         <Icon className="h-5 w-5" aria-hidden />
       </span>
       <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
         <span className="text-brand-600">{n}.</span> {title}
       </h2>
     </div>
+  );
+}
+
+function Callout({
+  kind,
+  title,
+  children,
+}: {
+  kind: 'note' | 'tip';
+  title: string;
+  children: React.ReactNode;
+}) {
+  const styles =
+    kind === 'tip'
+      ? 'border-brand-200 bg-brand-50/60'
+      : 'border-amber-200 bg-amber-50/60';
+  const titleColor = kind === 'tip' ? 'text-brand-800' : 'text-amber-800';
+  return (
+    <aside className={`mt-6 rounded-2xl border ${styles} p-5`}>
+      <p className={`text-xs font-semibold uppercase tracking-wider ${titleColor}`}>{title}</p>
+      <div className="mt-2 text-sm leading-6 text-slate-700">{children}</div>
+    </aside>
   );
 }
