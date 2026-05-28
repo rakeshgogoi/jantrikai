@@ -10,6 +10,7 @@ import {
   Mic,
   Volume2,
   ArrowRight,
+  BookOpenCheck,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -118,8 +119,9 @@ export default function JantraWebPage() {
                 Open Jantra Web
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
-              <Link href="/" className="btn-secondary">
-                Back to Jantrik AI
+              <Link href="/web/guide/" className="btn-secondary">
+                <BookOpenCheck className="h-4 w-4" aria-hidden />
+                Read the user guide
               </Link>
             </div>
           </div>

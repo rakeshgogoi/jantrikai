@@ -9,6 +9,7 @@ import {
   Mic,
   ImageDown,
   ArrowRight,
+  BookOpenCheck,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -103,8 +104,9 @@ export default function JantraBotPage() {
                 Open Jantra Bot
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
-              <Link href="/" className="btn-secondary">
-                Back to Jantrik AI
+              <Link href="/bot/guide/" className="btn-secondary">
+                <BookOpenCheck className="h-4 w-4" aria-hidden />
+                Read the user guide
               </Link>
             </div>
           </div>
@@ -196,6 +198,10 @@ export default function JantraBotPage() {
                 Start a chat
                 <ImageDown className="h-4 w-4 rotate-180" aria-hidden />
               </a>
+              <Link href="/bot/guide/" className="btn-secondary">
+                <BookOpenCheck className="h-4 w-4" aria-hidden />
+                Read the user guide
+              </Link>
             </div>
           </div>
         </div>

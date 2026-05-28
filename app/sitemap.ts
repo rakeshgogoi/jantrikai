@@ -11,8 +11,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }> = [
     { path: '/', changeFrequency: 'weekly', priority: 1.0 },
     { path: '/web/', changeFrequency: 'weekly', priority: 0.9 },
+    { path: '/web/guide/', changeFrequency: 'monthly', priority: 0.7 },
     { path: '/bot/', changeFrequency: 'weekly', priority: 0.9 },
+    { path: '/bot/guide/', changeFrequency: 'monthly', priority: 0.7 },
     { path: '/civic/', changeFrequency: 'weekly', priority: 0.9 },
+    { path: '/civic/guide/', changeFrequency: 'monthly', priority: 0.7 },
     { path: '/about/', changeFrequency: 'monthly', priority: 0.6 },
     { path: '/contact/', changeFrequency: 'monthly', priority: 0.5 },
   ];

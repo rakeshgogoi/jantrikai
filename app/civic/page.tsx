@@ -9,6 +9,7 @@ import {
   Briefcase,
   Newspaper,
   ArrowRight,
+  BookOpenCheck,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -90,8 +91,9 @@ export default function JantraCivicPage() {
                 Try Jantra Civic
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
-              <Link href="/" className="btn-secondary">
-                Back to Jantrik AI
+              <Link href="/civic/guide/" className="btn-secondary">
+                <BookOpenCheck className="h-4 w-4" aria-hidden />
+                Read the user guide
               </Link>
             </div>
           </div>
@@ -185,11 +187,15 @@ export default function JantraCivicPage() {
               right scheme, the right form, or the right office takes seconds, not
               hours.
             </p>
-            <div className="mt-8 flex justify-center">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a href="https://jantracivic.codingryder.com" className="btn-primary">
                 Open Jantra Civic
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
+              <Link href="/civic/guide/" className="btn-secondary">
+                <BookOpenCheck className="h-4 w-4" aria-hidden />
+                Read the user guide
+              </Link>
             </div>
           </div>
         </div>
