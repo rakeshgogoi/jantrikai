@@ -12,6 +12,11 @@ const companyLinks = [
   { href: 'https://codingryder.com', label: 'Coding Ryder', external: true },
 ];
 
+const legalLinks = [
+  { href: '/terms/', label: 'Terms & Conditions' },
+  { href: '/privacy/', label: 'Privacy Policy' },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
@@ -111,7 +116,19 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-slate-200 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} Coding Ryder Enterprises. All rights reserved.</p>
-          <p>Made in India · for India and the world.</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="transition hover:text-brand-700"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <span className="hidden text-slate-300 sm:inline">·</span>
+            <p>Made in India · for India and the world.</p>
+          </div>
         </div>
       </div>
     </footer>

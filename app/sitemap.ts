@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/civic/guide/', changeFrequency: 'monthly', priority: 0.7 },
     { path: '/about/', changeFrequency: 'monthly', priority: 0.6 },
     { path: '/contact/', changeFrequency: 'monthly', priority: 0.5 },
+    { path: '/terms/', changeFrequency: 'yearly', priority: 0.3 },
+    { path: '/privacy/', changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   return routes.map((r) => ({
