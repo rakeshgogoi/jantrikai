@@ -90,7 +90,7 @@ export default function JantraBotPage() {
               On WhatsApp · No app to install
             </span>
             <h1 className="heading-display mt-5">Jantra Bot</h1>
-            <p className="prose-lead mt-5">
+            <p className="prose-lead mt-5 !leading-7 sm:!leading-8">
               An AI assistant that lives inside WhatsApp - fluent in 10 Indian
               languages and Indic-Roman variants. Ask anything, translate, look up
               words, play games, send voice notes. All inside the chat app you

@@ -106,7 +106,7 @@ export default function JantraWebPage() {
               19 languages · 6 modes
             </span>
             <h1 className="heading-display mt-5">Jantra Web</h1>
-            <p className="prose-lead mt-5">
+            <p className="prose-lead mt-5 !leading-7 sm:!leading-8">
               A multilingual AI workspace in your browser. Chat, translate, look up
               words, play language games, scan financial statements, and digitise
               handwritten regional-script pages - all in your own language.

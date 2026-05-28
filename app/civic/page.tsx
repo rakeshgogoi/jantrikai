@@ -77,7 +77,7 @@ export default function JantraCivicPage() {
               On WhatsApp · Personalised to your state
             </span>
             <h1 className="heading-display mt-5">Jantra Civic</h1>
-            <p className="prose-lead mt-5">
+            <p className="prose-lead mt-5 !leading-7 sm:!leading-8">
               Civic information made conversational. Jantra Civic helps Indian
               citizens discover government schemes, find their elected
               representatives, access common forms, and track jobs and tenders -
