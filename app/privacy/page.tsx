@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const sections = [
-  { id: 'summary', title: 'TL;DR' },
+  { id: 'summary', title: 'At a glance' },
   { id: 'who-we-are', title: '1. Who we are' },
   { id: 'scope', title: '2. Scope' },
   { id: 'what-we-collect', title: '3. What we collect' },
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
             </nav>
 
             <div className="mt-10 space-y-12 text-[15px] leading-7 text-slate-700">
-              <Section id="summary" title="TL;DR">
+              <Section id="summary" title="At a glance">
                 <ul className="list-disc space-y-1.5 pl-5">
                   <li>
                     We collect the minimum needed to make each Service work -
