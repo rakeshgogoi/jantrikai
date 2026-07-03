@@ -41,7 +41,7 @@ const capabilities = [
   {
     icon: Languages,
     title: 'International languages',
-    body: 'Reply in the language you write in. English, Spanish, French, German, Portuguese, Arabic, Chinese, Japanese, Korean - with more regional languages on the roadmap.',
+    body: 'Reply in the language you write in. English, Portuguese, Spanish, Thai, Bahasa Indonesia, Korean, French, Vietnamese, Malay, German - with more languages on the roadmap.',
   },
   {
     icon: Mic,

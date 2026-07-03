@@ -60,7 +60,7 @@ const toc: TocItem[] = [
 
 const heroStats = [
   { label: 'Platform', value: 'WhatsApp' },
-  { label: 'Languages', value: '9+' },
+  { label: 'Languages', value: '10+' },
   { label: 'App to install', value: 'None' },
   { label: 'Price', value: 'Free' },
 ];
@@ -166,7 +166,7 @@ const assistantExamples = [
 ];
 
 const translateExamples = [
-  { q: 'Translate "How much does this cost?" to Japanese.', a: 'Returns the phrase plus a short romanised guide.' },
+  { q: 'Translate "How much does this cost?" to Thai.', a: 'Returns the phrase plus a short romanised guide.' },
   { q: 'What does "quiproquo" mean in French?', a: 'Short dictionary-style definition with example use.' },
   { q: 'Convert this Spanish paragraph to English, keep it casual.', a: 'Preserves tone; asks if you want a formal alternative.' },
 ];
@@ -452,14 +452,15 @@ export default function JantraWorldGuidePage() {
               <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {[
                   'English',
-                  'Spanish',
-                  'French',
-                  'German',
-                  'Portuguese',
-                  'Arabic',
-                  'Chinese',
-                  'Japanese',
+                  'Portuguese / Português',
+                  'Spanish / Español',
+                  'Thai',
+                  'Bahasa Indonesia',
                   'Korean',
+                  'French / Français',
+                  'Vietnamese / tiếng Việt',
+                  'Malay / Bahasa Melayu',
+                  'German / Deutsch',
                 ].map((c) => (
                   <div
                     key={c}
@@ -471,7 +472,7 @@ export default function JantraWorldGuidePage() {
                 ))}
               </div>
               <Callout kind="note" title="Roadmap">
-                Regional languages for South-East Asia and other markets are on the roadmap.
+                More languages across Latin America, the Middle East, and East Asia are on the roadmap.
                 Reach out at{' '}
                 <a
                   href="mailto:connect@codingryder.com"
