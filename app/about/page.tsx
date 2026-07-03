@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Jantrik AI - Built by Coding Ryder Enterprises',
     description:
-      'Language-first AI for India and the world. Learn about the team behind Jantra Web, Jantra Bot, and Jantra Civic.',
+      'Language-first AI for India and the world. Learn about the team behind Jantra Web, Jantra Bot, and Jantra World.',
     url: '/about/',
     type: 'website',
   },
@@ -22,7 +22,7 @@ const principles = [
   },
   {
     title: 'Meet people where they are',
-    body: 'On WhatsApp, in a browser, or on a dedicated civic number - the same product family, reachable on whatever surface fits.',
+    body: 'On WhatsApp in India, in a browser, or on a WhatsApp number for international users - the same product family, reachable on whatever surface fits.',
   },
   {
     title: 'Useful before clever',
@@ -70,8 +70,8 @@ export default function AboutPage() {
             </p>
             <p>
               Jantrik AI flips the default. Every product - Jantra Web in the
-              browser, Jantra Bot on WhatsApp, Jantra Civic for government services
-              - starts from the assumption that a user might think, type, or speak
+              browser, Jantra Bot on WhatsApp for India, Jantra World on WhatsApp for
+              the wider world - starts from the assumption that a user might think, type, or speak
               in Assamese, Hindi, Tamil, Bengali, Spanish, French, Arabic, Japanese,
               or any of the 19 languages we support today - 11 Indian, 8
               international. Indic and international scripts, romanised forms,

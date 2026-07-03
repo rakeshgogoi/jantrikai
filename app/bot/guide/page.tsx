@@ -7,7 +7,6 @@ import {
   Languages,
   Receipt,
   Gamepad2,
-  Landmark,
   Mic,
   ImageIcon,
   Terminal,
@@ -48,9 +47,9 @@ export const metadata: Metadata = {
 
 const toc: TocItem[] = [
   { n: 1, id: 'introduction', title: 'Introduction', sub: "What Jantra Bot is and who it's for" },
-  { n: 2, id: 'key-features', title: 'Key Features', sub: 'Eight core capabilities at a glance' },
+  { n: 2, id: 'key-features', title: 'Key Features', sub: 'Seven core capabilities at a glance' },
   { n: 3, id: 'getting-started', title: 'Getting Started', sub: 'Up and running in 30 seconds' },
-  { n: 4, id: 'modes', title: 'User Guide - Modes', sub: 'All six modes explained' },
+  { n: 4, id: 'modes', title: 'User Guide - Modes', sub: 'All five modes explained' },
   { n: 5, id: 'languages', title: 'Supported Languages', sub: '10 languages with scripts & codes' },
   { n: 6, id: 'voice', title: 'Voice Support', sub: 'Using voice notes with Jantra Bot' },
   { n: 7, id: 'images', title: 'Image Understanding', sub: 'Send a photo, get a description' },
@@ -65,7 +64,7 @@ const toc: TocItem[] = [
 
 const heroStats = [
   { label: 'Languages', value: '10' },
-  { label: 'Modes', value: '6' },
+  { label: 'Modes', value: '5' },
   { label: 'Setup', value: 'None' },
   { label: 'Price', value: 'Free' },
 ];
@@ -141,12 +140,6 @@ const features = [
     body:
       'Track income, expenses, and balances by chatting naturally. Export any time as CSV - no spreadsheets, no apps, just messages.',
   },
-  {
-    icon: Landmark,
-    title: 'Jantra Civic Built-in',
-    body:
-      'Civic mode opens a dedicated sub-product: government schemes you qualify for, civic services, your representatives, and local alerts - covered fully in the Jantra Civic Guide.',
-  },
 ];
 
 const gettingStarted = [
@@ -168,7 +161,7 @@ const gettingStarted = [
   {
     step: 'Step 4',
     title: 'Pick a mode (optional)',
-    body: 'Type /mode and pick one of: Assistant, Dictionary, Translator, Accounts, Play, or Civic. Defaults to Assistant if you skip this step.',
+    body: 'Type /mode and pick one of: Assistant, Dictionary, Translator, Accounts, or Play. Defaults to Assistant if you skip this step.',
   },
   {
     step: 'Step 5',
@@ -234,14 +227,6 @@ const modes = [
       'Short, snackable quizzes - play for one minute or fifteen',
     ],
   },
-  {
-    title: '4.6 Civic Mode (Jantra Civic)',
-    body:
-      'Civic mode opens a dedicated government-services sub-product - Jantra Civic. From here you can find schemes you qualify for, look up civic services, know your representatives, get help with forms, and see local alerts. Type /civic from anywhere to enter.',
-    examplesLabel: 'See also',
-    examples: ['For full documentation, read the separate Jantra Civic Guide.'],
-    civicLink: true,
-  },
 ];
 
 const languages = [
@@ -305,12 +290,11 @@ const imageTypes = [
 
 const commands = [
   { cmd: '/menu or *', does: 'Opens the main menu with all available actions.' },
-  { cmd: '/mode', does: 'Change your current mode (Assistant, Dictionary, Translator, Accounts, Play, Civic).' },
+  { cmd: '/mode', does: 'Change your current mode (Assistant, Dictionary, Translator, Accounts, Play).' },
   { cmd: '/lang', does: 'Change your preferred language from the 10 supported options.' },
   { cmd: '/status', does: 'Show your current settings: language, mode, and recent activity.' },
   { cmd: '/help', does: 'Show a quick help summary and the available commands.' },
   { cmd: '/clear', does: 'Clear Assistant-mode conversation history.' },
-  { cmd: '/civic', does: 'Jump directly into Jantra Civic.' },
   { cmd: 'change mode', does: 'Natural-language alternative to /mode.' },
   { cmd: 'change language', does: 'Natural-language alternative to /lang.' },
 ];
@@ -360,7 +344,6 @@ const useCases = [
   { scenario: 'Cooking companion', help: 'Send a photo of ingredients and ask "What can I cook with these?" or request recipes in your regional language.' },
   { scenario: 'Rural & semi-urban users', help: 'Ask farming questions, scheme queries, or health questions in your native language without needing English.' },
   { scenario: 'Personal expense tracker', help: 'Log spends in chat with Accounts mode, see balances, and export CSV when you need to share.' },
-  { scenario: 'Government & civic queries', help: 'Jump to Civic mode for schemes, services, and your representatives - see the Jantra Civic Guide.' },
 ];
 
 const faqs = [
@@ -387,7 +370,7 @@ const specs = [
   { k: 'Language Detection', v: 'langdetect library + Sarvam language-code enforcement' },
   { k: 'Supported Formats', v: 'Text · Voice (OGG / audio) · Images (JPEG, PNG, WEBP)' },
   { k: 'Context Window', v: 'Rolling conversation history per user, Assistant mode' },
-  { k: 'Modes', v: 'Assistant · Dictionary · Translator · Accounts · Play · Civic' },
+  { k: 'Modes', v: 'Assistant · Dictionary · Translator · Accounts · Play' },
   { k: 'Languages Supported', v: '10 (Assamese, Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, English, Kanglish, Hinglish)' },
   { k: 'Current Status', v: 'Beta - actively developed by Coding Ryder' },
 ];
@@ -554,15 +537,6 @@ export default function JantraBotGuidePage() {
                       <p className="mt-4 rounded-lg bg-emerald-50 px-3 py-2 text-xs italic text-emerald-900 ring-1 ring-inset ring-emerald-100">
                         {m.tip}
                       </p>
-                    )}
-                    {m.civicLink && (
-                      <Link
-                        href="/civic/guide/"
-                        className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-emerald-700 hover:text-emerald-800"
-                      >
-                        Read the Jantra Civic Guide
-                        <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-                      </Link>
                     )}
                   </div>
                 ))}

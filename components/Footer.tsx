@@ -4,7 +4,7 @@ import { Mail, Globe, Linkedin } from 'lucide-react';
 const productLinks = [
   { href: '/web/', label: 'Jantra Web' },
   { href: '/bot/', label: 'Jantra Bot' },
-  { href: '/civic/', label: 'Jantra Civic' },
+  { href: '/world/', label: 'Jantra World' },
 ];
 
 const companyLinks = [

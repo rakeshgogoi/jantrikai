@@ -3,7 +3,7 @@ import ProductCard from '@/components/ProductCard';
 import {
   Globe2,
   MessageSquareText,
-  Landmark,
+  Globe,
   Languages,
   Shield,
   Sparkles,
@@ -45,8 +45,8 @@ export default function HomePage() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="heading-section">Three products. One language-first ecosystem.</h2>
             <p className="prose-lead mt-4">
-              Whichever surface you prefer - a browser tab, WhatsApp, or a dedicated
-              civic-services line - Jantrik AI meets you in your language.
+              Whichever surface you prefer - a browser tab, WhatsApp in India, or
+              WhatsApp for the wider world - Jantrik AI meets you in your language.
             </p>
           </div>
 
@@ -68,12 +68,12 @@ export default function HomePage() {
               accent="emerald"
             />
             <ProductCard
-              name="Jantra Civic"
-              tagline="Civic services that speak your language"
-              description="Schemes, government forms, elected representatives, jobs and tenders - surfaced on WhatsApp, personalised to your state and demographics."
-              href="/civic/"
-              icon={Landmark}
-              accent="amber"
+              name="Jantra World"
+              tagline="Jantra Bot, for the world"
+              description="A WhatsApp AI assistant for international users - chat, translate, and get things done in your language, right inside WhatsApp."
+              href="/world/"
+              icon={Globe}
+              accent="sky"
               badge="New"
             />
           </div>

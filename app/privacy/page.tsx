@@ -7,12 +7,12 @@ const EFFECTIVE_DATE = '28 May 2026';
 export const metadata: Metadata = {
   title: 'Privacy Policy - Jantrik AI',
   description:
-    'How Jantrik AI collects, uses, shares, and retains your data across Jantra Web, Jantra Bot, and Jantra Civic.',
+    'How Jantrik AI collects, uses, shares, and retains your data across Jantra Web, Jantra Bot, and Jantra World.',
   alternates: { canonical: '/privacy/' },
   openGraph: {
     title: 'Privacy Policy - Jantrik AI',
     description:
-      'Data practices for Jantra Web, Jantra Bot, and Jantra Civic.',
+      'Data practices for Jantra Web, Jantra Bot, and Jantra World.',
     url: '/privacy/',
     type: 'website',
   },
@@ -27,7 +27,7 @@ const sections = [
   { id: 'no-training', title: '5. We do not train AI models on your data' },
   { id: 'processors', title: '6. Third-party processors' },
   { id: 'product-bot', title: '7. Jantra Bot - specifics' },
-  { id: 'product-civic', title: '8. Jantra Civic - specifics' },
+  { id: 'product-world', title: '8. Jantra World - specifics' },
   { id: 'product-web', title: '9. Jantra Web - specifics' },
   { id: 'retention', title: '10. How long we keep your data' },
   { id: 'sharing', title: '11. When we share your data' },
@@ -51,7 +51,7 @@ export default function PrivacyPage() {
             <h1 className="heading-display mt-5">Privacy Policy</h1>
             <p className="prose-lead mt-5 !leading-7 sm:!leading-8">
               How we handle data across Jantrik AI, Jantra Web, Jantra Bot,
-              and Jantra Civic - written to be readable, not just compliant.
+              and Jantra World - written to be readable, not just compliant.
             </p>
             <p className="mt-4 text-sm text-slate-500">
               Effective {EFFECTIVE_DATE}
@@ -160,9 +160,9 @@ export default function PrivacyPage() {
                     .
                   </li>
                   <li>
-                    <strong>Jantra Civic</strong> - delivered via WhatsApp at{' '}
+                    <strong>Jantra World</strong> - delivered via WhatsApp at{' '}
                     <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">
-                      jantracivic.codingryder.com
+                      world.jantrikai.com
                     </code>
                     .
                   </li>
@@ -174,7 +174,7 @@ export default function PrivacyPage() {
                 <ul className="mt-3 list-disc space-y-1.5 pl-5">
                   <li>
                     <strong>Identifier</strong> - your WhatsApp phone number
-                    (Bot/Civic) or your Jantra Web sign-in identifier (e.g.
+                    (Bot/World) or your Jantra Web sign-in identifier (e.g.
                     email or OAuth ID).
                   </li>
                   <li>
@@ -286,32 +286,32 @@ export default function PrivacyPage() {
                         {
                           p: 'Google Gemini',
                           u: 'AI language model & vision (image understanding)',
-                          s: 'Web, Bot, Civic',
+                          s: 'Web, Bot, World',
                         },
                         {
                           p: 'Sarvam AI',
                           u: 'Voice transcription (Indian languages)',
-                          s: 'Bot, Civic',
+                          s: 'Bot',
                         },
                         {
                           p: 'Meta - WhatsApp Business API',
                           u: 'Message delivery on WhatsApp',
-                          s: 'Bot, Civic',
+                          s: 'Bot, World',
                         },
                         {
                           p: 'Twilio',
                           u: 'WhatsApp Business API routing',
-                          s: 'Bot, Civic',
+                          s: 'Bot',
                         },
                         {
                           p: 'Neon',
                           u: 'PostgreSQL database hosting',
-                          s: 'Web, Bot, Civic',
+                          s: 'Web, Bot, World',
                         },
                         {
                           p: 'Render',
                           u: 'Application hosting',
-                          s: 'Web, Bot, Civic',
+                          s: 'Web, Bot, World',
                         },
                         {
                           p: 'Payment gateway',
@@ -372,29 +372,29 @@ export default function PrivacyPage() {
                 </ul>
               </Section>
 
-              <Section id="product-civic" title="8. Jantra Civic - specifics">
+              <Section id="product-world" title="8. Jantra World - specifics">
                 <ul className="list-disc space-y-1.5 pl-5">
                   <li>
-                    Same data model as Jantra Bot - WhatsApp number as
-                    identifier; text/voice handled identically.
+                    Same data model as Jantra Bot - your WhatsApp number is
+                    your identifier; text and (where supported) voice are
+                    handled the same way.
                   </li>
                   <li>
-                    To personalise scheme suggestions you may share
-                    profile information voluntarily (state, age group,
-                    occupation category). You can update or delete these at
-                    any time.
+                    Jantra World is delivered directly via Meta&rsquo;s
+                    WhatsApp Cloud API - no Twilio in the loop for this
+                    surface.
                   </li>
                   <li>
-                    Government scheme and representative data is aggregated
-                    from public sources and is not personal data. Verify with
-                    the official authority before acting on it (see our{' '}
+                    AI responses are generated by the same language model used
+                    across the product family. General-purpose replies only -
+                    see our{' '}
                     <Link
-                      href="/terms/#civic-disclaimer"
+                      href="/terms/#world-disclaimer"
                       className="font-medium text-brand-700 hover:underline"
                     >
                       Terms
                     </Link>
-                    ).
+                    {' '}for the limits.
                   </li>
                 </ul>
               </Section>
@@ -437,7 +437,7 @@ export default function PrivacyPage() {
                   </li>
                   <li>
                     <strong>Conversation history (text):</strong> retained on
-                    a rolling basis while the account is active. Bot/Civic
+                    a rolling basis while the account is active. Bot/World
                     users can wipe Assistant context with{' '}
                     <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">
                       /clear
@@ -555,7 +555,7 @@ export default function PrivacyPage() {
                     analytics. No third-party advertising cookies.
                   </li>
                   <li>
-                    <strong>Jantra Bot &amp; Jantra Civic:</strong> no
+                    <strong>Jantra Bot &amp; Jantra World:</strong> no
                     cookies; the Services run entirely inside WhatsApp.
                   </li>
                 </ul>

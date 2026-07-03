@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
   { href: '/web/', label: 'Jantra Web' },
   { href: '/bot/', label: 'Jantra Bot' },
-  { href: '/civic/', label: 'Jantra Civic' },
+  { href: '/world/', label: 'Jantra World' },
   { href: '/about/', label: 'About' },
 ];
 

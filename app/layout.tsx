@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: '%s · Jantrik AI',
   },
   description:
-    'Jantrik AI builds multilingual AI products for India and the world in 19 languages (11 Indian + 8 international) - Jantra Web (browser workspace), Jantra Bot (WhatsApp assistant), and Jantra Civic (government schemes & forms).',
+    'Jantrik AI builds multilingual AI products for India and the world in 19 languages (11 Indian + 8 international) - Jantra Web (browser workspace), Jantra Bot (WhatsApp assistant), and Jantra World (WhatsApp AI for international users).',
   applicationName: 'Jantrik AI',
   authors: [{ name: 'Coding Ryder Enterprises', url: 'https://codingryder.com' }],
   creator: 'Coding Ryder Enterprises',
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     'WhatsApp AI bot',
     'Jantra Bot',
     'Jantra Web',
-    'Jantra Civic',
-    'government schemes AI',
+    'Jantra World',
+    'international WhatsApp AI',
     'handwriting OCR Indic',
     'Sarvam AI',
     'Coding Ryder',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: 'Jantrik AI',
     title: 'Jantrik AI - Multilingual AI for the World in 19 languages',
     description:
-      'Jantra Web, Jantra Bot, and Jantra Civic - three multilingual AI products for India and the world, across 19 languages.',
+      'Jantra Web, Jantra Bot, and Jantra World - three multilingual AI products for India and the world, across 19 languages.',
     url: siteUrl,
     locale: 'en_IN',
   },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jantrik AI - Multilingual AI for the World in 19 languages',
     description:
-      'Jantra Web, Jantra Bot, and Jantra Civic - three multilingual AI products for India and the world, across 19 languages.',
+      'Jantra Web, Jantra Bot, and Jantra World - three multilingual AI products for India and the world, across 19 languages.',
   },
   robots: {
     index: true,

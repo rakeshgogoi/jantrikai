@@ -10,7 +10,7 @@ export interface TocItem {
   sub: string;
 }
 
-export type GuideAccent = 'emerald' | 'brand' | 'amber';
+export type GuideAccent = 'emerald' | 'brand' | 'amber' | 'sky';
 
 const accentStyles: Record<
   GuideAccent,
@@ -42,6 +42,13 @@ const accentStyles: Record<
     activeText: 'text-amber-700',
     activeBg: 'bg-amber-50',
     activeBorder: 'border-amber-500',
+  },
+  sky: {
+    badgeIdle: 'bg-sky-50 text-sky-700',
+    badgeActive: 'bg-sky-600 text-white',
+    activeText: 'text-sky-700',
+    activeBg: 'bg-sky-50',
+    activeBorder: 'border-sky-500',
   },
 };
 

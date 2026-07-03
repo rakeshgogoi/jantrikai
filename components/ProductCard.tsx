@@ -9,13 +9,14 @@ interface ProductCardProps {
   href: string;
   icon: LucideIcon;
   badge?: string;
-  accent?: 'indigo' | 'amber' | 'emerald';
+  accent?: 'indigo' | 'amber' | 'emerald' | 'sky';
 }
 
 const accentMap = {
   indigo: 'from-brand-500 to-brand-700',
   amber:  'from-amber-500 to-orange-600',
   emerald: 'from-emerald-500 to-teal-600',
+  sky:    'from-sky-500 to-sky-700',
 } as const;
 
 export default function ProductCard({

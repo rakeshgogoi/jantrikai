@@ -20,6 +20,11 @@ const accentStyles: Record<
     bg: 'bg-amber-50',
     ring: 'group-open:ring-amber-200',
   },
+  sky: {
+    text: 'text-sky-700',
+    bg: 'bg-sky-50',
+    ring: 'group-open:ring-sky-200',
+  },
 };
 
 export default function FAQItem({
