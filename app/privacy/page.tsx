@@ -378,6 +378,13 @@ export default function PrivacyPage() {
                     stored in our database.
                   </li>
                   <li>
+                    <strong>Feedback form</strong> (jantrikai.com/feedback):
+                    your rating and answers are stored in our database to
+                    improve Jantra Bot. Name and WhatsApp number are optional
+                    and only used if you ask us to follow up. Email us to have
+                    a submission deleted.
+                  </li>
+                  <li>
                     <strong>Accounts mode</strong> (expense tracking) has been
                     discontinued. Entries recorded before it was retired are
                     kept until deleted - email us and we will delete them.
