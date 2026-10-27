@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
 
-const EFFECTIVE_DATE = '28 May 2026';
+const EFFECTIVE_DATE = '27 October 2026';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - Jantrik AI',
@@ -290,7 +290,7 @@ export default function PrivacyPage() {
                         },
                         {
                           p: 'Sarvam AI',
-                          u: 'Voice transcription (Indian languages)',
+                          u: 'AI language model (chat replies) & voice transcription (Indian languages)',
                           s: 'Bot',
                         },
                         {
@@ -306,7 +306,12 @@ export default function PrivacyPage() {
                         {
                           p: 'Neon',
                           u: 'PostgreSQL database hosting',
-                          s: 'Web, Bot, World',
+                          s: 'Web',
+                        },
+                        {
+                          p: 'Supabase',
+                          u: 'PostgreSQL database hosting',
+                          s: 'Bot, World',
                         },
                         {
                           p: 'Render',
@@ -343,12 +348,13 @@ export default function PrivacyPage() {
                     identifier. No separate account is created.
                   </li>
                   <li>
-                    <strong>Text messages</strong> are sent to Google Gemini
-                    to generate a reply. Recent Assistant-mode conversation is
-                    stored so follow-up questions stay in context. You can
-                    wipe it any time with{' '}
+                    <strong>Text messages</strong> are sent to Sarvam AI or
+                    Google Gemini (for live information, translations and
+                    games) to generate a reply. Recent Assistant-mode
+                    conversation is stored so follow-up questions stay in
+                    context. You can wipe it any time with{' '}
                     <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">
-                      /clear
+                      /clear_history
                     </code>
                     .
                   </li>
@@ -365,9 +371,16 @@ export default function PrivacyPage() {
                     description is stored.
                   </li>
                   <li>
-                    <strong>Accounts mode</strong> records expense/income
-                    entries you submit. You can export them as CSV any time
-                    or ask us to delete them by emailing us.
+                    <strong>Documents</strong> (PDF, DOCX, TXT, WhatsApp chat
+                    exports) are sent to Google Gemini to summarise them or
+                    answer your questions. The file is held in memory for up
+                    to 10 minutes while you choose an action and is not
+                    stored in our database.
+                  </li>
+                  <li>
+                    <strong>Accounts mode</strong> (expense tracking) has been
+                    discontinued. Entries recorded before it was retired are
+                    kept until deleted - email us and we will delete them.
                   </li>
                 </ul>
               </Section>

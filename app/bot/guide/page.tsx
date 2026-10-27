@@ -107,7 +107,7 @@ const features = [
     icon: Languages,
     title: '10 Languages',
     body:
-      'Supports English, Hindi, Assamese, Kannada, Bengali, Tamil, Odia, Malayalam, Kanglish (romanised Kannada), and Hinglish (romanised Hindi). Switch anytime with a single command.',
+      'Supports Assamese, Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, English, Punjabi and Nepali. Type in the native script or in English letters - replies always come in your chosen language. Switch anytime with /lang.',
   },
   {
     icon: CheckCircle2,
@@ -207,8 +207,8 @@ const languages = [
   { n: 6, name: 'Odia', script: 'ଓଡ଼ିଆ', code: 'odi', voice: true },
   { n: 7, name: 'Malayalam', script: 'മലയാളം', code: 'mal', voice: true },
   { n: 8, name: 'English', script: 'English', code: 'eng', voice: true },
-  { n: 9, name: 'Kanglish', script: 'Romanised Kannada', code: 'kan_roman', voice: false },
-  { n: 10, name: 'Hinglish', script: 'Romanised Hindi', code: 'hin_roman', voice: false },
+  { n: 9, name: 'Punjabi', script: 'ਪੰਜਾਬੀ', code: 'pan', voice: false },
+  { n: 10, name: 'Nepali', script: 'नेपाली', code: 'nep', voice: false },
 ];
 
 const voiceSteps = [
@@ -221,7 +221,7 @@ const voiceSteps = [
   {
     n: 3,
     title: 'Understand',
-    body: 'The transcription is passed to Gemini AI, which generates a response in your set language.',
+    body: 'The transcription is answered by the AI language model, which generates a response in your set language.',
   },
   {
     n: 4,
@@ -295,8 +295,8 @@ const tips = [
     body: 'If something seems off, type /status to see your current language and mode at a glance.',
   },
   {
-    title: 'Kanglish / Hinglish for comfort',
-    body: 'If reading Devanagari or Kannada script is tiring, switch to Hinglish or Kanglish - you get the same language in easy-to-read English letters.',
+    title: 'Type in English letters if it is easier',
+    body: 'You can type your language in English letters - for example "ajir botor kenekua" - and Jantra Bot understands it and replies in your chosen language.',
   },
   {
     title: 'Ask for structured output',
@@ -322,25 +322,25 @@ const faqs = [
   { q: 'Can I use Jantra Bot on WhatsApp Web?', a: 'Yes - Jantra Bot works wherever WhatsApp works: mobile app, WhatsApp Web, and WhatsApp Desktop.' },
   { q: "What if the bot doesn't understand my voice note?", a: 'Try recording in a quieter environment or speak more clearly. If the problem persists, type your question instead.' },
   { q: 'Can I use multiple languages in one session?', a: "You can ask in any language, but the bot's replies will be in your currently set language. Use /lang to change it at any time." },
-  { q: 'What is the difference between Kanglish and Kannada?', a: 'Kannada uses the native Kannada script. Kanglish is the same language written in English/Roman letters - easier to read for those not fluent in the native script. Hinglish is the equivalent for Hindi.' },
+  { q: 'Can I type my language in English letters?', a: 'Yes. You can write in the native script or in English letters (romanised) - for example "ajir botor kenekua". Jantra Bot understands both and always replies in your chosen language.' },
   { q: 'Is there a message limit?', a: 'There is no strict daily limit for regular usage. Extremely high-volume usage may be rate-limited automatically.' },
-  { q: 'What AI powers Jantra Bot?', a: 'Jantra Bot uses Google Gemini for language understanding and image analysis, and Sarvam AI for voice transcription.' },
+  { q: 'What AI powers Jantra Bot?', a: 'Jantra Bot uses Sarvam AI - built for Indian languages - for most chat replies and for voice transcription, and Google Gemini for live information (with web search), translations, image and document understanding, and games.' },
   { q: 'Can businesses use Jantra Bot?', a: 'Jantra Bot is built for individuals. For business or institutional deployments, contact Coding Ryder directly.' },
   { q: 'How do I give feedback?', a: 'Email connect@codingryder.com - Rakesh personally reads every message.' },
 ];
 
 const specs = [
   { k: 'Platform', v: 'WhatsApp Business API (via Twilio & Meta Cloud API)' },
-  { k: 'AI / Language Model', v: 'Google Gemini 2.5 Flash (text + vision)' },
+  { k: 'AI / Language Models', v: 'Sarvam AI sarvam-105b (most chat replies) · Google Gemini 2.5 Flash (live info with web search, translations, images, documents, games)' },
   { k: 'Voice Transcription', v: 'Sarvam AI - saarika:v2.5 + saaras:v3 (Assamese)' },
   { k: 'Backend Framework', v: 'Python · FastAPI · Uvicorn (async)' },
-  { k: 'Database', v: 'PostgreSQL on Neon (serverless, cloud-hosted)' },
+  { k: 'Database', v: 'PostgreSQL on Supabase (cloud-hosted)' },
   { k: 'Hosting', v: 'Render (cloud deployment, always-on)' },
   { k: 'Language Detection', v: 'langdetect library + Sarvam language-code enforcement' },
-  { k: 'Supported Formats', v: 'Text · Voice (OGG / audio) · Images (JPEG, PNG, WEBP)' },
-  { k: 'Context Window', v: 'Rolling conversation history per user, Assistant mode' },
+  { k: 'Supported Formats', v: 'Text · Voice notes · Images (JPEG, PNG, WEBP) · PDF, DOCX, TXT · WhatsApp chat exports' },
+  { k: 'Context Window', v: 'Last 60 minutes of conversation per user (Assistant mode)' },
   { k: 'Modes', v: 'Assistant (incl. translations & word meanings) · Play' },
-  { k: 'Languages Supported', v: '10 (Assamese, Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, English, Kanglish, Hinglish)' },
+  { k: 'Languages Supported', v: '10 (Assamese, Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, English, Punjabi, Nepali)' },
   { k: 'Current Status', v: 'Beta - actively developed by Coding Ryder' },
 ];
 
@@ -401,10 +401,10 @@ export default function JantraBotGuidePage() {
                 supported languages.
               </p>
               <p className="mt-5 text-base leading-7 text-slate-700">
-                Built by Coding Ryder and powered by Google Gemini and Sarvam AI, Jantra Bot
+                Built by Coding Ryder and powered by Sarvam AI and Google Gemini, Jantra Bot
                 combines cutting-edge AI with deep support for Indian languages - including
-                Assamese, Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, and the beloved
-                romanised hybrids Kanglish and Hinglish.
+                Assamese, Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, Punjabi and Nepali,
+                typed in the native script or in English letters.
               </p>
 
               <h3 className="mt-10 text-xl font-bold text-slate-900">Who is it for?</h3>

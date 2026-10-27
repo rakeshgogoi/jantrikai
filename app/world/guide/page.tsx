@@ -49,7 +49,7 @@ const toc: TocItem[] = [
   { n: 3, id: 'getting-started', title: 'Getting Started', sub: 'From save-the-number to first reply' },
   { n: 4, id: 'assistant', title: 'Assistant', sub: 'Chat, brainstorm, draft, summarise' },
   { n: 5, id: 'translate', title: 'Translate & Explain', sub: 'Cross-language help mid-thread' },
-  { n: 6, id: 'voice', title: 'Voice Notes', sub: 'Speak, listen, keep moving' },
+  { n: 6, id: 'voice', title: 'Voice Notes', sub: 'Coming soon - text only today' },
   { n: 7, id: 'languages', title: 'Languages', sub: 'Supported today and on the roadmap' },
   { n: 8, id: 'commands', title: 'Commands Reference', sub: 'Shortcut commands explained' },
   { n: 9, id: 'tips', title: 'Tips & Tricks', sub: 'Power-user advice' },
@@ -74,11 +74,11 @@ const audiences = [
   {
     label: 'Multilingual chatters',
     body:
-      'People who write in more than one language a day. Reply in whichever language fits and Jantra World follows along without settings.',
+      'People who write in more than one language a day. Ask in whatever language comes naturally and get replies in the language you picked.',
   },
   {
-    label: 'Voice-first users',
-    body: 'Send a voice note in your language and get a text or spoken reply. Convenient while cooking, walking, or driving.',
+    label: 'Travellers & quick lookups',
+    body: 'Short questions, translations and word meanings on the go - all in a normal WhatsApp chat.',
   },
   {
     label: 'Travellers & expats',
@@ -106,9 +106,9 @@ const features = [
   },
   {
     icon: Mic,
-    title: 'Voice Notes',
+    title: 'Voice Notes (coming soon)',
     body:
-      'Send a WhatsApp voice note in your language. Jantra World transcribes, replies, and can send audio back where supported.',
+      'Jantra World is text-only today. Voice notes and images are on the roadmap - for now, please type your message.',
   },
   {
     icon: Globe,
@@ -144,17 +144,17 @@ const gettingStarted = [
   {
     step: 'Step 3',
     title: 'Say hi',
-    body: 'Send any message in the language you naturally write in. Jantra World replies in that language.',
+    body: 'Send any message. Jantra World replies in the language you picked.',
   },
   {
     step: 'Step 4',
-    title: 'Try a voice note',
-    body: 'Long-press the WhatsApp mic to send a voice note. Jantra World transcribes and replies.',
+    title: 'Pick a mode (optional)',
+    body: 'Type /mode to switch between Assistant, Dictionary, Translator and Play.',
   },
   {
     step: 'Step 5',
     title: 'Change language anytime',
-    body: 'Just start writing in a different language. Or use /lang to change the reply language explicitly.',
+    body: 'Use /lang to change the reply language at any time.',
   },
 ];
 
@@ -173,17 +173,16 @@ const translateExamples = [
 
 const commands = [
   { cmd: '/lang', does: 'Change the reply language explicitly.' },
-  { cmd: '/reset', does: 'Clear the current conversation context.' },
+  { cmd: '/clear', does: 'Clear the current conversation context.' },
   { cmd: '/help', does: 'Show the in-app help cheatsheet.' },
   { cmd: '/menu', does: 'Show the main menu (where enabled).' },
 ];
 
 const tips = [
   { title: 'Write like you would to a friend', body: 'Jantra World is tuned for casual conversation - short questions, follow-ups, and code-mixed replies all work.' },
-  { title: 'Use voice notes for long inputs', body: 'When you have a lot to say, a voice note is faster than typing on a phone keyboard.' },
-  { title: 'Switch languages naturally', body: 'You do not need to announce a language change. Just reply in the language you want and Jantra World will match.' },
+  { title: 'Change language with /lang', body: 'You can ask in any language, but replies follow the language you picked. Send /lang to change it.' },
   { title: 'Ask for the format you want', body: 'Say "in three bullets" or "as a short paragraph" - Jantra World will follow the instruction.' },
-  { title: 'Reset when the thread drifts', body: 'If a long conversation wanders off-topic, send /reset to start fresh.' },
+  { title: 'Reset when the thread drifts', body: 'If a long conversation wanders off-topic, send /clear to start fresh.' },
   { title: 'Save the contact', body: 'Once the number is in your contacts, WhatsApp will show it in search - much faster than reopening a link.' },
 ];
 
@@ -191,19 +190,19 @@ const faqs = [
   { q: 'Is Jantra World free?', a: 'Yes. Jantra World is currently free while in beta. Standard WhatsApp data charges may apply.' },
   { q: 'Do I need to install an app?', a: 'No. If you already use WhatsApp, you already have everything you need.' },
   { q: 'Which languages are supported?', a: 'English and a growing set of international languages - see the Languages section for the current list. More languages are on the roadmap.' },
-  { q: 'How is Jantra World different from Jantra Bot?', a: 'Same product family, different centre of gravity. Jantra Bot is India-first with 11 Indian languages. Jantra World is a dedicated WhatsApp number for international users, tuned for the regions we ship in.' },
+  { q: 'How is Jantra World different from Jantra Bot?', a: 'Same product family, different centre of gravity. Jantra Bot is India-first with 10 languages (9 Indian languages plus English). Jantra World is a dedicated WhatsApp number for international users, tuned for the regions we ship in.' },
   { q: 'Do you use my messages to train AI?', a: 'No. We do not use your content to train AI models. See the Privacy Policy for full details.' },
-  { q: 'Can I send images or documents?', a: 'Feature availability evolves quickly - try it and Jantra World will tell you what it can do today.' },
-  { q: 'What happens if I stop replying?', a: 'Nothing. Jantra World waits. Come back anytime and pick up where you left off, or send /reset to start fresh.' },
+  { q: 'Can I send images, documents or voice notes?', a: 'Not yet - Jantra World is text-only today. Images, documents and voice notes are on the roadmap.' },
+  { q: 'What happens if I stop replying?', a: 'Nothing. Jantra World waits. Come back anytime and pick up where you left off, or send /clear to start fresh.' },
 ];
 
 const specs = [
   { k: 'Platform', v: 'WhatsApp Cloud API (Meta)' },
   { k: 'AI / Language Model', v: 'A large language model, provider abstracted' },
   { k: 'Backend Framework', v: 'Python · FastAPI · async dispatcher' },
-  { k: 'Database', v: 'PostgreSQL on Neon (serverless)' },
+  { k: 'Database', v: 'PostgreSQL on Supabase (cloud-hosted)' },
   { k: 'Hosting', v: 'Render (cloud deployment, always-on)' },
-  { k: 'Voice', v: 'STT + TTS via managed providers' },
+  { k: 'Voice', v: 'Not yet supported - text only (voice notes coming soon)' },
   { k: 'Identity', v: 'WhatsApp phone number - no separate account' },
   { k: 'Data retention', v: 'Recent conversation context for continuity; details in the Privacy Policy' },
   { k: 'Current Status', v: 'Beta - actively developed by Coding Ryder' },
@@ -222,7 +221,7 @@ export default function JantraWorldGuidePage() {
             </span>
             <h1 className="heading-display mt-5">Jantra World - User Guide</h1>
             <p className="prose-lead mt-5">
-              WhatsApp AI for international users. Assistant · Translate · Voice · Languages.
+              WhatsApp AI for international users. Assistant · Translate · Dictionary · Play.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a href="https://world.jantrikai.com" className="btn-primary">
@@ -261,7 +260,7 @@ export default function JantraWorldGuidePage() {
               <p className="prose-lead mt-6">
                 Jantra World is a WhatsApp AI assistant for users beyond India - the international
                 sibling of Jantra Bot. It lives inside a WhatsApp thread and answers in the
-                language you write in. No app to install, no login, no new account.
+                language you pick. No app to install, no login, no new account.
               </p>
               <p className="mt-5 text-base leading-7 text-slate-700">
                 Save the number at{' '}
@@ -410,30 +409,25 @@ export default function JantraWorldGuidePage() {
             <section id="voice" className="scroll-mt-24">
               <SectionHeading n={6} title="Voice Notes" icon={Mic} />
               <p className="mt-6 text-base text-slate-700">
-                Send a WhatsApp voice note in the language you speak. Jantra World transcribes,
-                answers, and where supported can send an audio reply back - useful when your hands
-                are busy or a keyboard is slow.
+                Jantra World is text-only today. If you send a voice note, image or document, it
+                will ask you to type your message instead. Voice notes and media support are on the
+                roadmap - this section will be updated when they launch.
               </p>
-              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-slate-200 bg-white p-5">
-                  <Mic className="h-5 w-5 text-sky-600" aria-hidden />
-                  <h3 className="mt-3 text-base font-bold text-slate-900">Speak your language</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-700">
-                    Voice input is treated as first-class. No need to type on a small keyboard.
-                  </p>
-                </div>
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-slate-200 bg-white p-5">
                   <MessageSquareText className="h-5 w-5 text-sky-600" aria-hidden />
-                  <h3 className="mt-3 text-base font-bold text-slate-900">Text or audio back</h3>
+                  <h3 className="mt-3 text-base font-bold text-slate-900">Type for now</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-700">
-                    Replies default to text - ask for a voice reply where available.
+                    Every feature - questions, translations, word meanings and games - works with
+                    typed messages.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-white p-5">
-                  <Languages className="h-5 w-5 text-sky-600" aria-hidden />
-                  <h3 className="mt-3 text-base font-bold text-slate-900">Cross-language</h3>
+                  <Mic className="h-5 w-5 text-sky-600" aria-hidden />
+                  <h3 className="mt-3 text-base font-bold text-slate-900">Voice is coming</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-700">
-                    Speak in one language, ask for a reply in another - handy for translation.
+                    Voice notes are planned. Until then, your phone keyboard&rsquo;s voice
+                    typing is a quick way to dictate a message.
                   </p>
                 </div>
               </div>

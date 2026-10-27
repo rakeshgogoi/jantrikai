@@ -41,12 +41,12 @@ const capabilities = [
   {
     icon: Languages,
     title: 'International languages',
-    body: 'Reply in the language you write in. English, Portuguese, Spanish, Thai, Bahasa Indonesia, Korean, French, Vietnamese, Malay, German - with more languages on the roadmap.',
+    body: 'Pick your language once and every reply comes back in it. English, Portuguese, Spanish, Thai, Bahasa Indonesia, Korean, French, Vietnamese, Malay, German - with more languages on the roadmap.',
   },
   {
     icon: Mic,
-    title: 'Voice notes welcome',
-    body: 'Send a voice note in your language and get a written or spoken reply back - convenient on the go.',
+    title: 'Voice notes - coming soon',
+    body: 'Jantra World is text chat today. Voice notes and images are on the way.',
   },
   {
     icon: Sparkles,
@@ -56,7 +56,7 @@ const capabilities = [
   {
     icon: Bell,
     title: 'One number, always on',
-    body: 'A single WhatsApp number handles chat, voice, and quick lookups. Saved contacts see it as an ordinary chat.',
+    body: 'A single WhatsApp number handles chat, translations, and quick lookups. Saved contacts see it as an ordinary chat.',
   },
   {
     icon: Shield,
@@ -134,8 +134,8 @@ export default function JantraWorldPage() {
               <h2 className="heading-section">Made for how the world actually chats.</h2>
               <p className="prose-lead mt-4">
                 Jantra World keeps the friction low. Save the number, send a
-                message, get an answer. Reply in whichever language you write
-                in - even mid-conversation - and Jantra World follows along.
+                message, get an answer in the language you picked - and change
+                it any time with /lang.
               </p>
               <ul className="mt-6 space-y-3 text-sm text-slate-700">
                 <li className="flex items-start gap-3">
@@ -144,11 +144,11 @@ export default function JantraWorldPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-none rounded-full bg-sky-600" />
-                  Switch languages mid-thread without settings menus.
+                  Change your reply language any time with /lang.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-none rounded-full bg-sky-600" />
-                  Voice notes and text are treated as equals.
+                  Text chat today - voice notes coming soon.
                 </li>
               </ul>
             </div>
@@ -179,7 +179,7 @@ export default function JantraWorldPage() {
             <p className="prose-lead mt-4">
               Jantra Bot is India-first. Jantra World is the same product family,
               expanded outward - a dedicated WhatsApp number for international
-              users, with a language and voice mix tuned for the regions we ship
+              users, with a language mix tuned for the regions we ship
               in. Same simple product, different centre of gravity.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

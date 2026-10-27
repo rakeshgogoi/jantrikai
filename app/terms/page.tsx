@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
 
-const EFFECTIVE_DATE = '28 May 2026';
+const EFFECTIVE_DATE = '27 October 2026';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions - Jantrik AI',
@@ -344,7 +344,8 @@ export default function TermsPage() {
                 <p>
                   The Services depend on third-party providers including (but
                   not limited to) Google Gemini, Sarvam AI, Meta WhatsApp
-                  Business API, Twilio, Neon (PostgreSQL hosting), and Render
+                  Business API, Twilio, Neon and Supabase (PostgreSQL
+                  hosting), and Render
                   (application hosting). Your use of the Services is also
                   subject to those providers&rsquo; own terms. We are not
                   responsible for outages or actions of third-party providers
