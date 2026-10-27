@@ -5,7 +5,6 @@ import {
   MessageSquareText,
   BookOpen,
   Languages,
-  Receipt,
   Gamepad2,
   Mic,
   ImageIcon,
@@ -28,7 +27,7 @@ const ACCENT = 'emerald' as const;
 export const metadata: Metadata = {
   title: 'Jantra Bot User Guide - Complete product documentation',
   description:
-    'The complete Jantra Bot user guide: all six modes, 10 languages, voice and image support, commands, tips, use cases, FAQs, and technical specifications.',
+    'The complete Jantra Bot user guide: Assistant and Play modes, 10 languages, voice and image support, commands, tips, use cases, FAQs, and technical specifications.',
   alternates: { canonical: '/bot/guide/' },
   openGraph: {
     title: 'Jantra Bot User Guide - Complete product documentation',
@@ -49,7 +48,7 @@ const toc: TocItem[] = [
   { n: 1, id: 'introduction', title: 'Introduction', sub: "What Jantra Bot is and who it's for" },
   { n: 2, id: 'key-features', title: 'Key Features', sub: 'Seven core capabilities at a glance' },
   { n: 3, id: 'getting-started', title: 'Getting Started', sub: 'Up and running in 30 seconds' },
-  { n: 4, id: 'modes', title: 'User Guide - Modes', sub: 'All five modes explained' },
+  { n: 4, id: 'modes', title: 'User Guide - Modes', sub: 'Assistant and Play explained' },
   { n: 5, id: 'languages', title: 'Supported Languages', sub: '10 languages with scripts & codes' },
   { n: 6, id: 'voice', title: 'Voice Support', sub: 'Using voice notes with Jantra Bot' },
   { n: 7, id: 'images', title: 'Image Understanding', sub: 'Send a photo, get a description' },
@@ -64,7 +63,7 @@ const toc: TocItem[] = [
 
 const heroStats = [
   { label: 'Languages', value: '10' },
-  { label: 'Modes', value: '5' },
+  { label: 'Modes', value: '2' },
   { label: 'Setup', value: 'None' },
   { label: 'Price', value: 'Free' },
 ];
@@ -120,7 +119,7 @@ const features = [
     icon: Layers,
     title: 'Context-Aware Memory',
     body:
-      'Jantra Bot remembers your recent conversation in Assistant mode so follow-up questions always make sense, just like talking to a person. Clear it any time with /clear.',
+      'Jantra Bot remembers your recent conversation in Assistant mode so follow-up questions always make sense, just like talking to a person. Clear it any time with /clear_history.',
   },
   {
     icon: Mic,
@@ -135,10 +134,10 @@ const features = [
       "Send any photo - food, documents, street signs, plants, artwork - and Jantra Bot describes what it sees, in your language, powered by Google Gemini's vision AI.",
   },
   {
-    icon: Receipt,
-    title: 'Personal Accounts Mode',
+    icon: BookOpen,
+    title: 'Translations & Word Meanings',
     body:
-      'Track income, expenses, and balances by chatting naturally. Export any time as CSV - no spreadsheets, no apps, just messages.',
+      'Just ask in the chat - "translate this to English", "what does resilience mean?" - and get the answer in your language. No mode switching needed.',
   },
 ];
 
@@ -160,8 +159,8 @@ const gettingStarted = [
   },
   {
     step: 'Step 4',
-    title: 'Pick a mode (optional)',
-    body: 'Type /mode and pick one of: Assistant, Dictionary, Translator, Accounts, or Play. Defaults to Assistant if you skip this step.',
+    title: 'Want a game? (optional)',
+    body: 'Type /play for quizzes, riddles and word games. Everything else - questions, translations and word meanings - works straight away in the default Assistant mode.',
   },
   {
     step: 'Step 5',
@@ -174,50 +173,20 @@ const modes = [
   {
     title: '4.1 Assistant Mode (Default)',
     body:
-      'The default mode - a general-purpose AI for open-ended questions, explanations, creative writing, advice, and anything else you can think of. Responses are conversational, context-aware, and delivered in your chosen language.',
+      'The default mode - a general-purpose AI for open-ended questions, explanations, creative writing, advice, translations and word meanings. Just type what you want in plain words; no mode switching needed. Replies are conversational, context-aware, and always in your chosen language - whatever language you type in.',
     examplesLabel: 'Example questions',
     examples: [
       '"What are the health benefits of turmeric?"',
       '"Explain machine learning in simple terms"',
       '"Write a birthday message for my friend in Assamese"',
-      '"What is the capital of Manipur?"',
-      '"Give me a recipe for sambar"',
+      '"Translate to English: মই কালি স্কুললৈ নাযাওঁ"',
+      '"What does serendipity mean?"',
+      '"thank you k Hindi t ki koi?"',
     ],
+    tip: 'Tip: Name the language you want a translation in ("to Tamil", "in Hindi"). If you don\'t, Jantra Bot translates into your chosen language.',
   },
   {
-    title: '4.2 Dictionary Mode',
-    body:
-      'Send a single word and receive its meaning, origin, and an example sentence - all in your chosen language. Perfect for vocabulary building and language learning. Note: only single words are accepted in this mode.',
-    examplesLabel: 'Example inputs',
-    examples: ['"Ephemeral"', '"ಸಮುದ್ರ (Kannada)"', '"Serendipity"', '"নদী (Assamese)"'],
-  },
-  {
-    title: '4.3 Translator Mode',
-    body:
-      'Send any text and it will be translated into your currently set language. Useful for translating English articles, messages, or documents into your mother tongue, or vice versa.',
-    examplesLabel: 'Example inputs',
-    examples: [
-      '"The quick brown fox jumps over the lazy dog"',
-      '"Please translate this: Congratulations on your new job!"',
-      '"আজি বতৰটো কেনেকুৱা?" (translate to English)',
-    ],
-    tip: 'Tip: Combine with the /lang command to translate into any of the 10 supported languages.',
-  },
-  {
-    title: '4.4 Accounts Mode',
-    body:
-      'A natural-language expense tracker. Add transactions by typing what you spent, view recent activity, see your running balance, and export your records as CSV - all by chatting in any supported language.',
-    examplesLabel: 'Example inputs',
-    examples: [
-      '"Spent 250 on groceries today"',
-      '"Received salary 35000"',
-      '"Show last 10 transactions"',
-      '"Show balance"',
-      '"Export CSV"',
-    ],
-  },
-  {
-    title: '4.5 Play Mode',
+    title: '4.2 Play Mode',
     body:
       'A relaxing, multilingual word-game mode. Riddles, vocabulary puzzles, and quick quizzes - perfect for unwinding or for parents to share with children. Games run in your chosen language.',
     examplesLabel: "What's inside",
@@ -290,19 +259,20 @@ const imageTypes = [
 
 const commands = [
   { cmd: '/menu or *', does: 'Opens the main menu with all available actions.' },
-  { cmd: '/mode', does: 'Change your current mode (Assistant, Dictionary, Translator, Accounts, Play).' },
+  { cmd: '/mode', does: 'Switch between Assistant and Play mode.' },
+  { cmd: '/play', does: 'Start Play mode - quizzes, riddles and word games.' },
   { cmd: '/lang', does: 'Change your preferred language from the 10 supported options.' },
   { cmd: '/status', does: 'Show your current settings: language, mode, and recent activity.' },
   { cmd: '/help', does: 'Show a quick help summary and the available commands.' },
-  { cmd: '/clear', does: 'Clear Assistant-mode conversation history.' },
+  { cmd: '/clear_history', does: 'Clear your Assistant-mode conversation history (asks you to confirm first).' },
   { cmd: 'change mode', does: 'Natural-language alternative to /mode.' },
   { cmd: 'change language', does: 'Natural-language alternative to /lang.' },
 ];
 
 const tips = [
   {
-    title: 'Switch modes mid-conversation',
-    body: 'You can change mode at any point without losing context. Ask your last question in Assistant mode, then switch to Dictionary to look up a word from that answer.',
+    title: 'Translate and look up words in the same chat',
+    body: 'No need to switch anything. Ask a question, then ask "what does that word mean?" or "translate this to English" right after - Jantra Bot keeps the context.',
   },
   {
     title: 'Use voice for long queries',
@@ -335,7 +305,7 @@ const tips = [
 ];
 
 const useCases = [
-  { scenario: 'Student studying for exams', help: 'Switch to Dictionary mode for tough English words with Assamese meanings, then back to Assistant for chemistry explanations in your language.' },
+  { scenario: 'Student studying for exams', help: 'Ask the meaning of tough English words in Assamese, then ask for chemistry explanations in your language - all in the same chat.' },
   { scenario: 'Understanding a medical report', help: 'Photograph the report and ask "What does this mean?" - get a plain-language explanation, no medical jargon.' },
   { scenario: 'Shopping at a new market', help: 'Photograph an unfamiliar label and instantly know what it says, in your language.' },
   { scenario: 'Travel assistant', help: 'Ask for local food recommendations, cultural tips, or translate phrases you need at a local shop.' },
@@ -343,13 +313,12 @@ const useCases = [
   { scenario: 'Helping kids learn', help: "Parents can ask for children's stories, rhymes, or simple explanations in the languages kids are comfortable with." },
   { scenario: 'Cooking companion', help: 'Send a photo of ingredients and ask "What can I cook with these?" or request recipes in your regional language.' },
   { scenario: 'Rural & semi-urban users', help: 'Ask farming questions, scheme queries, or health questions in your native language without needing English.' },
-  { scenario: 'Personal expense tracker', help: 'Log spends in chat with Accounts mode, see balances, and export CSV when you need to share.' },
 ];
 
 const faqs = [
   { q: 'Is Jantra Bot free to use?', a: 'Yes, Jantra Bot is currently free during the beta period. Standard WhatsApp data charges from your network provider may apply.' },
   { q: 'Do I need to create an account?', a: 'No. There are no accounts, logins, or passwords. Your WhatsApp number is your identity.' },
-  { q: 'Does the bot store my conversations?', a: 'Jantra Bot stores recent conversation in Assistant mode so follow-up questions work. You can clear it any time with /clear. Images and voice recordings are not stored after processing.' },
+  { q: 'Does the bot store my conversations?', a: 'Jantra Bot stores recent conversation in Assistant mode so follow-up questions work. You can clear it any time with /clear_history. Images and voice recordings are not stored after processing.' },
   { q: 'Can I use Jantra Bot on WhatsApp Web?', a: 'Yes - Jantra Bot works wherever WhatsApp works: mobile app, WhatsApp Web, and WhatsApp Desktop.' },
   { q: "What if the bot doesn't understand my voice note?", a: 'Try recording in a quieter environment or speak more clearly. If the problem persists, type your question instead.' },
   { q: 'Can I use multiple languages in one session?', a: "You can ask in any language, but the bot's replies will be in your currently set language. Use /lang to change it at any time." },
@@ -370,7 +339,7 @@ const specs = [
   { k: 'Language Detection', v: 'langdetect library + Sarvam language-code enforcement' },
   { k: 'Supported Formats', v: 'Text · Voice (OGG / audio) · Images (JPEG, PNG, WEBP)' },
   { k: 'Context Window', v: 'Rolling conversation history per user, Assistant mode' },
-  { k: 'Modes', v: 'Assistant · Dictionary · Translator · Accounts · Play' },
+  { k: 'Modes', v: 'Assistant (incl. translations & word meanings) · Play' },
   { k: 'Languages Supported', v: '10 (Assamese, Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, English, Kanglish, Hinglish)' },
   { k: 'Current Status', v: 'Beta - actively developed by Coding Ryder' },
 ];
@@ -512,8 +481,8 @@ export default function JantraBotGuidePage() {
             <section id="modes" className="scroll-mt-24">
               <SectionHeading n={4} title="User Guide - Modes" icon={Terminal} />
               <p className="mt-6 text-base text-slate-700">
-                Jantra Bot operates in six distinct modes. Your active mode determines how the bot
-                interprets and responds to your messages. You can switch at any time by typing{' '}
+                Jantra Bot has two modes. Assistant handles everything you type - questions,
+                translations and word meanings - and Play is for games. Switch any time by typing{' '}
                 <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm">/mode</code>.
               </p>
 

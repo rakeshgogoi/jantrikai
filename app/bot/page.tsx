@@ -5,7 +5,7 @@ import {
   Languages,
   BookOpen,
   Gamepad2,
-  Receipt,
+  FileText,
   Mic,
   ImageDown,
   ArrowRight,
@@ -39,19 +39,14 @@ const features = [
     body: 'Ask anything - facts, advice, summaries, drafts. Replies in your chosen language; pulls live information from the web when needed.',
   },
   {
-    icon: BookOpen,
-    title: 'Dictionary',
-    body: 'Send a word, get its meaning, pronunciation, and an example sentence - explained in your language.',
-  },
-  {
     icon: Languages,
-    title: 'Translator',
-    body: 'Send any text; receive it translated into the language you picked. Works across Indic scripts and Roman forms.',
+    title: 'Translate',
+    body: 'Just ask - "translate this to English" or "thank you k Hindi t ki koi?". Works across Indic scripts and Roman forms.',
   },
   {
-    icon: Receipt,
-    title: 'Accounts',
-    body: 'Track your everyday spending and payments by chatting with Jantra in your language.',
+    icon: BookOpen,
+    title: 'Word meanings',
+    body: 'Ask what any word means and get its meaning and an example sentence, explained in your language.',
   },
   {
     icon: Gamepad2,
@@ -62,6 +57,11 @@ const features = [
     icon: Mic,
     title: 'Voice notes',
     body: 'Send a voice note in your language; Jantra transcribes and replies. No typing required.',
+  },
+  {
+    icon: FileText,
+    title: 'Photos & files',
+    body: 'Send a photo, PDF, document or chat export - Jantra can read the text, summarise it or answer questions about it.',
   },
 ];
 
@@ -117,11 +117,12 @@ export default function JantraBotPage() {
       <section className="section">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="heading-section">Five modes inside one number.</h2>
+            <h2 className="heading-section">Everything in one chat.</h2>
             <p className="prose-lead mt-4">
-              Switch any time with{' '}
-              <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm">/mode</code>{' '}
-              or the in-chat menu.
+              No modes to switch - just ask. Questions, translations and word
+              meanings all work in the same chat. Type{' '}
+              <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm">/play</code>{' '}
+              when you want a game.
             </p>
           </div>
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -176,7 +177,7 @@ export default function JantraBotPage() {
               {[
                 { n: 1, t: 'Save the number', d: 'Add Jantra Bot to your contacts and open WhatsApp.' },
                 { n: 2, t: 'Send "Hi"', d: 'You\'ll be shown a language picker - choose your preferred language.' },
-                { n: 3, t: 'Ask anything', d: 'Type, speak a voice note, or pick a mode like Translator or Dictionary.' },
+                { n: 3, t: 'Ask anything', d: 'Type or send a voice note - questions, translations, word meanings, all in the same chat.' },
               ].map((s) => (
                 <li key={s.n} className="flex items-start gap-5">
                   <span className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-emerald-600 text-base font-semibold text-white">
