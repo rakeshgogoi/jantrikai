@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
 
-const EFFECTIVE_DATE = '27 October 2026';
+const EFFECTIVE_DATE = '30 October 2026';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - Jantrik AI',
   description:
-    'How Jantrik AI collects, uses, shares, and retains your data across Jantra Web, Jantra Bot, and Jantra World.',
+    'How Jantrik AI collects, uses, shares, and retains your data across Jantra Web, Jantra Bot, the Jantra Bot app, and Jantra World.',
   alternates: { canonical: '/privacy/' },
   openGraph: {
     title: 'Privacy Policy - Jantrik AI',
@@ -27,17 +27,18 @@ const sections = [
   { id: 'no-training', title: '5. We do not train AI models on your data' },
   { id: 'processors', title: '6. Third-party processors' },
   { id: 'product-bot', title: '7. Jantra Bot - specifics' },
-  { id: 'product-world', title: '8. Jantra World - specifics' },
-  { id: 'product-web', title: '9. Jantra Web - specifics' },
-  { id: 'retention', title: '10. How long we keep your data' },
-  { id: 'sharing', title: '11. When we share your data' },
-  { id: 'transfers', title: '12. International transfers' },
-  { id: 'security', title: '13. Security' },
-  { id: 'your-rights', title: '14. Your rights' },
-  { id: 'children', title: '15. Children' },
-  { id: 'cookies', title: '16. Cookies & similar technologies' },
-  { id: 'changes', title: '17. Changes to this policy' },
-  { id: 'contact', title: '18. Contact' },
+  { id: 'product-app', title: '8. Jantra Bot App - specifics' },
+  { id: 'product-world', title: '9. Jantra World - specifics' },
+  { id: 'product-web', title: '10. Jantra Web - specifics' },
+  { id: 'retention', title: '11. How long we keep your data' },
+  { id: 'sharing', title: '12. When we share your data' },
+  { id: 'transfers', title: '13. International transfers' },
+  { id: 'security', title: '14. Security' },
+  { id: 'your-rights', title: '15. Your rights' },
+  { id: 'children', title: '16. Children' },
+  { id: 'cookies', title: '17. Cookies & similar technologies' },
+  { id: 'changes', title: '18. Changes to this policy' },
+  { id: 'contact', title: '19. Contact' },
 ];
 
 export default function PrivacyPage() {
@@ -51,7 +52,8 @@ export default function PrivacyPage() {
             <h1 className="heading-display mt-5">Privacy Policy</h1>
             <p className="prose-lead mt-5 !leading-7 sm:!leading-8">
               How we handle data across Jantrik AI, Jantra Web, Jantra Bot,
-              and Jantra World - written to be readable, not just compliant.
+              the Jantra Bot app, and Jantra World - written to be readable,
+              not just compliant.
             </p>
             <p className="mt-4 text-sm text-slate-500">
               Effective {EFFECTIVE_DATE}
@@ -158,6 +160,14 @@ export default function PrivacyPage() {
                       jantrabot.codingryder.com
                     </code>
                     .
+                  </li>
+                  <li>
+                    <strong>Jantra Bot App</strong> - the Jantra Bot mobile
+                    app for Android (package{' '}
+                    <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">
+                      com.codingryder.jantrabot
+                    </code>
+                    ).
                   </li>
                   <li>
                     <strong>Jantra World</strong> - delivered via WhatsApp at{' '}
@@ -286,12 +296,12 @@ export default function PrivacyPage() {
                         {
                           p: 'Google Gemini',
                           u: 'AI language model & vision (image understanding)',
-                          s: 'Web, Bot, World',
+                          s: 'Web, Bot, App, World',
                         },
                         {
                           p: 'Sarvam AI',
                           u: 'AI language model (chat replies) & voice transcription (Indian languages)',
-                          s: 'Bot',
+                          s: 'Bot, App',
                         },
                         {
                           p: 'Meta - WhatsApp Business API',
@@ -311,12 +321,12 @@ export default function PrivacyPage() {
                         {
                           p: 'Supabase',
                           u: 'PostgreSQL database hosting',
-                          s: 'Bot, World',
+                          s: 'Bot, App, World',
                         },
                         {
                           p: 'Render',
                           u: 'Application hosting',
-                          s: 'Web, Bot, World',
+                          s: 'Web, Bot, App, World',
                         },
                         {
                           p: 'Payment gateway',
@@ -392,7 +402,59 @@ export default function PrivacyPage() {
                 </ul>
               </Section>
 
-              <Section id="product-world" title="8. Jantra World - specifics">
+              <Section id="product-app" title="8. Jantra Bot App - specifics">
+                <ul className="list-disc space-y-1.5 pl-5">
+                  <li>
+                    <strong>No account.</strong> The app does not ask you to
+                    sign up or log in.
+                  </li>
+                  <li>
+                    <strong>Chat messages</strong> are sent securely to our
+                    server and to the AI providers in Section 6 only to
+                    generate a reply. Our server does not store your chat;
+                    the conversation is saved only on your phone, and you can
+                    clear it any time with <strong>New</strong>.
+                  </li>
+                  <li>
+                    <strong>Reports:</strong> if you tap{' '}
+                    <strong>Report</strong> on a reply, we store that reply,
+                    the question before it and any note you add, to review
+                    and improve the service.
+                  </li>
+                  <li>
+                    <strong>Feedback form:</strong> we store your rating and
+                    answers. Your name and phone number are stored only if
+                    you choose to enter them.
+                  </li>
+                  <li>
+                    <strong>Device identifier:</strong> the app creates a
+                    random ID when installed. It is used only to apply rate
+                    limits and prevent abuse, and is not linked to your
+                    identity.
+                  </li>
+                  <li>
+                    No ads, no advertising ID, no location, contacts, photos
+                    or files are collected. The app is intended for users
+                    aged 18 and over.
+                  </li>
+                  <li>
+                    <strong>Deleting your data:</strong> uninstalling the app
+                    or tapping <strong>New</strong> removes your chat from
+                    your phone. To delete feedback or reports you sent, email{' '}
+                    <a
+                      href="mailto:connect@codingryder.com?subject=Jantra%20Bot%20App%20data%20deletion"
+                      className="font-medium text-brand-700 hover:underline"
+                    >
+                      connect@codingryder.com
+                    </a>{' '}
+                    with the subject &ldquo;Jantra Bot App data
+                    deletion&rdquo; and roughly when you sent them. We delete
+                    them within 30 days.
+                  </li>
+                </ul>
+              </Section>
+
+              <Section id="product-world" title="9. Jantra World - specifics">
                 <ul className="list-disc space-y-1.5 pl-5">
                   <li>
                     Same data model as Jantra Bot - your WhatsApp number is
@@ -419,7 +481,7 @@ export default function PrivacyPage() {
                 </ul>
               </Section>
 
-              <Section id="product-web" title="9. Jantra Web - specifics">
+              <Section id="product-web" title="10. Jantra Web - specifics">
                 <ul className="list-disc space-y-1.5 pl-5">
                   <li>
                     A sign-in is required for some features. We store your
@@ -449,7 +511,7 @@ export default function PrivacyPage() {
                 </ul>
               </Section>
 
-              <Section id="retention" title="10. How long we keep your data">
+              <Section id="retention" title="11. How long we keep your data">
                 <ul className="list-disc space-y-1.5 pl-5">
                   <li>
                     <strong>Voice notes &amp; images:</strong> not retained
@@ -482,7 +544,7 @@ export default function PrivacyPage() {
                 </ul>
               </Section>
 
-              <Section id="sharing" title="11. When we share your data">
+              <Section id="sharing" title="12. When we share your data">
                 <p>We do not sell your personal data. We share data only:</p>
                 <ul className="mt-3 list-disc space-y-1.5 pl-5">
                   <li>
@@ -506,7 +568,7 @@ export default function PrivacyPage() {
                 </ul>
               </Section>
 
-              <Section id="transfers" title="12. International transfers">
+              <Section id="transfers" title="13. International transfers">
                 <p>
                   Some of our processors operate servers outside India
                   (notably the United States). When we transfer personal data
@@ -516,7 +578,7 @@ export default function PrivacyPage() {
                 </p>
               </Section>
 
-              <Section id="security" title="13. Security">
+              <Section id="security" title="14. Security">
                 <p>
                   We use commercially reasonable safeguards - encrypted
                   transport (TLS), access controls on our hosting and
@@ -528,7 +590,7 @@ export default function PrivacyPage() {
                 </p>
               </Section>
 
-              <Section id="your-rights" title="14. Your rights">
+              <Section id="your-rights" title="15. Your rights">
                 <p>Subject to applicable law, you have the right to:</p>
                 <ul className="mt-3 list-disc space-y-1.5 pl-5">
                   <li>Access the personal data we hold about you;</li>
@@ -555,7 +617,7 @@ export default function PrivacyPage() {
                 </p>
               </Section>
 
-              <Section id="children" title="15. Children">
+              <Section id="children" title="16. Children">
                 <p>
                   The Services are not directed at children under 13. We do
                   not knowingly collect personal data from children under 13.
@@ -566,7 +628,7 @@ export default function PrivacyPage() {
                 </p>
               </Section>
 
-              <Section id="cookies" title="16. Cookies & similar technologies">
+              <Section id="cookies" title="17. Cookies & similar technologies">
                 <ul className="list-disc space-y-1.5 pl-5">
                   <li>
                     <strong>Marketing site &amp; Jantra Web:</strong> we use
@@ -581,7 +643,7 @@ export default function PrivacyPage() {
                 </ul>
               </Section>
 
-              <Section id="changes" title="17. Changes to this policy">
+              <Section id="changes" title="18. Changes to this policy">
                 <p>
                   We may update this policy from time to time. The updated
                   version takes effect on the date marked at the top of this
@@ -591,7 +653,7 @@ export default function PrivacyPage() {
                 </p>
               </Section>
 
-              <Section id="contact" title="18. Contact">
+              <Section id="contact" title="19. Contact">
                 <p>
                   Privacy questions, data requests, or complaints:
                 </p>
