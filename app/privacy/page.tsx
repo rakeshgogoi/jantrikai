@@ -439,9 +439,16 @@ export default function PrivacyPage() {
                   </li>
                   <li>
                     <strong>Device identifier:</strong> the app creates a
-                    random ID when installed. It is used only to apply rate
-                    limits and prevent abuse, and is not linked to your
-                    identity.
+                    random ID when installed. It is used to apply rate limits,
+                    prevent abuse, and count how many people use the app. It
+                    is not linked to your identity.
+                  </li>
+                  <li>
+                    <strong>Usage counts:</strong> for each day you use the
+                    app we record a one-way hash of the device ID, the
+                    language you chose and how many messages you sent - never
+                    what you wrote. This tells us how many people use the app
+                    and in which languages.
                   </li>
                   <li>
                     No ads, no advertising ID, no location, contacts, photos
@@ -543,6 +550,11 @@ export default function PrivacyPage() {
                     <strong>Feedback &amp; reports:</strong> kept for up to 24
                     months to review and improve the Services, or until you
                     ask us to delete them.
+                  </li>
+                  <li>
+                    <strong>App usage counts:</strong> kept for up to 24 months,
+                    then deleted or reduced to totals that cannot be linked to
+                    any device.
                   </li>
                   <li>
                     <strong>Account &amp; preferences:</strong> retained while

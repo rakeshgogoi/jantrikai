@@ -179,8 +179,8 @@ export default function TermsPage() {
                   </li>
                   <li>
                     <strong>Jantra Bot app:</strong> no sign-up or login. The
-                    app creates a random device ID, used only to apply rate
-                    limits and prevent abuse.
+                    app creates a random device ID, used to apply rate limits,
+                    prevent abuse and count how many people use the app.
                   </li>
                   <li>
                     <strong>Jantra Web:</strong> some features require a
