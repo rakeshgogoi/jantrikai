@@ -93,8 +93,9 @@ export default function PrivacyPage() {
                 <ul className="list-disc space-y-1.5 pl-5">
                   <li>
                     We collect the minimum needed to make each Service work -
-                    your identifier (WhatsApp number or Jantra Web sign-in),
-                    your messages/queries, and your preferences.
+                    your identifier (WhatsApp number, Jantra Web sign-in, or a
+                    random device ID in the Jantra Bot app), your
+                    messages/queries, and your preferences.
                   </li>
                   <li>
                     We send your inputs to AI providers (Google Gemini, Sarvam
@@ -109,7 +110,9 @@ export default function PrivacyPage() {
                   </li>
                   <li>
                     You can clear your Jantra Bot conversation history any
-                    time with the <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">/clear</code> command.
+                    time with the <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">/clear_history</code> command.
+                    In the Jantra Bot app, your chat stays on your phone and
+                    is never stored on our servers.
                   </li>
                   <li>
                     Contact{' '}
@@ -184,8 +187,9 @@ export default function PrivacyPage() {
                 <ul className="mt-3 list-disc space-y-1.5 pl-5">
                   <li>
                     <strong>Identifier</strong> - your WhatsApp phone number
-                    (Bot/World) or your Jantra Web sign-in identifier (e.g.
-                    email or OAuth ID).
+                    (Bot/World), your Jantra Web sign-in identifier (e.g.
+                    email or OAuth ID), or a random device ID created when you
+                    install the Jantra Bot app (App).
                   </li>
                   <li>
                     <strong>Preferences</strong> - chosen language, active
@@ -203,7 +207,14 @@ export default function PrivacyPage() {
                   </li>
                   <li>
                     <strong>Usage data</strong> - timestamps, mode usage
-                    counts, daily/lifetime quotas, error logs (for debugging).
+                    counts, daily/lifetime quotas, rate-limit counters, error
+                    logs (for debugging).
+                  </li>
+                  <li>
+                    <strong>Feedback &amp; reports</strong> - answers you give
+                    in our feedback forms, and AI replies you report from the
+                    Jantra Bot app (with the question and any note you add).
+                    Name and phone number only if you choose to give them.
                   </li>
                   <li>
                     <strong>Payment metadata (Jantra Web paid plans)</strong>{' '}
@@ -522,9 +533,16 @@ export default function PrivacyPage() {
                     a rolling basis while the account is active. Bot/World
                     users can wipe Assistant context with{' '}
                     <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">
-                      /clear
+                      /clear_history
                     </code>
-                    .
+                    . The Jantra Bot app does not store your chat on our
+                    servers; it stays on your phone until you tap{' '}
+                    <strong>New</strong> or uninstall the app.
+                  </li>
+                  <li>
+                    <strong>Feedback &amp; reports:</strong> kept for up to 24
+                    months to review and improve the Services, or until you
+                    ask us to delete them.
                   </li>
                   <li>
                     <strong>Account &amp; preferences:</strong> retained while
@@ -571,7 +589,8 @@ export default function PrivacyPage() {
               <Section id="transfers" title="13. International transfers">
                 <p>
                   Some of our processors operate servers outside India
-                  (notably the United States). When we transfer personal data
+                  (including in the United States, the European Union and
+                  Singapore). When we transfer personal data
                   outside India, we rely on contractual safeguards with the
                   processor and limit data sharing to what is necessary to
                   operate the Services.
@@ -612,8 +631,10 @@ export default function PrivacyPage() {
                     connect@codingryder.com
                   </a>{' '}
                   from the address (or with the WhatsApp number) associated
-                  with your use of the Service. We will respond within a
-                  reasonable timeframe, typically 30 days.
+                  with your use of the Service. The Jantra Bot app has no
+                  account, so for app data tell us roughly when you sent the
+                  feedback or report (see Section 8). We will respond within
+                  a reasonable timeframe, typically 30 days.
                 </p>
               </Section>
 
@@ -625,6 +646,10 @@ export default function PrivacyPage() {
                   guardian&rsquo;s consent. If you believe a child under 13
                   has used a Service, contact us and we will delete the
                   associated data.
+                </p>
+                <p className="mt-3">
+                  The <strong>Jantra Bot app</strong> is intended only for
+                  users aged 18 and over.
                 </p>
               </Section>
 
@@ -639,6 +664,11 @@ export default function PrivacyPage() {
                   <li>
                     <strong>Jantra Bot &amp; Jantra World:</strong> no
                     cookies; the Services run entirely inside WhatsApp.
+                  </li>
+                  <li>
+                    <strong>Jantra Bot app:</strong> no cookies or advertising
+                    ID. The app stores your language, chat and its random
+                    device ID only on your phone.
                   </li>
                 </ul>
               </Section>
