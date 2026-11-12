@@ -427,9 +427,10 @@ export default function PrivacyPage() {
                   <li>
                     <strong>Chat messages</strong> are sent securely to our
                     server and to the AI providers in Section 6 only to
-                    generate a reply. Our server does not store your chat;
-                    the conversation is saved only on your phone, and you can
-                    clear it any time with <strong>New</strong>.
+                    generate a reply. Our server does not store your chats;
+                    your last 10 chats are saved only on your phone, listed
+                    under <strong>Chats</strong>, and you can delete any of
+                    them there. Older chats are deleted automatically.
                   </li>
                   <li>
                     <strong>Voice messages:</strong> the app uses the
@@ -476,9 +477,9 @@ export default function PrivacyPage() {
                     aged 18 and over.
                   </li>
                   <li>
-                    <strong>Deleting your data:</strong> uninstalling the app
-                    or tapping <strong>New</strong> removes your chat from
-                    your phone. To delete feedback or reports you sent, email{' '}
+                    <strong>Deleting your data:</strong> delete a chat from
+                    the <strong>Chats</strong> list, or uninstall the app to
+                    remove all of them from your phone. To delete feedback or reports you sent, email{' '}
                     <a
                       href="mailto:connect@codingryder.com?subject=Jantra%20Bot%20App%20data%20deletion"
                       className="font-medium text-brand-700 hover:underline"
@@ -563,8 +564,8 @@ export default function PrivacyPage() {
                       /clear_history
                     </code>
                     . The Jantra Bot app does not store your chat on our
-                    servers; it stays on your phone until you tap{' '}
-                    <strong>New</strong> or uninstall the app.
+                    servers; your last 10 chats stay on your phone until you
+                    delete them in the app or uninstall it.
                   </li>
                   <li>
                     <strong>Feedback &amp; reports:</strong> kept for up to 24
