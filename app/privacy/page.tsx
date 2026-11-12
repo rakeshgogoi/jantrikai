@@ -316,7 +316,7 @@ export default function PrivacyPage() {
                         },
                         {
                           p: 'ElevenLabs',
-                          u: 'Text-to-speech (reading replies aloud in Assamese and Nepali)',
+                          u: 'Text-to-speech (reading Assamese replies aloud)',
                           s: 'Bot, App',
                         },
                         {
