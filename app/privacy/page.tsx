@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
 
-const EFFECTIVE_DATE = '30 October 2026';
+const EFFECTIVE_DATE = '12 November 2026';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - Jantrik AI',
@@ -166,7 +166,7 @@ export default function PrivacyPage() {
                   </li>
                   <li>
                     <strong>Jantra Bot App</strong> - the Jantra Bot mobile
-                    app for Android (package{' '}
+                    app for Android and iPhone (package and bundle ID{' '}
                     <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">
                       com.codingryder.jantrabot
                     </code>
@@ -306,12 +306,17 @@ export default function PrivacyPage() {
                       {[
                         {
                           p: 'Google Gemini',
-                          u: 'AI language model & vision (image understanding)',
+                          u: 'AI language model, vision (image understanding) & transcription of long voice messages',
                           s: 'Web, Bot, App, World',
                         },
                         {
                           p: 'Sarvam AI',
-                          u: 'AI language model (chat replies) & voice transcription (Indian languages)',
+                          u: 'AI language model (chat replies), voice transcription & text-to-speech (Indian languages)',
+                          s: 'Bot, App',
+                        },
+                        {
+                          p: 'ElevenLabs',
+                          u: 'Text-to-speech (reading replies aloud in Assamese and Nepali)',
                           s: 'Bot, App',
                         },
                         {
@@ -425,6 +430,21 @@ export default function PrivacyPage() {
                     generate a reply. Our server does not store your chat;
                     the conversation is saved only on your phone, and you can
                     clear it any time with <strong>New</strong>.
+                  </li>
+                  <li>
+                    <strong>Voice messages:</strong> the app uses the
+                    microphone only while you record a voice message. The
+                    recording is sent to our server and to Sarvam AI (or
+                    Google Gemini for long messages) only to turn it into
+                    text. It is not stored by us after that.
+                  </li>
+                  <li>
+                    <strong>Listen:</strong> when you tap{' '}
+                    <strong>Listen</strong>, the reply&apos;s text is sent to
+                    Sarvam AI or ElevenLabs to make the audio. The audio is
+                    kept briefly in our server&apos;s memory so replaying is
+                    quick, and in your phone&apos;s cache; it is never saved
+                    to our database.
                   </li>
                   <li>
                     <strong>Reports:</strong> if you tap{' '}
