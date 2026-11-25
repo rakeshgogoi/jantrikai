@@ -7,7 +7,10 @@ import {
   Languages,
   Gamepad2,
   Mic,
+  Volume2,
   ImageIcon,
+  FileText,
+  Smartphone,
   Terminal,
   Lightbulb,
   Layers,
@@ -18,6 +21,7 @@ import {
   ArrowRight,
   ArrowLeft,
   CheckCircle2,
+  Search,
 } from 'lucide-react';
 import GuideTOC, { type TocItem } from '@/components/GuideTOC';
 import FAQItem from '@/components/FAQItem';
@@ -27,12 +31,12 @@ const ACCENT = 'emerald' as const;
 export const metadata: Metadata = {
   title: 'Jantra Bot User Guide - Complete product documentation',
   description:
-    'The complete Jantra Bot user guide: Assistant and Play modes, 10 languages, voice and image support, commands, tips, use cases, FAQs, and technical specifications.',
+    'The complete Jantra Bot user guide: Assistant and Play modes, 10 languages, voice input and spoken replies (Listen), image & document understanding, interactive follow-up buttons, Android app, commands, tips, use cases, FAQs, and technical specifications.',
   alternates: { canonical: '/bot/guide/' },
   openGraph: {
     title: 'Jantra Bot User Guide - Complete product documentation',
     description:
-      'Every mode, command, language, and tip for using Jantra Bot inside WhatsApp.',
+      'Every mode, command, language, file type, and tip for using Jantra Bot inside WhatsApp - plus the Android app.',
     url: '/bot/guide/',
     type: 'article',
   },
@@ -40,18 +44,18 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jantra Bot User Guide',
     description:
-      'Every mode, command, language, and tip for using Jantra Bot inside WhatsApp.',
+      'Every mode, command, language, file type, and tip for using Jantra Bot inside WhatsApp - plus the Android app.',
   },
 };
 
 const toc: TocItem[] = [
   { n: 1, id: 'introduction', title: 'Introduction', sub: "What Jantra Bot is and who it's for" },
-  { n: 2, id: 'key-features', title: 'Key Features', sub: 'Seven core capabilities at a glance' },
+  { n: 2, id: 'key-features', title: 'Key Features', sub: 'Nine core capabilities at a glance' },
   { n: 3, id: 'getting-started', title: 'Getting Started', sub: 'Up and running in 30 seconds' },
   { n: 4, id: 'modes', title: 'User Guide - Modes', sub: 'Assistant and Play explained' },
   { n: 5, id: 'languages', title: 'Supported Languages', sub: '10 languages with scripts & codes' },
-  { n: 6, id: 'voice', title: 'Voice Support', sub: 'Using voice notes with Jantra Bot' },
-  { n: 7, id: 'images', title: 'Image Understanding', sub: 'Send a photo, get a description' },
+  { n: 6, id: 'voice', title: 'Voice & Listen', sub: 'Voice notes in, spoken replies out' },
+  { n: 7, id: 'images', title: 'Images, Documents & Chats', sub: 'Pictures, PDFs, DOCX, and chat exports' },
   { n: 8, id: 'commands', title: 'Commands Reference', sub: 'Every slash command' },
   { n: 9, id: 'tips', title: 'Tips & Tricks', sub: 'Power-user advice' },
   { n: 10, id: 'use-cases', title: 'Use Cases', sub: 'Real-world scenarios' },
@@ -113,7 +117,7 @@ const features = [
     icon: CheckCircle2,
     title: 'WhatsApp Native',
     body:
-      'Zero setup. No downloads, no logins, no separate app. Works directly inside the WhatsApp app on any smartphone - Android, iOS, or web.',
+      'Zero setup. No downloads, no logins, no separate account. Works directly inside the WhatsApp app on any smartphone - Android, iOS, or web. A companion Jantra Bot app is also available on Android, with iOS coming soon.',
   },
   {
     icon: Layers,
@@ -128,10 +132,22 @@ const features = [
       'Send a voice note instead of typing. Jantra Bot transcribes it using Sarvam AI (purpose-built for Indian languages) and responds in your chosen language.',
   },
   {
+    icon: Volume2,
+    title: 'Listen - Spoken Replies',
+    body:
+      "Tap the 🔊 Listen button under any answer to hear it read aloud, in your chosen language. Assamese uses ElevenLabs for natural voice; other languages use Sarvam AI's text-to-speech.",
+  },
+  {
     icon: ImageIcon,
     title: 'Image Understanding',
     body:
-      "Send any photo - food, documents, street signs, plants, artwork - and Jantra Bot describes what it sees, in your language, powered by Google Gemini's vision AI.",
+      "Send any photo - food, documents, street signs, plants, artwork - and Jantra Bot describes what it sees, in your language, powered by Google Gemini's vision AI. You can also ask follow-up questions about an image you just sent.",
+  },
+  {
+    icon: FileText,
+    title: 'Files & Chat Exports',
+    body:
+      'Send a PDF, DOCX, or TXT file and Jantra Bot opens a quick picker: Summarize or Find in file. Send a WhatsApp chat export (ZIP) and summarize the whole chat - or from a specific date onward.',
   },
   {
     icon: BookOpen,
@@ -225,8 +241,8 @@ const voiceSteps = [
   },
   {
     n: 4,
-    title: 'Reply',
-    body: 'You receive the response as a text message in your chosen language, ready to read or copy.',
+    title: 'Reply (read or listen)',
+    body: 'You receive the response as a text message in your chosen language. Tap the 🔊 Listen button under the reply to hear it read aloud - Assamese uses ElevenLabs, other languages use Sarvam text-to-speech.',
   },
 ];
 
@@ -235,13 +251,15 @@ const voiceTips = [
   { label: 'Speak naturally', body: "Don't slow down unnaturally - speak as you normally would." },
   { label: 'Good connection', body: 'Ensure your internet connection is stable when sending audio.' },
   { label: 'Any length', body: "Short or long - there's no strict time limit on voice notes." },
+  { label: 'Hear it back', body: 'Tap 🔊 Listen under any reply to play the answer as audio - great for walking, cooking, or resting your eyes.' },
+  { label: 'Follow-up buttons', body: 'Replies may show quick buttons like 🔊 Listen or More details - tap them instead of retyping the same question.' },
 ];
 
 const imageSteps = [
   { n: 1, title: 'Attach', body: 'Attach and send any photo from your camera roll, or take a new one - JPEG, PNG, and WEBP are all accepted.' },
-  { n: 2, title: 'Acknowledge', body: 'Jantra Bot immediately replies in your language with a wait message such as "Let me read the image for you, please wait…"' },
-  { n: 3, title: 'Analyse', body: 'Google Gemini analyses the image and identifies its content - objects, scene, text, context.' },
-  { n: 4, title: 'Describe', body: "You receive a detailed description in your chosen language - useful for reading, summarising, or translating what's in the photo." },
+  { n: 2, title: 'Pick an action', body: 'Jantra Bot replies with a 3-button picker: Read text · Describe · Ask about this. Pick one and the bot does just that.' },
+  { n: 3, title: 'Analyse', body: "Google Gemini's vision AI reads the image for the action you chose - OCR, description, or your custom question." },
+  { n: 4, title: 'Reply (and follow up)', body: 'You get the answer in your chosen language. For the next 10 minutes you can send a follow-up question about the same image without re-sending it.' },
 ];
 
 const imageTypes = [
@@ -255,6 +273,23 @@ const imageTypes = [
   { type: 'Charts & infographics', examples: 'Tables, graphs, data visuals' },
   { type: 'Signs & labels', examples: 'Street signs, menus, price tags' },
   { type: 'Fashion', examples: 'Clothing, accessories, styles' },
+];
+
+const fileFlows = [
+  {
+    kind: 'Documents (PDF, DOCX, DOC, TXT)',
+    icon: FileText,
+    actions: 'Summarize · Find in file · Cancel',
+    body:
+      'Attach a PDF, Word doc or text file in WhatsApp. Jantra Bot opens a 3-button picker - Summarize gives you the key points in your language; Find in file lets you type a question and the bot answers using the file as the source.',
+  },
+  {
+    kind: 'WhatsApp chat exports (ZIP)',
+    icon: Search,
+    actions: 'Summarize all · Summarize from date · Cancel',
+    body:
+      'Export a WhatsApp chat (Group info → Export chat → Without media, or any chat) and send the ZIP to Jantra Bot. Summarize the whole thread, or pick a date and summarize only from that day onward.',
+  },
 ];
 
 const commands = [
@@ -279,6 +314,26 @@ const tips = [
     body: "Instead of typing a long question, record a voice note. It's faster, and the AI handles natural spoken language better than broken typed text.",
   },
   {
+    title: 'Tap 🔊 Listen for spoken answers',
+    body: 'Every reply has a Listen button under it - tap to hear the answer read aloud in your language. Perfect when you&apos;re walking, cooking, or sharing an answer with someone else.',
+  },
+  {
+    title: 'Use the follow-up buttons',
+    body: 'Replies often show quick buttons like 🔊 Listen or More details. Tapping a button is faster than retyping the question - and the bot knows exactly what you meant.',
+  },
+  {
+    title: 'Ask about a photo you just sent',
+    body: 'After sending an image, you have a 10-minute window to ask follow-up questions about it ("what does the sign say?", "is this safe to eat?") without re-sending the picture.',
+  },
+  {
+    title: 'Summarise a long WhatsApp chat',
+    body: 'Export a chat (Group info → Export chat → Without media) and send the ZIP to Jantra Bot. Pick Summarize all, or Summarize from date to catch up from a specific day.',
+  },
+  {
+    title: 'Ask about dates, facts and current events',
+    body: 'Questions about today&apos;s date, recent events, or facts route through Google so you get an up-to-date answer, not a stale model guess.',
+  },
+  {
     title: 'Mix languages freely',
     body: "You don't have to type in your set language. Ask in English even when your language is set to Kannada - the bot will reply in Kannada regardless.",
   },
@@ -288,7 +343,7 @@ const tips = [
   },
   {
     title: 'Photograph text for translation',
-    body: 'Take a photo of a sign, menu, or document and Jantra Bot will describe it including any text visible in the image.',
+    body: 'Take a photo of a sign, menu, or document and tap "Read text" in the picker to get the text extracted, then ask for a translation.',
   },
   {
     title: 'Use /status to check your setup',
@@ -301,6 +356,10 @@ const tips = [
   {
     title: 'Ask for structured output',
     body: '"Give me a bullet-point list", "Summarise in 3 lines", "Give me a table comparing X and Y" - the bot formats its output based on your instruction.',
+  },
+  {
+    title: 'Ask for code in a message',
+    body: 'If you ask for code, the bot sends the real code in its own message (not just a summary), so you can copy-paste it straight into your editor.',
   },
 ];
 
@@ -318,29 +377,37 @@ const useCases = [
 const faqs = [
   { q: 'Is Jantra Bot free to use?', a: 'Yes, Jantra Bot is currently free during the beta period. Standard WhatsApp data charges from your network provider may apply.' },
   { q: 'Do I need to create an account?', a: 'No. There are no accounts, logins, or passwords. Your WhatsApp number is your identity.' },
-  { q: 'Does the bot store my conversations?', a: 'Jantra Bot stores recent conversation in Assistant mode so follow-up questions work. You can clear it any time with /clear_history. Images and voice recordings are not stored after processing.' },
-  { q: 'Can I use Jantra Bot on WhatsApp Web?', a: 'Yes - Jantra Bot works wherever WhatsApp works: mobile app, WhatsApp Web, and WhatsApp Desktop.' },
+  { q: 'Does the bot store my conversations?', a: 'Jantra Bot stores recent conversation in Assistant mode so follow-up questions work. You can clear it any time with /clear_history. Images, documents, and voice recordings are not stored after processing; the file cache clears after 10 minutes.' },
+  { q: 'Is there a Jantra Bot app?', a: 'You do not need an app - WhatsApp is enough. But a native Android app is available on Google Play if you prefer a dedicated space, and an iPhone app is currently in review on the App Store. Everything the bot does on WhatsApp works the same in the app.' },
+  { q: 'Can I use Jantra Bot on WhatsApp Web?', a: 'Yes - Jantra Bot works wherever WhatsApp works: mobile WhatsApp, WhatsApp Web, WhatsApp Desktop, and the Jantra Bot companion app on Android.' },
   { q: "What if the bot doesn't understand my voice note?", a: 'Try recording in a quieter environment or speak more clearly. If the problem persists, type your question instead.' },
+  { q: 'Can I hear answers read out loud?', a: 'Yes. Every reply has a 🔊 Listen button - tap it to play the answer as audio. Assamese uses ElevenLabs for a natural voice; other languages use Sarvam AI text-to-speech.' },
+  { q: 'What kinds of files can I send?', a: 'Photos (JPEG, PNG, WEBP), documents (PDF, DOCX, DOC, TXT), and WhatsApp chat exports (ZIP). The bot opens a quick picker for each file so you choose the action - Summarize, Find in file, Read text, Describe, or Ask about this.' },
   { q: 'Can I use multiple languages in one session?', a: "You can ask in any language, but the bot's replies will be in your currently set language. Use /lang to change it at any time." },
   { q: 'Can I type my language in English letters?', a: 'Yes. You can write in the native script or in English letters (romanised) - for example "ajir botor kenekua". Jantra Bot understands both and always replies in your chosen language.' },
   { q: 'Is there a message limit?', a: 'There is no strict daily limit for regular usage. Extremely high-volume usage may be rate-limited automatically.' },
-  { q: 'What AI powers Jantra Bot?', a: 'Jantra Bot uses Sarvam AI - built for Indian languages - for most chat replies and for voice transcription, and Google Gemini for live information (with web search), translations, image and document understanding, and games.' },
+  { q: 'What AI powers Jantra Bot?', a: 'Sarvam AI (built for Indian languages) handles most chat replies and voice transcription. Google Gemini powers live information with web search, translations, image and document understanding, and games. ElevenLabs provides the natural Assamese voice for spoken replies.' },
   { q: 'Can businesses use Jantra Bot?', a: 'Jantra Bot is built for individuals. For business or institutional deployments, contact Coding Ryder directly.' },
-  { q: 'How do I give feedback?', a: 'Email connect@codingryder.com - Rakesh personally reads every message.' },
+  { q: 'How do I give feedback?', a: 'Email connect@codingryder.com - Rakesh personally reads every message. You can also use the feedback form at codingryder.com.' },
 ];
 
 const specs = [
-  { k: 'Platform', v: 'WhatsApp Business API (via Twilio & Meta Cloud API)' },
+  { k: 'Platform', v: 'WhatsApp Business API (via Twilio & Meta Cloud API) · Native Android app (iOS in App Store review)' },
   { k: 'AI / Language Models', v: 'Sarvam AI sarvam-105b (most chat replies) · Google Gemini 2.5 Flash (live info with web search, translations, images, documents, games)' },
   { k: 'Voice Transcription', v: 'Sarvam AI - saarika:v2.5 + saaras:v3 (Assamese)' },
+  { k: 'Text-to-Speech (🔊 Listen)', v: 'ElevenLabs (Assamese - eleven_v4_turbo) · Sarvam AI Bulbul (other languages)' },
+  { k: 'Factual / Date Queries', v: 'Routed to Google Search for up-to-date answers' },
   { k: 'Backend Framework', v: 'Python · FastAPI · Uvicorn (async)' },
   { k: 'Database', v: 'PostgreSQL on Supabase (cloud-hosted)' },
   { k: 'Hosting', v: 'Render (cloud deployment, always-on)' },
   { k: 'Language Detection', v: 'langdetect library + Sarvam language-code enforcement' },
-  { k: 'Supported Formats', v: 'Text · Voice notes · Images (JPEG, PNG, WEBP) · PDF, DOCX, TXT · WhatsApp chat exports' },
+  { k: 'Supported Formats', v: 'Text · Voice notes · Images (JPEG, PNG, WEBP) · PDF, DOCX, DOC, TXT · WhatsApp chat exports (ZIP)' },
+  { k: 'File Picker', v: '3-button action picker per file; 10-minute follow-up window; files not persisted' },
+  { k: 'Reply Formatting', v: 'Model Markdown converted to WhatsApp formatting (bold, lists, code blocks); long code sent in parts' },
   { k: 'Context Window', v: 'Last 60 minutes of conversation per user (Assistant mode)' },
   { k: 'Modes', v: 'Assistant (incl. translations & word meanings) · Play' },
-  { k: 'Languages Supported', v: '10 (Assamese, Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, English, Punjabi, Nepali)' },
+  { k: 'Languages Supported', v: '10 total · Voice input in 8 (Assamese, Kannada, Hindi, Bengali, Tamil, Odia, Malayalam, English) · Text-only: Punjabi, Nepali' },
+  { k: 'Mobile Apps', v: 'Android: live on Google Play (com.codingryder.jantrabot) · iOS: in App Store review' },
   { k: 'Current Status', v: 'Beta - actively developed by Coding Ryder' },
 ];
 
@@ -475,6 +542,39 @@ export default function JantraBotGuidePage() {
                 Try it now: jantrabot.codingryder.com
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
+
+              {/* Optional: companion app */}
+              <aside className="mt-6 rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-5">
+                <div className="flex items-start gap-4">
+                  <span className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 ring-1 ring-inset ring-emerald-200">
+                    <Smartphone className="h-5 w-5" aria-hidden />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
+                      Optional - Jantra Bot companion app
+                    </p>
+                    <p className="mt-1.5 text-sm leading-6 text-slate-700">
+                      You don&apos;t need any app to use Jantra Bot - WhatsApp is enough. But if
+                      you&apos;d like a dedicated space with faster access, a native Android app is
+                      live on Google Play. An iPhone app is currently in review on the App Store.
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.codingryder.jantrabot"
+                        className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-3 py-2 text-xs font-semibold text-white hover:bg-slate-800"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Get the Android app
+                        <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                      </a>
+                      <span className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-500">
+                        iPhone app - coming soon
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </aside>
             </section>
 
             {/* Section 4 — Modes */}
@@ -559,16 +659,17 @@ export default function JantraBotGuidePage() {
               </p>
             </section>
 
-            {/* Section 6 — Voice */}
+            {/* Section 6 — Voice & Listen */}
             <section id="voice" className="scroll-mt-24">
-              <SectionHeading n={6} title="Voice Support" icon={Mic} />
+              <SectionHeading n={6} title="Voice & Listen" icon={Mic} />
               <p className="mt-6 text-base text-slate-700">
-                Jantra Bot understands voice notes. No typing needed - just hold the microphone
-                button in WhatsApp and speak naturally. The bot will transcribe your voice and
-                respond in your chosen language.
+                Jantra Bot works both ways with voice. Send a voice note instead of typing - just
+                hold the microphone button in WhatsApp and speak naturally. And tap the{' '}
+                <span className="whitespace-nowrap">🔊 Listen</span> button under any reply to hear
+                it read back to you in your language.
               </p>
 
-              <h3 className="mt-8 text-lg font-bold text-slate-900">How it works</h3>
+              <h3 className="mt-8 text-lg font-bold text-slate-900">Voice notes - how it works</h3>
               <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {voiceSteps.map((s) => (
                   <li
@@ -586,12 +687,17 @@ export default function JantraBotGuidePage() {
                 ))}
               </ol>
 
-              <h3 className="mt-10 text-lg font-bold text-slate-900">Voice technology - Sarvam AI</h3>
+              <h3 className="mt-10 text-lg font-bold text-slate-900">Voice tech - Sarvam AI & ElevenLabs</h3>
               <p className="mt-3 text-sm leading-6 text-slate-700">
-                Jantra Bot uses Sarvam AI (sarvam.ai) for voice transcription - an Indian startup
-                whose models are trained natively on Indian languages including Assamese, Kannada,
-                Hindi, Bengali, and Tamil. This makes it significantly more accurate for Indian
-                accents and regional speech patterns than generic speech engines.
+                Jantra Bot uses <strong>Sarvam AI</strong> (sarvam.ai) for voice transcription - an
+                Indian startup whose models are trained natively on Indian languages, so it's far
+                more accurate on Indian accents than generic engines. For spoken replies (Listen)
+                it uses Sarvam&apos;s text-to-speech in most languages, and{' '}
+                <strong>ElevenLabs</strong> for Assamese to deliver a notably more natural voice.
+              </p>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Voice input works across 8 languages today (Assamese, Kannada, Hindi, Bengali,
+                Tamil, Odia, Malayalam, English). Punjabi and Nepali are text-only for now.
               </p>
 
               <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -604,16 +710,16 @@ export default function JantraBotGuidePage() {
               </div>
             </section>
 
-            {/* Section 7 — Images */}
+            {/* Section 7 — Images, Documents & Chats */}
             <section id="images" className="scroll-mt-24">
-              <SectionHeading n={7} title="Image Understanding" icon={ImageIcon} />
+              <SectionHeading n={7} title="Images, Documents & Chats" icon={ImageIcon} />
               <p className="mt-6 text-base text-slate-700">
-                Send any photo to Jantra Bot and it will describe what it sees - in your chosen
-                language. Powered by Google Gemini's multimodal vision AI, the bot can identify
-                objects, scenes, text, food, animals, landmarks, and much more.
+                Jantra Bot reads anything you can send in WhatsApp - photos, PDFs, Word docs, text
+                files, even full WhatsApp chat exports. For every file it opens a small 3-button
+                picker so you tell it exactly what you want done.
               </p>
 
-              <h3 className="mt-8 text-lg font-bold text-slate-900">How it works</h3>
+              <h3 className="mt-8 text-lg font-bold text-slate-900">Images - how it works</h3>
               <ol className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {imageSteps.map((s) => (
                   <li
@@ -640,9 +746,35 @@ export default function JantraBotGuidePage() {
                   </div>
                 ))}
               </div>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">Documents & chat exports</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Send a file and the bot opens an action picker. Your pick, and any follow-up
+                question, stays live for 10 minutes - after that the file is forgotten and you can
+                re-send if you need it again.
+              </p>
+              <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {fileFlows.map((f) => (
+                  <div key={f.kind} className="rounded-2xl border border-slate-200 bg-white p-5">
+                    <div className="flex items-center gap-3">
+                      <span className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 ring-1 ring-inset ring-emerald-100">
+                        <f.icon className="h-5 w-5" aria-hidden />
+                      </span>
+                      <p className="text-sm font-semibold text-slate-900">{f.kind}</p>
+                    </div>
+                    <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-emerald-700">
+                      Picker options
+                    </p>
+                    <p className="mt-1 text-sm text-slate-700">{f.actions}</p>
+                    <p className="mt-3 text-sm leading-6 text-slate-700">{f.body}</p>
+                  </div>
+                ))}
+              </div>
+
               <Callout kind="note" title="Privacy">
-                Images are sent to Google Gemini for analysis and are not stored by Jantra Bot.
-                Only the text description is saved in your conversation history.
+                Images and files are sent to Google Gemini for analysis and are not stored by
+                Jantra Bot after processing. Only the text answer stays in your conversation
+                history, and the file cache clears after 10 minutes.
               </Callout>
             </section>
 
@@ -792,7 +924,8 @@ export default function JantraBotGuidePage() {
                 ))}
               </ul>
               <p className="mt-6 text-xs text-slate-500">
-                Powered by Google Gemini · Sarvam AI · FastAPI · PostgreSQL · WhatsApp Business API
+                Powered by Google Gemini · Sarvam AI · ElevenLabs · FastAPI · PostgreSQL · WhatsApp
+                Business API
               </p>
             </section>
 
@@ -841,7 +974,8 @@ export default function JantraBotGuidePage() {
               <p className="mt-8 text-center text-xs text-slate-500">
                 © 2026 Coding Ryder · All rights reserved · Currently in Beta
                 <br />
-                Jantra Bot is a product of Coding Ryder · Powered by Google Gemini & Sarvam AI
+                Jantra Bot is a product of Coding Ryder · Powered by Google Gemini · Sarvam AI ·
+                ElevenLabs
               </p>
             </section>
           </article>
