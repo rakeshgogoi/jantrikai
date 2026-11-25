@@ -17,6 +17,9 @@ import {
   PhoneCall,
   ArrowRight,
   ArrowLeft,
+  Gamepad2,
+  Repeat,
+  MousePointerClick,
 } from 'lucide-react';
 import GuideTOC, { type TocItem } from '@/components/GuideTOC';
 import FAQItem from '@/components/FAQItem';
@@ -47,21 +50,24 @@ const toc: TocItem[] = [
   { n: 1, id: 'introduction', title: 'Introduction', sub: "What Jantra World is and who it's for" },
   { n: 2, id: 'key-features', title: 'Key Features', sub: 'Core capabilities at a glance' },
   { n: 3, id: 'getting-started', title: 'Getting Started', sub: 'From save-the-number to first reply' },
-  { n: 4, id: 'assistant', title: 'Assistant', sub: 'Chat, brainstorm, draft, summarise' },
-  { n: 5, id: 'translate', title: 'Translate & Explain', sub: 'Cross-language help mid-thread' },
-  { n: 6, id: 'voice', title: 'Voice Notes', sub: 'Coming soon - text only today' },
-  { n: 7, id: 'languages', title: 'Languages', sub: 'Supported today and on the roadmap' },
-  { n: 8, id: 'commands', title: 'Commands Reference', sub: 'Shortcut commands explained' },
-  { n: 9, id: 'tips', title: 'Tips & Tricks', sub: 'Power-user advice' },
-  { n: 10, id: 'faqs', title: 'FAQs', sub: 'Frequently asked questions' },
-  { n: 11, id: 'specs', title: 'Technical Specifications', sub: 'Architecture & data handling' },
-  { n: 12, id: 'contact', title: 'Contact & Feedback', sub: 'How to reach us' },
+  { n: 4, id: 'modes', title: 'Modes', sub: 'Assistant, Dictionary, Translator, Play' },
+  { n: 5, id: 'assistant', title: 'Assistant', sub: 'Chat, brainstorm, draft, summarise' },
+  { n: 6, id: 'dictionary', title: 'Dictionary', sub: 'One word, one meaning, one example' },
+  { n: 7, id: 'translate', title: 'Translator', sub: 'Any text, any direction' },
+  { n: 8, id: 'play', title: 'Play', sub: 'Quizzes, riddles, hangman, word games' },
+  { n: 9, id: 'voice', title: 'Voice Notes', sub: 'Coming soon - text only today' },
+  { n: 10, id: 'languages', title: 'Languages', sub: '10 supported today' },
+  { n: 11, id: 'commands', title: 'Commands Reference', sub: 'Shortcut commands explained' },
+  { n: 12, id: 'tips', title: 'Tips & Tricks', sub: 'Power-user advice' },
+  { n: 13, id: 'faqs', title: 'FAQs', sub: 'Frequently asked questions' },
+  { n: 14, id: 'specs', title: 'Technical Specifications', sub: 'Architecture & data handling' },
+  { n: 15, id: 'contact', title: 'Contact & Feedback', sub: 'How to reach us' },
 ];
 
 const heroStats = [
-  { label: 'Platform', value: 'WhatsApp' },
-  { label: 'Languages', value: '10+' },
-  { label: 'App to install', value: 'None' },
+  { label: 'Languages', value: '10' },
+  { label: 'Modes', value: '4' },
+  { label: 'Setup', value: 'None' },
   { label: 'Price', value: 'Free' },
 ];
 
@@ -96,37 +102,49 @@ const features = [
     icon: MessageSquareText,
     title: 'Assistant',
     body:
-      'Chat, brainstorm, draft messages, or summarise a document. Free-form questions get direct, plain-language answers.',
+      'Multi-turn chat with memory — brainstorm, draft messages, summarise, or answer open questions. Replies always come in the language you picked.',
+  },
+  {
+    icon: BookOpen,
+    title: 'Dictionary',
+    body:
+      'Send a single word in any supported language and get its meaning plus one example sentence, explained in your chosen language.',
   },
   {
     icon: Languages,
-    title: 'Translate & Explain',
+    title: 'Translator',
     body:
-      'Translate messages between supported languages, look up word meanings, and get short explanations for unfamiliar terms.',
+      'Translate any text to your chosen language in one tap - stateless, so mid-chat context never leaks into the translation.',
   },
   {
-    icon: Mic,
-    title: 'Voice Notes (coming soon)',
+    icon: Gamepad2,
+    title: 'Play',
     body:
-      'Jantra World is text-only today. Voice notes and images are on the roadmap - for now, please type your message.',
+      'Four built-in games: quizzes, riddles, hangman, and word games — all playable in your chosen language, right in the chat.',
+  },
+  {
+    icon: MousePointerClick,
+    title: 'Quick-reply buttons',
+    body:
+      'Each mode presents interactive WhatsApp buttons - switch modes, play again, or get help without typing a slash command.',
   },
   {
     icon: Globe,
-    title: 'International languages',
+    title: '10 international languages',
     body:
-      'English plus a growing set of international languages tuned for the regions we ship in. Roadmap continues to expand.',
-  },
-  {
-    icon: Terminal,
-    title: 'Simple commands',
-    body:
-      'Optional slash commands - change language, reset context, show help. Most sessions never need them.',
+      'English, Spanish, Portuguese, French, German, Korean, Thai, Bahasa Indonesia, Malay, Vietnamese - all first-class. Switch any time with /lang.',
   },
   {
     icon: CheckCircle2,
     title: 'Zero-install',
     body:
       'No download, no login, no account creation. Save the number, send a message, get a reply.',
+  },
+  {
+    icon: Mic,
+    title: 'Voice & images (coming soon)',
+    body:
+      'Jantra World is text-only today. Voice notes and image understanding are on the roadmap, following the Jantra Bot playbook.',
   },
 ];
 
@@ -172,39 +190,90 @@ const translateExamples = [
 ];
 
 const commands = [
-  { cmd: '/lang', does: 'Change the reply language explicitly.' },
-  { cmd: '/clear', does: 'Clear the current conversation context.' },
-  { cmd: '/help', does: 'Show the in-app help cheatsheet.' },
-  { cmd: '/menu', does: 'Show the main menu (where enabled).' },
+  { cmd: '/menu or *', does: 'Open the main menu with every available action.' },
+  { cmd: '/mode', does: 'Switch between Assistant, Dictionary, Translator and Play.' },
+  { cmd: '/play', does: 'Jump straight into Play mode - quizzes, riddles, hangman, word games.' },
+  { cmd: '/lang', does: 'Change your preferred language from the 10 supported options.' },
+  { cmd: '/status', does: 'Show your current settings: language, mode, and recent activity.' },
+  { cmd: '/help', does: 'Show a quick help summary and the available commands.' },
+  { cmd: '/clear', does: 'Clear your Assistant-mode conversation history.' },
+  { cmd: 'change mode', does: 'Natural-language alternative to /mode.' },
+  { cmd: 'change language', does: 'Natural-language alternative to /lang.' },
 ];
 
 const tips = [
+  { title: 'Use the quick-reply buttons', body: 'Every mode shows interactive buttons - switch modes, play again, or restart a game by tapping a button instead of typing.' },
   { title: 'Write like you would to a friend', body: 'Jantra World is tuned for casual conversation - short questions, follow-ups, and code-mixed replies all work.' },
   { title: 'Change language with /lang', body: 'You can ask in any language, but replies follow the language you picked. Send /lang to change it.' },
+  { title: 'Dictionary is for one word', body: 'Dictionary mode expects a single word. Longer text goes to Assistant or Translator depending on the mode.' },
+  { title: 'Translator is stateless', body: 'Translator does not remember previous turns - send the exact text you want translated with no extra context.' },
   { title: 'Ask for the format you want', body: 'Say "in three bullets" or "as a short paragraph" - Jantra World will follow the instruction.' },
-  { title: 'Reset when the thread drifts', body: 'If a long conversation wanders off-topic, send /clear to start fresh.' },
+  { title: 'Reset when the thread drifts', body: 'If a long Assistant conversation wanders off-topic, send /clear to start fresh.' },
   { title: 'Save the contact', body: 'Once the number is in your contacts, WhatsApp will show it in search - much faster than reopening a link.' },
 ];
 
 const faqs = [
   { q: 'Is Jantra World free?', a: 'Yes. Jantra World is currently free while in beta. Standard WhatsApp data charges may apply.' },
   { q: 'Do I need to install an app?', a: 'No. If you already use WhatsApp, you already have everything you need.' },
-  { q: 'Which languages are supported?', a: 'English and a growing set of international languages - see the Languages section for the current list. More languages are on the roadmap.' },
-  { q: 'How is Jantra World different from Jantra Bot?', a: 'Same product family, different centre of gravity. Jantra Bot is India-first with 10 languages (9 Indian languages plus English). Jantra World is a dedicated WhatsApp number for international users, tuned for the regions we ship in.' },
+  { q: 'Which languages are supported?', a: 'Ten languages today: English, Spanish, Portuguese, French, German, Korean, Thai, Bahasa Indonesia, Malay, Vietnamese. More on the roadmap.' },
+  { q: 'What modes are available?', a: 'Four modes: Assistant (multi-turn chat with memory), Dictionary (single-word lookup), Translator (stateless text translation), and Play (quizzes, riddles, hangman, word games).' },
+  { q: 'How is Jantra World different from Jantra Bot?', a: 'Same product family, different centre of gravity. Jantra Bot is India-first (Twilio channel, 10 Indian + English languages, voice input, images, documents). Jantra World is a dedicated Meta Cloud API number for international users (text-only today, voice + images on the roadmap).' },
   { q: 'Do you use my messages to train AI?', a: 'No. We do not use your content to train AI models. See the Privacy Policy for full details.' },
-  { q: 'Can I send images, documents or voice notes?', a: 'Not yet - Jantra World is text-only today. Images, documents and voice notes are on the roadmap.' },
+  { q: 'Can I send images, documents or voice notes?', a: 'Not yet - Jantra World is text-only today. Images, documents and voice notes are on the roadmap, following the Jantra Bot playbook.' },
   { q: 'What happens if I stop replying?', a: 'Nothing. Jantra World waits. Come back anytime and pick up where you left off, or send /clear to start fresh.' },
+  { q: 'Can I play games?', a: 'Yes - send /play or pick Play from the mode menu. Four games are included: multiple-choice quizzes, riddles, hangman, and word-association games. All run in your chosen language.' },
+];
+
+const modes = [
+  {
+    id: 'mode-assistant',
+    title: 'Assistant',
+    icon: MessageSquareText,
+    tag: 'Multi-turn · With memory',
+    body: 'The default mode and the one most people use. Multi-turn Gemini chat with conversation history - follow-up questions carry context. Ask anything in any supported language.',
+  },
+  {
+    id: 'mode-dictionary',
+    title: 'Dictionary',
+    icon: BookOpen,
+    tag: 'Single word · Stateless',
+    body: 'Send a single word in any supported language. Get back its meaning plus one example sentence, both in your chosen language. No history, so each lookup starts clean.',
+  },
+  {
+    id: 'mode-translator',
+    title: 'Translator',
+    icon: Repeat,
+    tag: 'Any text · Stateless',
+    body: 'Translate any text - a phrase, a paragraph, a message - to your chosen language. Stateless: mid-conversation context never leaks in, and the text is translated literally even if it looks like a question.',
+  },
+  {
+    id: 'mode-play',
+    title: 'Play',
+    icon: Gamepad2,
+    tag: '4 games · Interactive buttons',
+    body: 'Four built-in games with quick-reply buttons to answer and move between rounds. Works entirely in your chosen language.',
+  },
+];
+
+const playGames = [
+  { title: 'Quiz', body: 'Short multiple-choice quizzes - trivia, science, geography, language. Pick an answer, get instant feedback.' },
+  { title: 'Riddles', body: 'Classic riddles with a short answer. Tap "Give up" to reveal, or send your guess as a message.' },
+  { title: 'Hangman', body: 'Guess the hidden word letter by letter. Interactive buttons let you quit, restart or pick a new category.' },
+  { title: 'Word games', body: 'Word-association and vocabulary puzzles - pattern-match, fill-in, or build-the-word rounds.' },
 ];
 
 const specs = [
-  { k: 'Platform', v: 'WhatsApp Cloud API (Meta)' },
-  { k: 'AI / Language Model', v: 'A large language model, provider abstracted' },
-  { k: 'Backend Framework', v: 'Python · FastAPI · async dispatcher' },
-  { k: 'Database', v: 'PostgreSQL on Supabase (cloud-hosted)' },
+  { k: 'Platform', v: 'WhatsApp - Meta Cloud API (dedicated international number)' },
+  { k: 'AI / Language Model', v: 'Google Gemini (via google-genai), one chat model handles Assistant, Dictionary, Translator and Play prompts' },
+  { k: 'Backend Framework', v: 'Python · FastAPI · async dispatcher (shares runtime with Jantra Bot; dedicated router/handler per channel)' },
+  { k: 'Database', v: 'PostgreSQL on Supabase - dedicated jantra_users_world and jantra_history_world tables (isolated from Jantra Bot)' },
   { k: 'Hosting', v: 'Render (cloud deployment, always-on)' },
-  { k: 'Voice', v: 'Not yet supported - text only (voice notes coming soon)' },
-  { k: 'Identity', v: 'WhatsApp phone number - no separate account' },
-  { k: 'Data retention', v: 'Recent conversation context for continuity; details in the Privacy Policy' },
+  { k: 'Interactive UI', v: 'WhatsApp quick-reply buttons and list pickers for mode selection, play actions, language picker' },
+  { k: 'Modes', v: 'Assistant · Dictionary · Translator · Play (4 games)' },
+  { k: 'Supported Formats', v: 'Text only today. Voice notes and images are on the roadmap.' },
+  { k: 'Languages Supported', v: '10 (English, Spanish, Portuguese, French, German, Korean, Thai, Bahasa Indonesia, Malay, Vietnamese)' },
+  { k: 'Identity', v: 'WhatsApp phone number - no separate account, no login' },
+  { k: 'Data retention', v: 'Assistant mode keeps recent conversation for continuity; Dictionary and Translator are stateless; details in the Privacy Policy' },
   { k: 'Current Status', v: 'Beta - actively developed by Coding Ryder' },
 ];
 
@@ -343,9 +412,35 @@ export default function JantraWorldGuidePage() {
               </a>
             </section>
 
-            {/* Section 4 — Assistant */}
+            {/* Section 4 — Modes overview */}
+            <section id="modes" className="scroll-mt-24">
+              <SectionHeading n={4} title="Modes" icon={Layers} />
+              <p className="mt-6 text-base text-slate-700">
+                Jantra World has four modes. Assistant is the default; switch any time with{' '}
+                <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm">/mode</code>, or tap
+                a mode button after any reply.
+              </p>
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {modes.map((m) => (
+                  <a
+                    key={m.id}
+                    href={`#${m.id === 'mode-translator' ? 'translate' : m.id.replace('mode-', '')}`}
+                    className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-sky-300 hover:shadow-md"
+                  >
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700 transition group-hover:bg-sky-100">
+                      <m.icon className="h-5 w-5" aria-hidden />
+                    </div>
+                    <h3 className="mt-4 text-base font-semibold text-slate-900">{m.title}</h3>
+                    <p className="mt-1 text-xs font-medium uppercase tracking-wider text-sky-700">{m.tag}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{m.body}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 5 — Assistant */}
             <section id="assistant" className="scroll-mt-24">
-              <SectionHeading n={4} title="Assistant" icon={MessageSquareText} />
+              <SectionHeading n={5} title="Assistant" icon={MessageSquareText} />
               <p className="mt-6 text-base text-slate-700">
                 The default surface. Ask anything - a question, a draft request, a summary,
                 a brainstorm. Replies come back in your language, in plain phrasing.
@@ -376,12 +471,40 @@ export default function JantraWorldGuidePage() {
               </Callout>
             </section>
 
-            {/* Section 5 — Translate & Explain */}
-            <section id="translate" className="scroll-mt-24">
-              <SectionHeading n={5} title="Translate & Explain" icon={Languages} />
+            {/* Section 6 — Dictionary */}
+            <section id="dictionary" className="scroll-mt-24">
+              <SectionHeading n={6} title="Dictionary" icon={BookOpen} />
               <p className="mt-6 text-base text-slate-700">
-                Cross-language help without leaving the chat thread. Translate a phrase or a
-                paragraph, look up a word, or ask for a short explanation of a term.
+                Dictionary mode is stateless and single-word. Send one word in any supported
+                language and get back its meaning plus an example sentence - both in the language
+                you picked. No history, no drift, no conversation.
+              </p>
+              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {[
+                  { label: 'Meaning', body: 'A short, plain definition in your chosen language.' },
+                  { label: 'Example', body: 'One natural example sentence using the word in context.' },
+                  { label: 'Any input language', body: 'Send the word in English or any supported language; the answer still comes in your chosen language.' },
+                  { label: 'Keep it to one word', body: 'Dictionary rejects phrases. Longer text goes to Assistant or Translator instead.' },
+                ].map((d) => (
+                  <div key={d.label} className="rounded-xl border border-slate-200 bg-white p-4">
+                    <p className="text-sm font-semibold text-sky-700">{d.label}</p>
+                    <p className="mt-1 text-sm text-slate-700">{d.body}</p>
+                  </div>
+                ))}
+              </div>
+              <Callout kind="tip" title="Switch quickly">
+                Use <code className="rounded bg-slate-100 px-1.5 py-0.5">/mode</code> or the mode
+                buttons under any reply to jump to Dictionary, look something up, and jump back.
+              </Callout>
+            </section>
+
+            {/* Section 7 — Translator */}
+            <section id="translate" className="scroll-mt-24">
+              <SectionHeading n={7} title="Translator" icon={Repeat} />
+              <p className="mt-6 text-base text-slate-700">
+                Translate any text - a phrase, a paragraph, a message - to the language you picked.
+                Translator is stateless, so mid-conversation context never leaks into the output.
+                It treats your input as text to be translated, not as a question to answer.
               </p>
 
               <h3 className="mt-8 text-lg font-bold text-slate-900">Example asks</h3>
@@ -405,9 +528,35 @@ export default function JantraWorldGuidePage() {
               </div>
             </section>
 
-            {/* Section 6 — Voice */}
+            {/* Section 8 — Play */}
+            <section id="play" className="scroll-mt-24">
+              <SectionHeading n={8} title="Play" icon={Gamepad2} />
+              <p className="mt-6 text-base text-slate-700">
+                Four built-in games, all playable in your chosen language with quick-reply buttons
+                for answers and controls. Great for a short break, and surprisingly useful for
+                practising a language.
+              </p>
+              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {playGames.map((g) => (
+                  <div key={g.title} className="rounded-2xl border border-slate-200 bg-white p-5">
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-50 text-sky-700">
+                      <Gamepad2 className="h-5 w-5" aria-hidden />
+                    </div>
+                    <h3 className="mt-3 text-base font-bold text-slate-900">{g.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-700">{g.body}</p>
+                  </div>
+                ))}
+              </div>
+              <Callout kind="tip" title="Jump straight in">
+                Send <code className="rounded bg-slate-100 px-1.5 py-0.5">/play</code> to open the
+                game menu from any mode. Tap a game to start; tap Play again or pick a new game
+                any time.
+              </Callout>
+            </section>
+
+            {/* Section 9 — Voice */}
             <section id="voice" className="scroll-mt-24">
-              <SectionHeading n={6} title="Voice Notes" icon={Mic} />
+              <SectionHeading n={9} title="Voice Notes" icon={Mic} />
               <p className="mt-6 text-base text-slate-700">
                 Jantra World is text-only today. If you send a voice note, image or document, it
                 will ask you to type your message instead. Voice notes and media support are on the
@@ -433,9 +582,9 @@ export default function JantraWorldGuidePage() {
               </div>
             </section>
 
-            {/* Section 7 — Languages */}
+            {/* Section 10 — Languages */}
             <section id="languages" className="scroll-mt-24">
-              <SectionHeading n={7} title="Languages" icon={Globe} />
+              <SectionHeading n={10} title="Languages" icon={Globe} />
               <p className="mt-6 text-base text-slate-700">
                 Jantra World is tuned for international users. English is the anchor; other
                 languages are added as we ship into new regions. Just start writing in the
@@ -478,9 +627,9 @@ export default function JantraWorldGuidePage() {
               </Callout>
             </section>
 
-            {/* Section 8 — Commands */}
+            {/* Section 11 — Commands */}
             <section id="commands" className="scroll-mt-24">
-              <SectionHeading n={8} title="Commands Reference" icon={Terminal} />
+              <SectionHeading n={11} title="Commands Reference" icon={Terminal} />
               <p className="mt-6 text-base text-slate-700">
                 Most users never touch a command. These are optional shortcuts.
               </p>
@@ -506,9 +655,9 @@ export default function JantraWorldGuidePage() {
               </div>
             </section>
 
-            {/* Section 9 — Tips */}
+            {/* Section 12 — Tips */}
             <section id="tips" className="scroll-mt-24">
-              <SectionHeading n={9} title="Tips & Tricks" icon={Lightbulb} />
+              <SectionHeading n={12} title="Tips & Tricks" icon={Lightbulb} />
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {tips.map((t) => (
                   <div key={t.title} className="rounded-xl border border-slate-200 bg-white p-5">
@@ -522,9 +671,9 @@ export default function JantraWorldGuidePage() {
               </div>
             </section>
 
-            {/* Section 10 — FAQs */}
+            {/* Section 13 — FAQs */}
             <section id="faqs" className="scroll-mt-24">
-              <SectionHeading n={10} title="Frequently Asked Questions" icon={HelpCircle} />
+              <SectionHeading n={13} title="Frequently Asked Questions" icon={HelpCircle} />
               <p className="mt-4 text-sm text-slate-600">Tap any question to expand the answer.</p>
               <div className="mt-6 space-y-3">
                 {faqs.map((f) => (
@@ -533,9 +682,9 @@ export default function JantraWorldGuidePage() {
               </div>
             </section>
 
-            {/* Section 11 — Specs */}
+            {/* Section 14 — Specs */}
             <section id="specs" className="scroll-mt-24">
-              <SectionHeading n={11} title="Technical Specifications" icon={Cpu} />
+              <SectionHeading n={14} title="Technical Specifications" icon={Cpu} />
               <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
                 <table className="min-w-full divide-y divide-slate-200 text-sm">
                   <tbody className="divide-y divide-slate-200 bg-white">
@@ -550,9 +699,9 @@ export default function JantraWorldGuidePage() {
               </div>
             </section>
 
-            {/* Section 12 — Contact */}
+            {/* Section 15 — Contact */}
             <section id="contact" className="scroll-mt-24">
-              <SectionHeading n={12} title="Contact & Feedback" icon={PhoneCall} />
+              <SectionHeading n={15} title="Contact & Feedback" icon={PhoneCall} />
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <ContactCard
                   label="Try Jantra World"

@@ -23,6 +23,10 @@ import {
   Receipt,
   Gamepad2,
   BookOpenCheck,
+  Volume2,
+  Mic,
+  Share2,
+  PenTool,
 } from 'lucide-react';
 import GuideTOC, { type TocItem } from '@/components/GuideTOC';
 import FAQItem from '@/components/FAQItem';
@@ -68,7 +72,7 @@ const toc: TocItem[] = [
 
 const heroStats = [
   { label: 'Languages', value: '19' },
-  { label: 'Chat modes', value: '5' },
+  { label: 'Chat modes', value: '6' },
   { label: 'Sign-in', value: 'Email' },
   { label: 'Price', value: 'Free' },
 ];
@@ -76,11 +80,15 @@ const heroStats = [
 const highlights = [
   '100% free to use - no credit card or payment required',
   'Supports 19 languages (11 Indian + 8 international)',
-  'Five specialised chat modes inside a single application',
-  'Powered by Google Gemini 2.5 Flash - fast, multimodal AI',
+  'Six specialised chat modes inside a single application',
+  'Powered by Google Gemini - 2.5 Pro for OCR, 2.5 Flash elsewhere',
+  '🔊 Listen - tap to hear any reply read aloud, with word-by-word highlighting, pause/resume, and male/female voice choice (ElevenLabs for Assamese, Sarvam for others)',
+  'Voice input - send a voice note with waveform visualisation and silence-based auto-stop; spoken language auto-detected',
+  'Share a reply as a card image or download the spoken audio',
+  'Google Search grounding in Chat mode for up-to-date factual answers',
   'Works on any device: desktop, tablet, and mobile browsers',
   'Passwordless sign-in - just an email address gets you started',
-  'Built-in image understanding for OCR and transaction tracking',
+  'Built-in image understanding, bank-statement/UPI OCR, and handwriting OCR for Indic scripts',
   'Privacy-first design - minimal data collection, no third-party tracking',
 ];
 
@@ -88,10 +96,12 @@ const platformInfo = [
   { k: 'Application Name', v: 'Jantra Web' },
   { k: 'Web Address', v: 'web.jantrikai.com' },
   { k: 'Developer', v: 'Coding Ryder (codingryder.com)' },
-  { k: 'AI Engine', v: 'Google Gemini 2.5 Flash' },
+  { k: 'AI Engine', v: 'Google Gemini 2.5 Pro (OCR) + 2.5 Flash (everything else)' },
+  { k: 'Voice (STT)', v: 'Sarvam AI - saarika:v2.5 + saaras:v3 for Assamese' },
+  { k: 'Voice (TTS)', v: 'ElevenLabs (Assamese) + Sarvam Bulbul (other languages) with word-level highlighting' },
   { k: 'Category', v: 'AI Assistant / Language Tool' },
   { k: 'Pricing', v: 'Free (Rookie tier - no payment required)' },
-  { k: 'Hosting', v: 'Render (cloud-hosted, Oregon region)' },
+  { k: 'Hosting', v: 'Frontend on Vercel, FastAPI backend on Render (Oregon)' },
   { k: 'First released', v: '2026' },
 ];
 
@@ -141,17 +151,20 @@ const interfaceAreas = [
 const inputCapabilities = [
   'Type your message and press Enter (or tap the Send button) to submit it.',
   'Use Shift+Enter to insert a line break without sending.',
-  'Upload an image by clicking the image icon next to the input field - supported in Chat and Accounts modes.',
+  'Upload an image by clicking the image icon next to the input field - supported in Chat, Accounts and Handwriting OCR modes.',
   'Use the suggested starter chips displayed above the input on a fresh session to begin a conversation quickly.',
-  'Tap the microphone icon (where shown) to record a voice prompt that will be transcribed.',
+  'Tap the microphone icon to record a voice prompt — a waveform modal shows while you speak and recording auto-stops when you pause. The spoken language is auto-detected; noise-only recordings are discarded automatically.',
+  'Tap 🔊 Listen under any AI reply to hear it read aloud, with word-by-word highlighting. Use pause/resume, and pick a male or female voice from settings.',
+  'Share a reply as a card image, or download the spoken-audio version, via the share menu under each message.',
 ];
 
 const modes = [
-  { mode: 'Chat', purpose: 'General AI conversation - ask any question in your language', icon: MessageCircle },
-  { mode: 'Translate', purpose: 'Translate text between any of the 19 supported languages', icon: Languages },
+  { mode: 'Chat', purpose: 'General AI conversation with Google Search grounding for current facts - ask anything in your language', icon: MessageCircle },
+  { mode: 'Translate', purpose: 'Translate text or whole documents between any of the 19 supported languages', icon: Languages },
   { mode: 'Dictionary', purpose: 'Look up word meanings, pronunciation and usage examples', icon: BookOpen },
   { mode: 'Play', purpose: 'Interactive word games: Hangman, Quiz, Riddle and Word Game', icon: Gamepad2 },
-  { mode: 'Accounts', purpose: 'Analyse payment-app screenshots and track UPI transactions', icon: Receipt },
+  { mode: 'Accounts', purpose: 'Upload a bank statement, UPI screenshot or card statement — Jantra extracts each transaction and exports to CSV', icon: Receipt },
+  { mode: 'Handwriting OCR', purpose: 'Photograph a handwritten page in an Indic script, digitise the text, and edit the output with Roman → Indic typing', icon: PenTool },
 ];
 
 const chatUses = [
