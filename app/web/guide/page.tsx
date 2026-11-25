@@ -86,7 +86,7 @@ const highlights = [
 
 const platformInfo = [
   { k: 'Application Name', v: 'Jantra Web' },
-  { k: 'Web Address', v: 'jantraweb.codingryder.com' },
+  { k: 'Web Address', v: 'web.jantrikai.com' },
   { k: 'Developer', v: 'Coding Ryder (codingryder.com)' },
   { k: 'AI Engine', v: 'Google Gemini 2.5 Flash' },
   { k: 'Category', v: 'AI Assistant / Language Tool' },
@@ -113,7 +113,7 @@ const systemReqs = [
 ];
 
 const signupSteps = [
-  'Open your browser and navigate to jantraweb.codingryder.com.',
+  'Open your browser and navigate to web.jantrikai.com.',
   'You will be redirected automatically to the Sign In page.',
   'Enter your email address in the provided field.',
   'Select your country from the dropdown list.',
@@ -348,7 +348,7 @@ const glossary = [
 ];
 
 const supportLinks = [
-  { resource: 'Jantra Web App', url: 'jantraweb.codingryder.com', href: 'https://jantraweb.codingryder.com' },
+  { resource: 'Jantra Web App', url: 'web.jantrikai.com', href: 'https://web.jantrikai.com' },
   { resource: 'Coding Ryder Website', url: 'codingryder.com', href: 'https://codingryder.com' },
   { resource: 'User Guide (web version)', url: 'codingryder.com/jantrabot_guide.html', href: 'https://codingryder.com/jantrabot_guide.html' },
   { resource: 'Terms & Privacy Policy', url: 'codingryder.com/jantrabot_legal.html', href: 'https://codingryder.com/jantrabot_legal.html' },
@@ -372,7 +372,7 @@ export default function JantraWebGuidePage() {
               Powered by Google Gemini 2.5 Flash.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="https://jantraweb.codingryder.com" className="btn-primary">
+              <a href="https://web.jantrikai.com" className="btn-primary">
                 Open Jantra Web
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
@@ -1244,10 +1244,10 @@ Content-Type: application/json
               <div className="mt-8 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 p-8 text-center text-white shadow-md">
                 <p className="text-xl font-bold">Ready to start?</p>
                 <a
-                  href="https://jantraweb.codingryder.com"
+                  href="https://web.jantrikai.com"
                   className="mt-3 inline-flex items-center gap-2 text-lg font-semibold underline decoration-2 underline-offset-4 hover:text-brand-50"
                 >
-                  jantraweb.codingryder.com
+                  web.jantrikai.com
                   <ArrowRight className="h-5 w-5" aria-hidden />
                 </a>
               </div>

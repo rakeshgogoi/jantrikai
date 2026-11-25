@@ -166,7 +166,7 @@ const gettingStarted = [
   {
     step: 'Step 2',
     title: 'Start a chat',
-    body: 'Open jantrabot.codingryder.com - it launches a WhatsApp chat with Jantra Bot directly.',
+    body: 'Open bot.jantrikai.com - it launches a WhatsApp chat with Jantra Bot directly.',
   },
   {
     step: 'Step 3',
@@ -428,7 +428,7 @@ export default function JantraBotGuidePage() {
               Voice & image · No downloads.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="https://jantrabot.codingryder.com" className="btn-primary">
+              <a href="https://bot.jantrikai.com" className="btn-primary">
                 Try Jantra Bot
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
@@ -536,10 +536,10 @@ export default function JantraBotGuidePage() {
                 ))}
               </ol>
               <a
-                href="https://jantrabot.codingryder.com"
+                href="https://bot.jantrikai.com"
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-emerald-600"
               >
-                Try it now: jantrabot.codingryder.com
+                Try it now: bot.jantrikai.com
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
 
@@ -935,9 +935,9 @@ export default function JantraBotGuidePage() {
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <ContactCard
                   label="Try Jantra Bot"
-                  value="jantrabot.codingryder.com"
+                  value="bot.jantrikai.com"
                   sub="Opens a WhatsApp chat with the bot directly"
-                  href="https://jantrabot.codingryder.com"
+                  href="https://bot.jantrikai.com"
                 />
                 <ContactCard
                   label="Feedback / Support"
@@ -963,10 +963,10 @@ export default function JantraBotGuidePage() {
               <div className="mt-8 overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 p-8 text-center text-white shadow-md">
                 <p className="text-xl font-bold">Ready to try it?</p>
                 <a
-                  href="https://jantrabot.codingryder.com"
+                  href="https://bot.jantrikai.com"
                   className="mt-3 inline-flex items-center gap-2 text-lg font-semibold underline decoration-2 underline-offset-4 hover:text-emerald-50"
                 >
-                  jantrabot.codingryder.com
+                  bot.jantrikai.com
                   <ArrowRight className="h-5 w-5" aria-hidden />
                 </a>
               </div>

@@ -113,7 +113,7 @@ export default function JantraWebPage() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="https://jantraweb.codingryder.com"
+                href="https://web.jantrikai.com"
                 className="btn-primary"
               >
                 Open Jantra Web
@@ -249,7 +249,7 @@ export default function JantraWebPage() {
                   ))}
                 </ul>
                 <a
-                  href="https://jantraweb.codingryder.com"
+                  href="https://web.jantrikai.com"
                   className={
                     t.highlighted
                       ? 'mt-8 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-700'

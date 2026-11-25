@@ -153,14 +153,14 @@ export default function PrivacyPage() {
                   <li>
                     <strong>Jantra Web</strong> -{' '}
                     <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">
-                      jantraweb.codingryder.com
+                      web.jantrikai.com
                     </code>
                     .
                   </li>
                   <li>
                     <strong>Jantra Bot</strong> - delivered via WhatsApp at{' '}
                     <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs">
-                      jantrabot.codingryder.com
+                      bot.jantrikai.com
                     </code>
                     .
                   </li>

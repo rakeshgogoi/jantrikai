@@ -98,7 +98,7 @@ export default function JantraBotPage() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="https://jantrabot.codingryder.com"
+                href="https://bot.jantrikai.com"
                 className="btn-primary"
               >
                 Open Jantra Bot
@@ -193,7 +193,7 @@ export default function JantraBotPage() {
 
             <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="https://jantrabot.codingryder.com"
+                href="https://bot.jantrikai.com"
                 className="btn-primary"
               >
                 Start a chat
