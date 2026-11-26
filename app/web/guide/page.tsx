@@ -319,29 +319,38 @@ const faqs = [
 ];
 
 const techStack = [
-  { layer: 'Frontend', tech: 'Next.js 14 + TypeScript', details: 'React 18, Tailwind CSS, Supabase client' },
-  { layer: 'Backend', tech: 'FastAPI (Python)', details: 'Uvicorn server, pdfplumber, python-docx' },
-  { layer: 'Database', tech: 'Neon PostgreSQL', details: 'Serverless PostgreSQL, psycopg2 adapter' },
-  { layer: 'AI Model', tech: 'Google Gemini 2.5 Flash', details: 'google-genai SDK, multimodal (text + image)' },
-  { layer: 'Voice / OCR', tech: 'Sarvam / Bhashini APIs', details: 'Indian-language transcription and translation services' },
-  { layer: 'Hosting', tech: 'Render (cloud)', details: 'Node.js + Python services, Oregon region' },
+  { layer: 'Frontend', tech: 'Next.js 14 + TypeScript', details: 'React 18, Tailwind CSS, Supabase SSR client — hosted on Vercel' },
+  { layer: 'Backend', tech: 'FastAPI (Python)', details: 'Uvicorn, pdfplumber, python-docx, weasyprint, apscheduler — hosted on Render (Oregon)' },
+  { layer: 'Database', tech: 'Neon PostgreSQL', details: 'Serverless Postgres via psycopg2, visitor analytics in a dedicated table' },
+  { layer: 'AI Model', tech: 'Google Gemini', details: '2.5 Pro for OCR tasks, 2.5 Flash elsewhere (google-genai SDK, multimodal with Google Search grounding on Chat)' },
+  { layer: 'Voice (STT)', tech: 'Sarvam AI', details: 'saarika:v2.5 for most languages, saaras:v3 for Assamese; waveform modal + silence auto-stop on the client' },
+  { layer: 'Voice (TTS / 🔊 Listen)', tech: 'ElevenLabs + Sarvam Bulbul', details: 'ElevenLabs for Assamese (eleven_v4_turbo), Sarvam for other languages; word-level highlighting via CSS Highlights API, pause/resume, male/female voice choice' },
+  { layer: 'Payments', tech: 'Razorpay', details: 'For future Seasoned / Maestro tier upgrades' },
+  { layer: 'Email', tech: 'Resend', details: 'Transactional email for sign-in and receipts' },
+  { layer: 'Hosting', tech: 'Vercel + Render', details: 'Next.js frontend on Vercel at web.jantrikai.com; FastAPI backend on Render' },
 ];
 
 const endpoints = [
   { method: 'POST', endpoint: '/chat', purpose: 'Main chat endpoint, used by every mode' },
   { method: 'GET', endpoint: '/history/{session_id}', purpose: 'Fetch the conversation history for a session' },
-  { method: 'POST', endpoint: '/accounts/screenshot', purpose: 'Upload a payment screenshot for OCR extraction' },
+  { method: 'POST', endpoint: '/accounts/screenshot', purpose: 'Upload a bank statement / UPI screenshot / card statement for OCR extraction' },
   { method: 'GET', endpoint: '/accounts/export/{token}', purpose: 'Download the transaction CSV export' },
-  { method: 'POST', endpoint: '/voice/transcribe', purpose: 'Transcribe audio via the Sarvam API' },
+  { method: 'POST', endpoint: '/handwriting/ocr', purpose: 'Digitise a handwritten Indic-script page (Gemini 2.5 Pro)' },
+  { method: 'POST', endpoint: '/voice/transcribe', purpose: 'Transcribe audio via Sarvam (saarika v2.5 / saaras v3 for Assamese)' },
+  { method: 'POST', endpoint: '/tts', purpose: 'Text-to-speech for the 🔊 Listen button (ElevenLabs for Assamese, Sarvam Bulbul otherwise)' },
+  { method: 'POST', endpoint: '/share/card', purpose: 'Render a reply as a shareable card image' },
   { method: 'POST', endpoint: '/users/register', purpose: 'Register a new user account' },
-  { method: 'GET', endpoint: '/health', purpose: 'Health check / server status' },
+  { method: 'POST', endpoint: '/track/pageview', purpose: 'Anonymous visitor analytics ingest' },
+  { method: 'GET', endpoint: '/health', purpose: 'Health check / server status (API version surfaced here)' },
 ];
 
 const apiModes = [
-  { value: 'chat', use: 'General-purpose conversation' },
-  { value: 'translate', use: 'Translation requests' },
+  { value: 'chat', use: 'General-purpose conversation with Google Search grounding' },
+  { value: 'translate', use: 'Translation requests — text or whole documents' },
   { value: 'dictionary', use: 'Word lookup' },
-  { value: 'play', use: 'Interactive games' },
+  { value: 'play', use: 'Interactive games — Hangman, Quiz, Riddle, Word Game' },
+  { value: 'accounts', use: 'Bank statement / UPI / card statement extraction to CSV' },
+  { value: 'handwriting', use: 'Handwriting OCR for Indic scripts' },
 ];
 
 const glossary = [
@@ -349,9 +358,12 @@ const glossary = [
   { term: 'Bhashini', meaning: 'An Indian government initiative providing language-AI building blocks (translation, transliteration, speech) for Indian languages.' },
   { term: 'Chat Mode', meaning: 'The general-purpose AI assistant mode of Jantra Web.' },
   { term: 'Dark Theme', meaning: 'An optional visual theme using a dark background, easier on the eyes in low-light environments.' },
-  { term: 'Gemini 2.5 Flash', meaning: 'The Google AI model that powers Jantra Web. Multimodal (text + image), fast and capable across many languages.' },
-  { term: 'Mode', meaning: 'A purpose-built chat experience inside Jantra Web. Five modes are available: Chat, Translate, Dictionary, Play and Accounts.' },
-  { term: 'OCR (Optical Character Recognition)', meaning: 'Technology that reads text from images. Used in Accounts Mode to read payment screenshots.' },
+  { term: 'Gemini', meaning: 'The Google AI model family that powers Jantra Web. Multimodal (text + image); 2.5 Pro handles OCR, 2.5 Flash handles everything else.' },
+  { term: 'Listen (🔊)', meaning: 'The text-to-speech button under every AI reply. Reads the answer out loud in your language with word-level highlighting, pause/resume, and a male/female voice choice. Uses ElevenLabs for Assamese, Sarvam Bulbul for other languages.' },
+  { term: 'Mode', meaning: 'A purpose-built chat experience inside Jantra Web. Six modes are available: Chat, Translate, Dictionary, Play, Accounts and Handwriting OCR.' },
+  { term: 'OCR (Optical Character Recognition)', meaning: 'Technology that reads text from images. Used in Accounts Mode (bank statements, UPI screenshots, card statements) and Handwriting OCR Mode (handwritten Indic-script pages).' },
+  { term: 'Google Search Grounding', meaning: 'Chat Mode can call Google Search to answer questions about recent events, dates and live facts, so replies are not limited to the model&rsquo;s training cutoff.' },
+  { term: 'Share Card', meaning: 'Render any AI reply as an image you can share on social media or messaging apps. The audio version of the reply can also be downloaded.' },
   { term: 'Onboarding', meaning: 'The initial language-selection screen shown after registration.' },
   { term: 'Passwordless', meaning: 'An authentication style that uses only an email address (and a session identifier in the browser) - no password to remember.' },
   { term: 'Rookie / Seasoned / Maestro', meaning: 'The three tier names used by Jantra Web. Rookie is the free default; the others are coming soon.' },
@@ -362,9 +374,9 @@ const glossary = [
 
 const supportLinks = [
   { resource: 'Jantra Web App', url: 'web.jantrikai.com', href: 'https://web.jantrikai.com' },
+  { resource: 'Jantrik AI Platform', url: 'jantrikai.com', href: 'https://jantrikai.com' },
   { resource: 'Coding Ryder Website', url: 'codingryder.com', href: 'https://codingryder.com' },
-  { resource: 'User Guide (web version)', url: 'codingryder.com/jantrabot_guide.html', href: 'https://codingryder.com/jantrabot_guide.html' },
-  { resource: 'Terms & Privacy Policy', url: 'codingryder.com/jantrabot_legal.html', href: 'https://codingryder.com/jantrabot_legal.html' },
+  { resource: 'Terms & Privacy Policy', url: 'jantrikai.com/privacy', href: 'https://jantrikai.com/privacy' },
   { resource: 'Twitter / X', url: '@codingryder', href: 'https://twitter.com/codingryder' },
 ];
 
@@ -381,8 +393,8 @@ export default function JantraWebGuidePage() {
             </span>
             <h1 className="heading-display mt-5">Jantra Web - User Guide</h1>
             <p className="prose-lead mt-5">
-              AI chat in Indian & world languages. 19 languages · 5 modes · Free to use ·
-              Powered by Google Gemini 2.5 Flash.
+              AI chat in Indian & world languages. 19 languages · 6 modes · Free to use ·
+              Powered by Google Gemini (2.5 Pro for OCR, 2.5 Flash elsewhere).
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a href="https://web.jantrikai.com" className="btn-primary">
@@ -847,6 +859,36 @@ export default function JantraWebGuidePage() {
                 Accounts data lives inside your current session. Use{' '}
                 <code className="rounded bg-amber-100 px-1 py-0.5">/export</code> regularly to
                 download a CSV backup before clearing or rotating your session.
+              </Callout>
+
+              <h3 className="mt-10 text-lg font-bold text-slate-900">5.6 Handwriting OCR Mode</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Handwriting OCR digitises handwritten pages in Indian regional scripts. Photograph
+                a page (notebook, letter, form), upload it, and Jantra extracts the text into an
+                editable field — with Roman → Indic typing so you can fix any misreads without
+                hunting for the right glyph on your keyboard. Powered by Google Gemini 2.5 Pro for
+                vision-grade accuracy on cursive and connected scripts.
+              </p>
+              <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-brand-700">5.6.1 How it works</p>
+              <ol className="mt-2 space-y-1.5 text-sm text-slate-700">
+                {[
+                  'Open Handwriting OCR mode from the sidebar.',
+                  'Tap the image upload icon and attach a clear photo of the handwritten page.',
+                  'Jantra extracts the text in the original Indic script.',
+                  'Edit the output directly — use Roman letters and watch them transliterate into the Indic script as you type.',
+                  'Copy, share, or download the cleaned-up text when done.',
+                ].map((s, idx) => (
+                  <li key={s} className="flex items-start gap-2">
+                    <span className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-brand-100 text-[11px] font-semibold text-brand-700">
+                      {idx + 1}
+                    </span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ol>
+              <Callout kind="tip" title="Tip">
+                Flat, well-lit photos work best. Try to fill the frame with the page and avoid
+                hard shadows across the writing.
               </Callout>
             </section>
 
